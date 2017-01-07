@@ -16,5 +16,11 @@ namespace Ragnarok {
 	class MapLocation : Point {
 		public MapLocation(int x, int y, Map map) : base(x, y) {
 		}
+
+		//Metoda sprawdzająca czy obiekt MapLocation jest w zasięgu
+		public bool InRangeOf(MapLocation location, int range) {
+			bool isInRange = DistanceTo(location) <= range; //Obiekt typu MapLocation dziedziczy z Point (przez co także jest obiektem typu Point) więc mogę wywołać na nim metody klasy Point. 
+			return isInRange;
+		}
 	}
 }
