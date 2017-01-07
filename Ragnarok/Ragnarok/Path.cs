@@ -12,5 +12,22 @@ namespace Ragnarok {
 		public Path(MapLocation[] path) {
 			this.path = path;
 		}
+
+		public MapLocation GetLocationAt(int pathStep) {
+			if (pathStep < Length) {
+				return path[pathStep];
+			} else {
+				return null;
+			}
+		}
+
+		public bool IsOnPath(MapLocation location) {
+			foreach (var pathLocation in path) {
+				if(location.Equals(pathLocation)) {
+					return true;
+				}
+			}
+			return false;
+		}
 	}
 }

@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 namespace Ragnarok {
 	class MapLocation : Point {
 		public MapLocation(int x, int y, Map map) : base(x, y) {
+			//Dopisać sprawdzanie czy obiekt "wpadnie" w siatkę mapy i wyrzucić Exception jeśli nie
 		}
 
 		//Metoda sprawdzająca czy obiekt MapLocation jest w zasięgu

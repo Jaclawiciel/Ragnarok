@@ -45,5 +45,25 @@ namespace Ragnarok
 		public int DistanceTo(Point point) {
 			return DistanceTo(point.X, point.Y);
 		}
+
+		public override string ToString() {
+			return X + ", " + Y;
+		}
+
+		//Można jeszcze dopisać override metody Equal do sprawdzania czy różne Punkty są równe i GetHashCode do nadawania ID obiektom
+		
+		public override bool Equals(object obj) {
+			if (!(obj is Point)) { //Jeśli obiekt obj nie jest typem Point (nie powstał z klasy Point, ani nie dziedziczy po klasie Point) to obiekty nie mogą być takie same (zwracamy false)
+				return false;
+			} else {
+				Point that = obj as Point; //Tworzę obiekt "that" castując obiekt obj do typu Point
+				return this.X == that.X && this.Y == that.Y;
+			}
+		}
+		/*
+		public override int GetHashCode() {
+			return base.GetHashCode();
+		}
+		*/
 	}
 }
