@@ -50,7 +50,7 @@ namespace Ragnarok
 			return X + ", " + Y;
 		}
 
-		//Można jeszcze dopisać override metody Equal do sprawdzania czy różne Punkty są równe i GetHashCode do nadawania ID obiektom
+		//Można jeszcze dopisać override GetHashCode do nadawania ID obiektom
 		
 		public override bool Equals(object obj) {
 			if (!(obj is Point)) { //Jeśli obiekt obj nie jest typem Point (nie powstał z klasy Point, ani nie dziedziczy po klasie Point) to obiekty nie mogą być takie same (zwracamy false)
