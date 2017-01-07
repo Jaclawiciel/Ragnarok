@@ -55,6 +55,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapLocation.cs" />
+    <Compile Include="Path.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
