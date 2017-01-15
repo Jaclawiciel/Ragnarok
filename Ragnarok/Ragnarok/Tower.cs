@@ -17,9 +17,8 @@ namespace Ragnarok {
             this.location = location;
         }
 
-        private bool IsSuccessfulShot() {   //W tej gałęzi nie widać klasy Random. Po Merge trzeba usunąć komentarz.
-            //return Random.NextDouble() < Accuracy;
-            return true;
+        private bool IsSuccessfulShot() {
+            return Random.NextDouble() < Accuracy;
         }
         public void Shooting(IInvader[] invaders) {
             foreach(IInvader invader in invaders) {
