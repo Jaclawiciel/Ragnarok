@@ -10,7 +10,7 @@ namespace Ragnarok {
     class Tower {
         protected virtual int Range { get; } = 1;
         protected virtual int Power { get; } = 1;
-        protected virtual double Accuracy { get; } = 1;
+        protected virtual double Accuracy { get; } = .75;
         private MapLocation location;
 
         public Tower(MapLocation location) {

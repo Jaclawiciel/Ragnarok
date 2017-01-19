@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicTower.cs" />
+    <Compile Include="CrossbowTower.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +57,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="IInvader.cs" />
     <Compile Include="Invader.cs" />
+    <Compile Include="MageTower.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapLocation.cs" />
     <Compile Include="Path.cs" />
@@ -63,6 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RagnarokException.cs" />
     <Compile Include="Random.cs" />
+    <Compile Include="SniperTower.cs" />
     <Compile Include="Tower.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
