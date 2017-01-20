@@ -34,21 +34,25 @@
 			this.loadGameButton = new System.Windows.Forms.Button();
 			this.menuSettingsButton = new System.Windows.Forms.Button();
 			this.menuQuitButton = new System.Windows.Forms.Button();
+			this.closeMenuButton = new System.Windows.Forms.Button();
 			this.mainMenuPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// mainMenuPanel
 			// 
+			this.mainMenuPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.mainMenuPanel.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.mainMenuPanel.Controls.Add(this.closeMenuButton);
 			this.mainMenuPanel.Controls.Add(this.menuQuitButton);
 			this.mainMenuPanel.Controls.Add(this.menuSettingsButton);
 			this.mainMenuPanel.Controls.Add(this.loadGameButton);
 			this.mainMenuPanel.Controls.Add(this.startNewGameButton);
 			this.mainMenuPanel.Controls.Add(this.mainMenuTitle);
-			this.mainMenuPanel.Location = new System.Drawing.Point(143, 93);
+			this.mainMenuPanel.Location = new System.Drawing.Point(27, 22);
 			this.mainMenuPanel.Name = "mainMenuPanel";
 			this.mainMenuPanel.Size = new System.Drawing.Size(222, 200);
 			this.mainMenuPanel.TabIndex = 0;
+			this.mainMenuPanel.Visible = false;
 			// 
 			// mainMenuTitle
 			// 
@@ -68,6 +72,7 @@
 			this.startNewGameButton.TabIndex = 1;
 			this.startNewGameButton.Text = "New Game";
 			this.startNewGameButton.UseVisualStyleBackColor = true;
+			this.startNewGameButton.Click += new System.EventHandler(this.startNewGameButton_Click);
 			// 
 			// loadGameButton
 			// 
@@ -77,6 +82,7 @@
 			this.loadGameButton.TabIndex = 2;
 			this.loadGameButton.Text = "Load Game";
 			this.loadGameButton.UseVisualStyleBackColor = true;
+			this.loadGameButton.Click += new System.EventHandler(this.loadGameButton_Click);
 			// 
 			// menuSettingsButton
 			// 
@@ -86,6 +92,7 @@
 			this.menuSettingsButton.TabIndex = 3;
 			this.menuSettingsButton.Text = "Settings";
 			this.menuSettingsButton.UseVisualStyleBackColor = true;
+			this.menuSettingsButton.Click += new System.EventHandler(this.menuSettingsButton_Click);
 			// 
 			// menuQuitButton
 			// 
@@ -95,13 +102,29 @@
 			this.menuQuitButton.TabIndex = 4;
 			this.menuQuitButton.Text = "Quit";
 			this.menuQuitButton.UseVisualStyleBackColor = true;
+			this.menuQuitButton.Click += new System.EventHandler(this.menuQuitButton_Click);
+			// 
+			// closeMenuButton
+			// 
+			this.closeMenuButton.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.closeMenuButton.FlatAppearance.BorderSize = 0;
+			this.closeMenuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.closeMenuButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.closeMenuButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.closeMenuButton.Location = new System.Drawing.Point(185, 3);
+			this.closeMenuButton.Name = "closeMenuButton";
+			this.closeMenuButton.Size = new System.Drawing.Size(34, 30);
+			this.closeMenuButton.TabIndex = 5;
+			this.closeMenuButton.Text = "X";
+			this.closeMenuButton.UseVisualStyleBackColor = false;
+			this.closeMenuButton.Click += new System.EventHandler(this.closeMenuButton_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-			this.ClientSize = new System.Drawing.Size(523, 414);
+			this.ClientSize = new System.Drawing.Size(630, 536);
 			this.Controls.Add(this.mainMenuPanel);
 			this.Name = "Form1";
 			this.Text = "Form1";
@@ -119,6 +142,7 @@
 		private System.Windows.Forms.Button loadGameButton;
 		private System.Windows.Forms.Button startNewGameButton;
 		private System.Windows.Forms.Label mainMenuTitle;
+		private System.Windows.Forms.Button closeMenuButton;
 	}
 }
 
