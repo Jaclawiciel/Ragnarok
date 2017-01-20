@@ -57,6 +57,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="IInvader.cs" />
     <Compile Include="Invader.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="MageTower.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapLocation.cs" />
