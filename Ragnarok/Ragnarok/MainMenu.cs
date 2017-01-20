@@ -26,15 +26,8 @@ namespace Ragnarok {
 			this.quitButton = quitButton;
 		}
 
-		public System.Drawing.Point CenterPointOf(Form1 form, Panel panel) {
-			System.Drawing.Point centerPoint = new System.Drawing.Point(
-				form.Size.Width / 2 - panel.Size.Width / 2, 
-				form.Size.Height / 2 - panel.Size.Height);
-			return centerPoint;
-		}
-
 		public void ShowMenuIn(Form1 form) {
-			menuPanel.Location = CenterPointOf(form, menuPanel);	
+			menuPanel.Location = Form1.CenterPointOf(form, menuPanel);	
 			menuPanel.Show();
 		}
 
