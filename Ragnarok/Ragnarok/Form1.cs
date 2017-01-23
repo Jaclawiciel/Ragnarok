@@ -24,10 +24,13 @@ namespace Ragnarok
 
 
 			mainMenu.ShowMenuWithoutCloseButtonIn(this);
-		}
+
+            game = new Game();
+        }
 
 		private MainMenu mainMenu;
 		private MapPanel mainMapPanel;
+        private Game game;
 		
 
 		// Metoda centrująca panele w Formie
@@ -45,7 +48,7 @@ namespace Ragnarok
 		}
 
 		private void loadGameButton_Click(object sender, EventArgs e) {
-
+            
 		}
 
 		private void menuSettingsButton_Click(object sender, EventArgs e) {

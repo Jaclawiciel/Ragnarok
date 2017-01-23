@@ -17,6 +17,9 @@ namespace Ragnarok {
             this.location = location;
         }
 
+        public int GetX() { return location.X; }
+        public int GetY() { return location.Y; }
+
         private bool IsSuccessfulShot() {
             return Random.NextDouble() < Accuracy;
         }
