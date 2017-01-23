@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ragnarok {
 	class Game {
-        private Map map = new Map(14, 10);
+        private Map map = new Map(15, 10);
         public Path path { get; private set; }
         public List<Tower> towers { get; private set; }
         public List<IInvader> invaders { get; private set; }
