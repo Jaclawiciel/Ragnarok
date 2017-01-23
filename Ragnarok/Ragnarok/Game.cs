@@ -21,7 +21,6 @@ namespace Ragnarok {
              new MapLocation(12, 5, map), new MapLocation(13, 5, map), new MapLocation(14, 5, map)});
             towers = new List<Tower>();
             invaders = new List<IInvader>();
-            towers.Add(new SniperTower(new MapLocation(1, 3, map)));
         }
 
         public void PlayTurn() {
@@ -35,7 +34,6 @@ namespace Ragnarok {
         public void AddTower(Tower tower) {
             towers.Add(tower);
         }
-        //przekazujesz tu X i Y punktu z jakiego ma byc usunięta wieża, refund będzie później
         public void DeleteTower(Tower tower) {
             foreach(Tower t in towers) {
                 if (t.GetX() == tower.GetX() && t.GetY() == tower.GetY()) towers.Remove(t);

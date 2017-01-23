@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace Ragnarok {
     class Tower {
-        protected virtual int Range { get; } = 1;
-        protected virtual int Power { get; } = 1;
+        protected virtual int Range { get; set; } = 1;
+        protected virtual int Power { get; set; } = 1;
         protected virtual double Accuracy { get; } = .75;
         private MapLocation location;
+        public int UpgradeLevel { get; protected set; } = 1;
 
         public Tower(MapLocation location) {
             this.location = location;
@@ -19,6 +20,14 @@ namespace Ragnarok {
 
         public int GetX() { return location.X; }
         public int GetY() { return location.Y; }
+
+        public void Upgrade() {
+            if (UpgradeLevel <= 3) {
+                Range += 1;
+                Power += 1;
+                UpgradeLevel += 1;
+            }
+        }
 
         private bool IsSuccessfulShot() {
             return Random.NextDouble() < Accuracy;
