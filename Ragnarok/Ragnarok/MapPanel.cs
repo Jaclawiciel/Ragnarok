@@ -25,8 +25,8 @@ namespace Ragnarok {
 
 		private void GenerateFields(int width, int height) {
 			fields = new PictureBox[width,height];
-			for (int i = 0; i < width - 1; i++) {
-				for (int j = 0; j < height - 1; j++) {
+			for (int i = 0; i < width; i++) {
+				for (int j = 0; j < height; j++) {
 					fields[i, j] = new PictureBox();
 					fields[i, j].Size = new System.Drawing.Size(70, 70);
 					fields[i, j].Location = new System.Drawing.Point(i * 70, j * 70);
