@@ -55,9 +55,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1PartialPBClicked.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Game.cs" />
     <Compile Include="IInvader.cs" />
     <Compile Include="Invader.cs" />

@@ -37,7 +37,5 @@ namespace Ragnarok {
 				}
 			}
 		}
-
-		public void 
 	}
 }
