@@ -142,6 +142,7 @@
 			// 
 			// mapPanel
 			// 
+			this.mapPanel.BackgroundImage = global::Ragnarok.Properties.Resources.MapOnly;
 			this.mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.mapPanel.Location = new System.Drawing.Point(0, 0);
 			this.mapPanel.Name = "mapPanel";

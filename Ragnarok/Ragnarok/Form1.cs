@@ -18,7 +18,7 @@ namespace Ragnarok
 
 			// Inicjalizuję obiekty okien
 			mainMenu = new MainMenu(mainMenuPanel, closeMenuButton, startNewGameButton, loadGameButton, menuSettingsButton, menuQuitButton);
-			mainMapPanel = new MapPanel(mapPanel, game.map);
+			mainMapPanel = new MapPanel(mapPanel, game.map, game.towerSpots);
 
 			//Ukrywam kolejne panele programu
 			mainMenu.Hide();

@@ -9,15 +9,18 @@ using System.Windows.Forms;
 namespace Ragnarok {
 	class MapPanel : IPanel {
 		private Panel panel;
-		public PictureBox[,] fields { get; private set; }
+		private MapLocation[] MLTowerSpots;
+		private PictureBox[] PBTowerSpots;
 
-		public MapPanel(Panel panel, Map map) {
+
+		public MapPanel(Panel panel, Map map, MapLocation[] towerSpots) {
 			this.panel = panel;
 			panel.Size = new System.Drawing.Size(map.Width * 70, map.Height * 70);
-			panel.BackgroundImage
+			this.MLTowerSpots = towerSpots;
 		}
 
 		public void Show() {
+			DrawTowersSpots(MLTowerSpots);
 			panel.Show();
 		}
 
@@ -25,8 +28,16 @@ namespace Ragnarok {
 			panel.Hide();
 		}
 
-		private void DrawPath(Path path) {
-
+		private void DrawTowersSpots(MapLocation[] towerSpots) {
+			PBTowerSpots = new PictureBox[towerSpots.Length];
+			for (int i = 0; i < towerSpots.Length; i++) {
+				PBTowerSpots[i] = new PictureBox();
+				PBTowerSpots[i].Size = new Size(70, 70);
+				PBTowerSpots[i].Location = new System.Drawing.Point(towerSpots[i].X * 70, towerSpots[i].Y * 70);
+				PBTowerSpots[i].BackColor = Color.DarkRed;
+				PBTowerSpots[i].Enabled = true;
+				panel.Controls.Add(PBTowerSpots[i]);
+			}
 		}
 	}
 }

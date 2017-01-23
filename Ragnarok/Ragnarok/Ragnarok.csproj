@@ -87,6 +87,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -110,6 +111,7 @@
     <Content Include="Resources\Mage Tower.png" />
     <Content Include="Resources\Mage Tower2.png" />
     <Content Include="Resources\Mage Tower3.png" />
+    <None Include="Resources\MapOnly.png" />
     <Content Include="Resources\Shielded Invader.png" />
     <Content Include="Resources\Sniper Tower.png" />
     <Content Include="Resources\Sniper Tower2.png" />
