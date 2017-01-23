@@ -14,19 +14,18 @@ namespace Ragnarok
 		public Form1() {
 			InitializeComponent();
 
+            game = new Game();
+
 			// Inicjalizuję obiekty okien
 			mainMenu = new MainMenu(mainMenuPanel, closeMenuButton, startNewGameButton, loadGameButton, menuSettingsButton, menuQuitButton);
-			mainMapPanel = new MapPanel(mapPanel, 15, 10);
+			mainMapPanel = new MapPanel(mapPanel, game.map);
 
 			//Ukrywam kolejne panele programu
 			mainMenu.Hide();
 			mainMapPanel.Hide();
 
-
 			mainMenu.ShowMenuWithoutCloseButtonIn(this);
-
-            game = new Game();
-        }
+		}
 
 		private MainMenu mainMenu;
 		private MapPanel mainMapPanel;
@@ -60,6 +59,9 @@ namespace Ragnarok
 		}
 
 		private void closeMenuButton_Click(object sender, EventArgs e) {
+		}
+
+		private void mapPanel_Click(object sender, EventArgs e) {
 		}
 	}
 }

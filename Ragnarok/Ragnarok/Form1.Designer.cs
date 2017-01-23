@@ -142,6 +142,7 @@
 			// 
 			// mapPanel
 			// 
+			this.mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.mapPanel.Location = new System.Drawing.Point(0, 0);
 			this.mapPanel.Name = "mapPanel";
 			this.mapPanel.Size = new System.Drawing.Size(1050, 700);
