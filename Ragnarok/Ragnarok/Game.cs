@@ -25,7 +25,7 @@ namespace Ragnarok {
         }
 
         public void PlayTurn() {
-
+            Damage();
             MoveEveryone();
             AreYouAlive();
             WaveSpawn();
@@ -54,7 +54,11 @@ namespace Ragnarok {
                     break;
             }
         }
-
+        public void Damage() {
+            foreach(Tower tower in towers) {
+                tower.Shooting(invaders);
+            }
+        }
         public void MoveEveryone() {
             foreach(IInvader invader in invaders) {
                 if (invader.IsActive) {

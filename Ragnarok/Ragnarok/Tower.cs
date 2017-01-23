@@ -23,16 +23,13 @@ namespace Ragnarok {
         private bool IsSuccessfulShot() {
             return Random.NextDouble() < Accuracy;
         }
-        public void Shooting(IInvader[] invaders) {
+        public void Shooting(List<IInvader> invaders) {
             foreach(IInvader invader in invaders) {
                 if(invader.IsActive && location.InRangeOf(invader.location, Range)) {
                     if (IsSuccessfulShot()) {
                         invader.TakeDamage(Power);
                         if (invader.IsDestroyed) {
-                            //Co się dzieje jak zostaje zniszczony? Trzeba to pokazać na ekranie w formsach jakoś.
-                        }
-                        else {
-                            //Koleś idzie dalej. Może zrobić coś jak log tego co się dzieje na polu walki. Nie sądzę że uda nam się zobrazować otrzymywanie obrażeń w formsach.
+                            //GIVE ME GOLD
                         }
                         break;
                     }
