@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 //Klasa Map służy do utworzenia Mapy, na której będzie toczyć się cała rozgrywka. 
 

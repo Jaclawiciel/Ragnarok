@@ -36,7 +36,7 @@ namespace Ragnarok {
 			closeButton.Hide();
 		}
 
-		public void HideMenu() {
+		public void Hide() {
 			menuPanel.Hide();
 		}
 	}

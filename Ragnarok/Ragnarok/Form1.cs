@@ -16,15 +16,19 @@ namespace Ragnarok
 
 			// Inicjalizuję obiekty okien
 			mainMenu = new MainMenu(mainMenuPanel, closeMenuButton, startNewGameButton, loadGameButton, menuSettingsButton, menuQuitButton);
+			mainMapPanel = new MapPanel(mapPanel, 15, 10);
 
 			//Ukrywam kolejne panele programu
-			mainMenu.HideMenu();
+			mainMenu.Hide();
+			mainMapPanel.Hide();
 
 
 			mainMenu.ShowMenuWithoutCloseButtonIn(this);
 		}
 
 		private MainMenu mainMenu;
+		private MapPanel mainMapPanel;
+		
 
 		// Metoda centrująca panele w Formie
 		public static System.Drawing.Point CenterPointOf(Form1 form, Panel panel) {
@@ -36,7 +40,8 @@ namespace Ragnarok
 
 		// Metody menu
 		private void startNewGameButton_Click(object sender, EventArgs e) {
-			mainMenu.HideMenu();
+			mainMenu.Hide();
+			mainMapPanel.Show();
 		}
 
 		private void loadGameButton_Click(object sender, EventArgs e) {
