@@ -34,6 +34,5 @@ namespace Ragnarok {
                 if (t.GetX() == x && t.GetY() == y) towers.Remove(t);
             }
         }
-
 	}
 }
