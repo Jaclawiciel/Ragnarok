@@ -36,7 +36,17 @@ namespace Ragnarok {
             }
         }
         public void AddInvader() {
-            Random.NextDouble();
+            switch (Random.Random123()) {
+                case 1:
+                    invaders.Add(new BasicInvader(path));
+                    break;
+                case 2:
+                    invaders.Add(new ShieldedInvader(path));
+                    break;
+                case 3:
+                    invaders.Add(new TankInvader(path));
+                    break;
+            }
         }
 	}
 }
