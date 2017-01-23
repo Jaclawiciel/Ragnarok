@@ -98,6 +98,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Basic Invader.png" />
+    <Content Include="Resources\Basic Tower.png" />
+    <Content Include="Resources\Crossbow Tower.png" />
+    <Content Include="Resources\Crossbow Tower2.png" />
+    <Content Include="Resources\Crossbow Tower3.png" />
+    <Content Include="Resources\Mage Tower.png" />
+    <Content Include="Resources\Mage Tower2.png" />
+    <Content Include="Resources\Mage Tower3.png" />
+    <Content Include="Resources\Shielded Invader.png" />
+    <Content Include="Resources\Sniper Tower.png" />
+    <Content Include="Resources\Sniper Tower2.png" />
+    <Content Include="Resources\Sniper Tower3.png" />
+    <Content Include="Resources\Tank Invader.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
