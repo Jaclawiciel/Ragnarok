@@ -10,6 +10,7 @@ namespace Ragnarok {
         public Path path { get; private set; }
         public List<Tower> towers { get; private set; }
         public List<IInvader> invaders { get; private set; }
+        public int waveCount { get; private set; } = 3;
 
         public Game() {
             path =new Path(new[] { new MapLocation(0, 5, map), new MapLocation(1, 5, map), new MapLocation(2, 5, map), new MapLocation(3, 5, map),
@@ -34,6 +35,8 @@ namespace Ragnarok {
                 if (t.GetX() == x && t.GetY() == y) towers.Remove(t);
             }
         }
-        
+        public void AddInvader() {
+            Random.NextDouble();
+        }
 	}
 }
