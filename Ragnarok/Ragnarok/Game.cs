@@ -36,9 +36,23 @@ namespace Ragnarok {
             towers.Add(tower);
         }
         //przekazujesz tu X i Y punktu z jakiego ma byc usunięta wieża, refund będzie później
-        public void DeleteTower(int x, int y) {
+        public void DeleteTower(Tower tower) {
             foreach(Tower t in towers) {
-                if (t.GetX() == x && t.GetY() == y) towers.Remove(t);
+                if (t.GetX() == tower.GetX() && t.GetY() == tower.GetY()) towers.Remove(t);
+            }
+        }
+        public void SwitchTowers(Tower oldTower, int which) {
+            DeleteTower(oldTower);
+            switch (which) {
+                case 1:
+                    towers.Add(new CrossbowTower(new MapLocation(oldTower.GetX(), oldTower.GetY(), map)));
+                    break;
+                case 2:
+                    towers.Add(new MageTower(new MapLocation(oldTower.GetX(), oldTower.GetY(), map)));
+                    break;
+                case 3:
+                    towers.Add(new SniperTower(new MapLocation(oldTower.GetX(), oldTower.GetY(), map)));
+                    break;
             }
         }
         public void AddInvader() {
