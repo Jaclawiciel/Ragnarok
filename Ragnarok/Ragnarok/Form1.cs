@@ -45,7 +45,6 @@ namespace Ragnarok
 		}
 
 		private void loadGameButton_Click(object sender, EventArgs e) {
-
 		}
 
 		private void menuSettingsButton_Click(object sender, EventArgs e) {
@@ -57,6 +56,9 @@ namespace Ragnarok
 		}
 
 		private void closeMenuButton_Click(object sender, EventArgs e) {
+		}
+
+		private void mapPanel_Click(object sender, EventArgs e) {
 		}
 	}
 }

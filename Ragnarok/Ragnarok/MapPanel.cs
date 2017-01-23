@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ragnarok {
-	class MapPanel {
+	class MapPanel : IPanel {
 		private Panel panel;
 		public PictureBox[,] fields { get; private set; }
 
@@ -32,9 +32,12 @@ namespace Ragnarok {
 					fields[i, j].Location = new System.Drawing.Point(i * 70, j * 70);
 					fields[i, j].BackColor = System.Drawing.Color.Brown;
 					fields[i, j].BorderStyle = BorderStyle.FixedSingle;
+					fields[i, j].Enabled = false;
 					panel.Controls.Add(fields[i, j]);
 				}
 			}
 		}
+
+		public void 
 	}
 }
