@@ -25,10 +25,8 @@ namespace Ragnarok {
         public Invader(Path path) {
             this.path = path;
         }
-        
-        public void Move() {
-            pathStep += stepSize;
-        }
+
+        public void Move() => pathStep += stepSize;
 
         public virtual void TakeDamage(int damage) {
             HP -= damage;
