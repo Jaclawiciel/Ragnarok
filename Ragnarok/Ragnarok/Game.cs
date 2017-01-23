@@ -48,5 +48,8 @@ namespace Ragnarok {
                     break;
             }
         }
+        public void WaveSpawn() {
+            if (invaders.Count() <= waveCount) AddInvader();
+        }
 	}
 }
