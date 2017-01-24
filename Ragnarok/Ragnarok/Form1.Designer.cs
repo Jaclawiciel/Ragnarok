@@ -437,7 +437,6 @@
 			this.switchPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.switchPictureBox)).EndInit();
 			this.ResumeLayout(false);
-
 		}
 
 		#endregion
