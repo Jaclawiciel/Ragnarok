@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ragnarok {
-	class MainMenu {
+	class MainMenu : IPanel {
 
 		private Panel menuPanel;
 		private Button closeButton;
@@ -24,6 +24,10 @@ namespace Ragnarok {
 			this.loadGameButton = loadGameButton;
 			this.settingsButton = settingsButton;
 			this.quitButton = quitButton;
+		}
+
+		public void Show() {
+			menuPanel.Show();
 		}
 
 		public void ShowMenuIn(Form1 form) {
