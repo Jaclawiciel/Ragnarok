@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ragnarok {
-	class MapPanel : IPanel {
+	class MapPanel {
 		public Panel panel;
 		private MapLocation[] MLTowerSpots;
 		public PictureBox[] PBTowerSpots;
@@ -41,7 +41,7 @@ namespace Ragnarok {
 			}
 		}
 
-		public Tower WhatTowerIsPlaced(MapLocation towerSpotLocation, Tower[] towers) {
+		public Tower WhatTowerIsPlacedOn(MapLocation towerSpotLocation, Tower[] towers) {
 			foreach (Tower tower in towers) {
 				if (towerSpotLocation.X == tower.GetX() && towerSpotLocation.Y == tower.GetY()) {
 					if (tower is BasicTower) {

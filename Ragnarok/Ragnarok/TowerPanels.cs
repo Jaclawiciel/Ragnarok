@@ -7,42 +7,224 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ragnarok {
-	class BasicTowerPanel {
-		private Panel basicTowerPanel;
-		private PictureBox towerImage;
-		private Label costLabel;
-		private Label damageLabel;
-		private Label rangeLabel;
+	public enum TowerType { noneTower, basicTower, crossbowTower, mageTower, sniperTower }
 
-		public BasicTowerPanel(Panel basicTowerPanel, PictureBox towerImage, Label costLabel, Label damageLabel, Label rangeLabel) {
-			this.basicTowerPanel = basicTowerPanel;
-			this.towerImage = towerImage;
-			this.costLabel = costLabel;
-			this.damageLabel = damageLabel;
-			this.rangeLabel = rangeLabel;
+	abstract class TowerPanel : IPanel {
+		protected Panel towerPanel;
+		protected int level;
+		protected PictureBox towerPictureBox;
+		protected Image towerImage {
+			get {
+				switch (towerType) {
+					case TowerType.noneTower: {
+							return Image.FromFile("../../Resources/Basic Tower.png");
+						}
+						break;
+					case TowerType.basicTower: {
+							return null;
+						}
+						break;
+					case TowerType.crossbowTower: {
+							switch (level) {
+								case 1: {
+										return Image.FromFile("../../Resources/Crossbow Tower.png");
+									}
+									break;
+								case 2: {
+										return Image.FromFile("../../Resources/Crossbow Tower2.png");
+									}
+								case 3: {
+										return Image.FromFile("../../Resources/Crossbow Tower3.png");
+									}
+								default:
+									return null;
+							}
+						}
+					case TowerType.mageTower:
+						switch (level) {
+							case 1: {
+									return Image.FromFile("../../Resources/Mage Tower.png");
+								}
+								break;
+							case 2: {
+									return Image.FromFile("../../Resources/Mage Tower2.png");
+								}
+							case 3: {
+									return Image.FromFile("../../Resources/Mage Tower3.png");
+								}
+							default:
+								return null;
+						}
+					case TowerType.sniperTower: {
+							switch (level) {
+								case 1: {
+										return Image.FromFile("../../Resources/Mage Tower.png");
+									}
+									break;
+								case 2: {
+										return Image.FromFile("../../Resources/Mage Tower2.png");
+									}
+								case 3: {
+										return Image.FromFile("../../Resources/Mage Tower3.png");
+									}
+								default:
+									return null;
+							}
+						}
+					default:
+						return null;
+				}
+			}
 		}
+		//protected Label costlabel { get { return costlabel} set { costlabel.Text = "Cost: " + cost; } }
+		protected Label rangeLabel;
+		protected Label powerLabel;
+		protected Tower tower;
+		protected TowerType towerType;
+		protected int cost;
+		protected int range;
+		protected int power;
+		protected Map map;
 
-		public void Show(MapLocation towerSpotLocation) {
-			towerImage.Image = Image.FromFile("../../Resources/Basic Tower.png");
+		public virtual void Show(MapLocation spotLocation) {
 
-			//********************************//
-			//costLabel = tower.GetCost();
-			//damageLabel = tower.GetDamage();
-			//rangeLabel = tower.GetRange();
-			//*******************************//
-
-			basicTowerPanel.BringToFront();
-			basicTowerPanel.Location = new System.Drawing.Point(towerSpotLocation.X * 70 + 50, towerSpotLocation.Y * 70 + 50);
-			basicTowerPanel.Show();
+			towerPanel.Location = CalculatePanelLocationFor(spotLocation, map);
+			towerPanel.Show();
+			towerPanel.BringToFront();
 		}
 
 		public void Hide() {
-			basicTowerPanel.Hide();
+			towerPanel.Hide();
 		}
 
+		public static void HideEveryPanelExceptFirst(TowerPanel towerPanel, BasicTowerPanel basicTowerPanel, SwitchTowerPanel switchTowerPanel) {
+			if (towerPanel is BasicTowerPanel) {
+				switchTowerPanel.Hide();
+			} else if (towerPanel is SwitchTowerPanel) {
+				basicTowerPanel.Hide();
+			}
+		}
 
+		public static void HideAllPanels(BasicTowerPanel basicTowerPanel, SwitchTowerPanel switchTowerPanel) {
+			basicTowerPanel.Hide();
+			switchTowerPanel.Hide();
+		}
+
+		protected PictureBox FindPictureBoxIn(Panel panel, string namePictureBoxContains) {
+			List<PictureBox> pictureBoxTempList = panel.Controls.OfType<PictureBox>().ToList();
+			foreach (PictureBox pictureBox in pictureBoxTempList) {
+				if (pictureBox.Name.Contains(namePictureBoxContains)) {
+					return pictureBox;
+				} else if (pictureBox.Name.Contains(namePictureBoxContains.First().ToString().ToUpper() + namePictureBoxContains.Substring(1))) {
+					return pictureBox;
+				}
+			}
+			return null;
+		}
+
+		protected Label FindLabelIn(Panel panel, string nameLabelContains) {
+			List<Label> labelTempList = panel.Controls.OfType<Label>().ToList();
+			foreach (Label label in labelTempList) {
+				if (label.Name.Contains(nameLabelContains)) {
+					return label;
+				} else if(label.Name.Contains(nameLabelContains.First().ToString().ToUpper() + nameLabelContains.Substring(1))) {
+					return label;
+				}
+			}
+			return null;
+		}
+
+		protected virtual System.Drawing.Point CalculatePanelLocationFor(MapLocation spotLocation, Map map) {
+			int x;
+			int y;
+			if (spotLocation.X > map.Width / 2) x = spotLocation.X * 70 - 150;
+			else x = spotLocation.X * 70 + 50;
+			if (spotLocation.Y > map.Height / 2) y = spotLocation.Y * 70 - 200;
+			else y = spotLocation.Y * 70 + 50;
+			return new System.Drawing.Point(x, y);
+		}
 	}
 
+
+
+
+
+	class BasicTowerPanel : TowerPanel {
+		private Label costLabel;
+		private int cost;
+		
+
+		public BasicTowerPanel(Panel panel, Map map) {
+			tower = new BasicTower(new MapLocation(0, 0, new Map(1, 1)));
+			towerPanel = panel;
+			level = 1;
+			towerType = TowerType.noneTower;
+			towerPictureBox = FindPictureBoxIn(panel, "basic");
+			towerPictureBox.Image = towerImage;
+			rangeLabel = FindLabelIn(panel, "range");
+			range = tower.Range;
+			rangeLabel.Text = "Range: " + range;
+			powerLabel = FindLabelIn(panel, "power");
+			power = tower.Power;
+			powerLabel.Text = "Power: " + power;
+			this.map = map;
+		}
+	}
+
+
+	class SwitchTowerPanel : TowerPanel {
+		private Label costLabel;
+		private int cost;
+		private PictureBox towerPictureBox1;
+		private PictureBox towerPictureBox2;
+		private Image towerImage1;
+		private Image towerImage2;
+		private Label rangeLabel1;
+		private Label rangeLabel2;
+		private Label powerLabel1;
+		private Label powerLabel2;
+		private Tower tower1;
+		private Tower tower2;
+		private TowerType towerType1;
+		private TowerType towerType2;
+		private int cost1;
+		private int cost2;
+		private int range1;
+		private int range2;
+		private int power1;
+		private int power2;
+
+		public SwitchTowerPanel(Panel panel, Map map) {
+			towerPanel = panel;
+			tower = new CrossbowTower(new MapLocation(0, 0, map));
+			tower1 = new MageTower(new MapLocation(0, 0, map));
+			tower2 = new SniperTower(new MapLocation(0, 0, map));
+			level = 1;
+			towerType = TowerType.basicTower;
+			rangeLabel = FindLabelIn(panel, "crossbowRange");
+			range = tower.Range;
+			rangeLabel.Text = "Range: " + range;
+			rangeLabel1 = FindLabelIn(panel, "mageRange");
+			range1 = tower1.Range;
+			rangeLabel1.Text = "Range: " + range1;
+			rangeLabel2 = FindLabelIn(panel, "sniperRange");
+			range2 = tower2.Range;
+			rangeLabel2.Text = "Range: " + range2;
+
+			powerLabel = FindLabelIn(panel, "crossbowPower");
+			power = tower.Power;
+			powerLabel.Text = "Power: " + power;
+			powerLabel1 = FindLabelIn(panel, "magePower");
+			power1 = tower1.Power;
+			powerLabel1.Text = "Power: " + power1;
+			powerLabel2 = FindLabelIn(panel, "sniperPower");
+			power2 = tower2.Power;
+			powerLabel2.Text = "Power: " + power2;
+			this.map = map;
+		}
+	}
+
+	/*
 	class SwitchTowerPanel {
 		private Panel switchPanel;
 		private PictureBox towerImage;
@@ -57,87 +239,92 @@ namespace Ragnarok {
 		public void Show(MapLocation towerSpotLocation) {
 			towerImage.Image = Image.FromFile("../../Resources/Basic Tower.png");
 
-			//********************************//
-			//costLabel = tower.GetCost();
-			//*******************************//
+			//********************************/
+	//costLabel = tower.GetCost();
+	//*******************************//
+	/*
+				switchPanel.BringToFront();
+				switchPanel.Location = new System.Drawing.Point(towerSpotLocation.X * 70 + 50, towerSpotLocation.Y * 70 + 50);
+				switchPanel.Show();
+			}
 
-			switchPanel.BringToFront();
-			switchPanel.Location = new System.Drawing.Point(towerSpotLocation.X * 70 + 50, towerSpotLocation.Y * 70 + 50);
-			switchPanel.Show();
+			public void Hide() {
+				switchPanel.Hide();
+			}
 		}
 
-		public void Hide() {
-			switchPanel.Hide();
-		}
-	}
+		class UpgradeTowerPanel {
 
-	class UpgradeTowerPanel {
+			private Panel upgradeTowerPanel;
+			private PictureBox towerImage;
+			private Label costLabel;
+			private Label damageLabel;
+			private Label rangeLabel;
 
-		private Panel upgradeTowerPanel;
-		private PictureBox towerImage;
-		private Label costLabel;
-		private Label damageLabel;
-		private Label rangeLabel;
+			public UpgradeTowerPanel(Panel upgradeTowerPanel, PictureBox towerImage, Label costLabel, Label damageLabel, Label rangeLabel) {
+				this.upgradeTowerPanel = upgradeTowerPanel;
+				this.towerImage = towerImage;
+				this.costLabel = costLabel;
+				this.damageLabel = damageLabel;
+				this.rangeLabel = rangeLabel;
+			}
 
-		public UpgradeTowerPanel(Panel upgradeTowerPanel, PictureBox towerImage, Label costLabel, Label damageLabel, Label rangeLabel) {
-			this.upgradeTowerPanel = upgradeTowerPanel;
-			this.towerImage = towerImage;
-			this.costLabel = costLabel;
-			this.damageLabel = damageLabel;
-			this.rangeLabel = rangeLabel;
-		}
+			public void Show(MapLocation towerSpotLocation, Tower[] towers) {
+				foreach (Tower tower in towers) {
+					if (towerSpotLocation.X == tower.GetX() && towerSpotLocation.Y == tower.GetY()) {
+						towerImage.Image = GetTowerImageFor(tower);
 
-		public void Show(MapLocation towerSpotLocation, Tower[] towers) {
-			foreach (Tower tower in towers) {
-				if (towerSpotLocation.X == tower.GetX() && towerSpotLocation.Y == tower.GetY()) {
-					towerImage.Image = GetTowerImageFor(tower);
+						//********************************/
+	//costLabel = tower.GetCost();
+	//damageLabel = tower.GetDamage();
+	//rangeLabel = tower.GetRange();
+	//*******************************//
+	/*
+						upgradeTowerPanel.BringToFront();
+						upgradeTowerPanel.Location = new System.Drawing.Point(towerSpotLocation.X * 70 + 50, towerSpotLocation.Y * 70 + 50);
+						upgradeTowerPanel.Show();
+					}
+				}
+			}
 
-					//********************************//
-					//costLabel = tower.GetCost();
-					//damageLabel = tower.GetDamage();
-					//rangeLabel = tower.GetRange();
-					//*******************************//
+			public void Hide() {
+				upgradeTowerPanel.Hide();
+			}
 
-					upgradeTowerPanel.BringToFront();
-					upgradeTowerPanel.Location = new System.Drawing.Point(towerSpotLocation.X * 70 + 50, towerSpotLocation.Y * 70 + 50);
-					upgradeTowerPanel.Show();
+			private Image GetTowerImageFor(Tower tower) {
+				if (tower is BasicTower) {
+					return Image.FromFile("../../Resources/Basic Tower.png");
+				} else if (tower is MageTower) {
+					if (tower.UpgradeLevel == 1) {
+						return Image.FromFile("../../Resources/Mage Tower.png");
+					} else if (tower.UpgradeLevel == 2) {
+						return Image.FromFile("../../Resources/Mage Tower2.png");
+					} else {
+						return Image.FromFile("../../Resources/Mage Tower3.png");
+					}
+
+				} else if (tower is SniperTower) {
+					if (tower.UpgradeLevel == 1) {
+						return Image.FromFile("../../Resources/Sniper Tower.png");
+					} else if (tower.UpgradeLevel == 2) {
+						return Image.FromFile("../../Resources/Sniper Tower2.png");
+					} else {
+						return Image.FromFile("../../Resources/Sniper Tower3.png");
+					}
+				} else {
+					if (tower.UpgradeLevel == 1) {
+						return Image.FromFile("../../Resources/Crossbow Tower.png");
+					} else if (tower.UpgradeLevel == 2) {
+						return Image.FromFile("../../Resources/Crossbow Tower2.png");
+					} else {
+						return Image.FromFile("../../Resources/Crossbow Tower3.png");
+					}
 				}
 			}
 		}
 
-		public void Hide() {
-			upgradeTowerPanel.Hide();
-		}
+		class RagnarokTowerPanel {
 
-		private Image GetTowerImageFor(Tower tower) {
-			if (tower is BasicTower) {
-				return Image.FromFile("../../Resources/Basic Tower.png");
-			} else if (tower is MageTower) {
-				if (tower.UpgradeLevel == 1) {
-					return Image.FromFile("../../Resources/Mage Tower.png");
-				} else if (tower.UpgradeLevel == 2) {
-					return Image.FromFile("../../Resources/Mage Tower2.png");
-				} else {
-					return Image.FromFile("../../Resources/Mage Tower3.png");
-				}
-				
-			} else if (tower is SniperTower) {
-				if (tower.UpgradeLevel == 1) {
-					return Image.FromFile("../../Resources/Sniper Tower.png");
-				} else if (tower.UpgradeLevel == 2) {
-					return Image.FromFile("../../Resources/Sniper Tower2.png");
-				} else {
-					return Image.FromFile("../../Resources/Sniper Tower3.png");
-				}
-			} else {
-				if (tower.UpgradeLevel == 1) {
-					return Image.FromFile("../../Resources/Crossbow Tower.png");
-				} else if (tower.UpgradeLevel == 2) {
-					return Image.FromFile("../../Resources/Crossbow Tower2.png");
-				} else {
-					return Image.FromFile("../../Resources/Crossbow Tower3.png");
-				}
-			}
 		}
-	}
+	*/
 }
