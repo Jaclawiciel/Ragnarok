@@ -17,6 +17,7 @@ namespace Ragnarok {
 			this.panel = panel;
 			panel.Size = new System.Drawing.Size(map.Width * 70, map.Height * 70);
 			this.MLTowerSpots = towerSpots;
+			this.panel.BackgroundImage = Image.FromFile("../../Resources/MapOnly.png");
 		}
 
 		public void Show() {
