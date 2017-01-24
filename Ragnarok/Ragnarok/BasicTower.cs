@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Ragnarok {
     class BasicTower : Tower {
-        protected override int Range { get; } = 1;
-        protected override int Power { get; } = 2;
+        protected override int Range { get; set; } = 1;
+        protected override int Power { get; set; } = 2;
         protected override double Accuracy { get; } = .75;
 
         public BasicTower(MapLocation location) : base(location) { }
