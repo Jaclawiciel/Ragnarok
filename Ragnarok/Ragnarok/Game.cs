@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,9 +17,9 @@ namespace Ragnarok {
 
 		public Game() {
 			path = new Path(new[] { new MapLocation(0, 7, map), new MapLocation(1, 7, map), new MapLocation(2, 7, map), new MapLocation(2, 6, map),
-			 new MapLocation(2, 5, map), new MapLocation(2, 4, map), new MapLocation(2, 3, map), new MapLocation(2, 2, map),
-			 new MapLocation(3, 2, map), new MapLocation(4, 2, map), new MapLocation(5, 2, map), new MapLocation(6, 2, map),
-			 new MapLocation(6, 3, map), new MapLocation(6, 4, map), new MapLocation(6, 5, map), new MapLocation(6,6,map),
+			new MapLocation(2, 5, map), new MapLocation(2, 4, map), new MapLocation(2, 3, map), new MapLocation(2, 2, map),
+			new MapLocation(3, 2, map), new MapLocation(4, 2, map), new MapLocation(5, 2, map), new MapLocation(6, 2, map),
+			new MapLocation(6, 3, map), new MapLocation(6, 4, map), new MapLocation(6, 5, map), new MapLocation(6,6,map),
 			new MapLocation(6,7,map), new MapLocation(6,8,map), new MapLocation(7,8,map), new MapLocation(8,8,map), new MapLocation(8,7,map), new MapLocation(8,6,map), new MapLocation(9,6,map), new MapLocation(10,6,map),
 			new MapLocation(10, 5, map), new MapLocation(10,4,map), new MapLocation(10, 3, map), new MapLocation(10,2,map),
 			new MapLocation(10,1,map), new MapLocation(11,1,map), new MapLocation(12,1,map), new MapLocation(13,1,map),
