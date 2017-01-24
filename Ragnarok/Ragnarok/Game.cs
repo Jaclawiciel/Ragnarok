@@ -28,7 +28,8 @@ namespace Ragnarok {
 
             towers = new List<Tower>();
             invaders = new List<IInvader>();
-            towers.Add(new SniperTower(new MapLocation(1, 3, map)));
+            towers.Add(new BasicTower(new MapLocation(4, 3, map)));
+			towers.Add(new SniperTower(new MapLocation(4, 5, map)));
         }
 
         public void PlayTurn() {
