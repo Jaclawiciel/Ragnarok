@@ -20,6 +20,8 @@ namespace Ragnarok {
 
         public int GetX() { return location.X; }
         public int GetY() { return location.Y; }
+        public int GetRange() { return Range; }
+        public int GetPower() { return Power; }
 
         public void Upgrade() {
             if (UpgradeLevel <= 3) {

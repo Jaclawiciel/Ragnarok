@@ -13,8 +13,6 @@ namespace Ragnarok {
         private Path path { get; }
         private int pathStep = 0;
 
-        protected virtual int stepSize { get; } = 1;
-
         public MapLocation location => path.GetLocationAt(pathStep);
         public bool PathEnded { get { return pathStep >= path.Length; } }
 
@@ -26,7 +24,9 @@ namespace Ragnarok {
             this.path = path;
         }
 
-        public void Move() => pathStep += stepSize;
+        public void Move() {
+            pathStep += 1;
+        }
 
         public virtual void TakeDamage(int damage) {
             HP -= damage;
