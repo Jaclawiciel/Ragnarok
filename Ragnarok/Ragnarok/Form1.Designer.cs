@@ -333,7 +333,6 @@
 			this.panel2.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
 			this.ResumeLayout(false);
-
 		}
 
 		#endregion
@@ -346,6 +345,7 @@
 		private System.Windows.Forms.Label mainMenuTitle;
 		private System.Windows.Forms.Button closeMenuButton;
 		private System.Windows.Forms.Panel mapPanel;
+
 		private System.Windows.Forms.Panel basicTowerPanel;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;

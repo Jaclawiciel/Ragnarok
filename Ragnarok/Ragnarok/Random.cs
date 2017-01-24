@@ -12,5 +12,11 @@ namespace Ragnarok {
 		public static double NextDouble() {
 			return random.NextDouble();
 		}
+        public static int Random123() {
+            double temp = random.NextDouble();
+            if (temp < .40) return 1;
+            else if (temp < .70) return 2;
+            else return 3;
+        }
 	}
 }
