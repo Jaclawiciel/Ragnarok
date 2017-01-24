@@ -70,23 +70,23 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.button3 = new System.Windows.Forms.Button();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
+			this.switchSniperPowerTower = new System.Windows.Forms.Label();
+			this.switchSniperRangeTower = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
 			this.label8 = new System.Windows.Forms.Label();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
+			this.switchSniperPictureBox = new System.Windows.Forms.PictureBox();
+			this.switchMagePowerLabel = new System.Windows.Forms.Label();
+			this.switchMageRangeLabel = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.label5 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
+			this.switchMagePictureBox = new System.Windows.Forms.PictureBox();
+			this.switchCrossbowPowerLabel = new System.Windows.Forms.Label();
+			this.switchCrossbowRangeLabel = new System.Windows.Forms.Label();
 			this.switchTowerLabel = new System.Windows.Forms.Label();
 			this.switchCrossbowButton = new System.Windows.Forms.Button();
 			this.switchCloseButton = new System.Windows.Forms.Button();
 			this.switchCostLabel = new System.Windows.Forms.Label();
-			this.switchPictureBox = new System.Windows.Forms.PictureBox();
+			this.switchCrossbowPictureBox = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label14 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
@@ -101,9 +101,9 @@
 			this.upgradePanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.upgradePanelImage)).BeginInit();
 			this.switchPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.switchPictureBox)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.switchSniperPictureBox)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.switchMagePictureBox)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.switchCrossbowPictureBox)).BeginInit();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			this.SuspendLayout();
@@ -274,9 +274,9 @@
 			this.basicPanelCostLabel.ForeColor = System.Drawing.SystemColors.Info;
 			this.basicPanelCostLabel.Location = new System.Drawing.Point(50, 141);
 			this.basicPanelCostLabel.Name = "basicPanelCostLabel";
-			this.basicPanelCostLabel.Size = new System.Drawing.Size(50, 15);
+			this.basicPanelCostLabel.Size = new System.Drawing.Size(38, 15);
 			this.basicPanelCostLabel.TabIndex = 2;
-			this.basicPanelCostLabel.Text = "Cost: $5";
+			this.basicPanelCostLabel.Text = "Cost: ";
 			// 
 			// basicPanelTowerImage
 			// 
@@ -418,23 +418,23 @@
 			this.switchPanel.Controls.Add(this.label10);
 			this.switchPanel.Controls.Add(this.label9);
 			this.switchPanel.Controls.Add(this.button3);
-			this.switchPanel.Controls.Add(this.label6);
-			this.switchPanel.Controls.Add(this.label7);
+			this.switchPanel.Controls.Add(this.switchSniperPowerTower);
+			this.switchPanel.Controls.Add(this.switchSniperRangeTower);
 			this.switchPanel.Controls.Add(this.button2);
 			this.switchPanel.Controls.Add(this.label8);
-			this.switchPanel.Controls.Add(this.pictureBox2);
-			this.switchPanel.Controls.Add(this.label3);
-			this.switchPanel.Controls.Add(this.label4);
+			this.switchPanel.Controls.Add(this.switchSniperPictureBox);
+			this.switchPanel.Controls.Add(this.switchMagePowerLabel);
+			this.switchPanel.Controls.Add(this.switchMageRangeLabel);
 			this.switchPanel.Controls.Add(this.button1);
 			this.switchPanel.Controls.Add(this.label5);
-			this.switchPanel.Controls.Add(this.pictureBox1);
-			this.switchPanel.Controls.Add(this.label2);
-			this.switchPanel.Controls.Add(this.label1);
+			this.switchPanel.Controls.Add(this.switchMagePictureBox);
+			this.switchPanel.Controls.Add(this.switchCrossbowPowerLabel);
+			this.switchPanel.Controls.Add(this.switchCrossbowRangeLabel);
 			this.switchPanel.Controls.Add(this.switchTowerLabel);
 			this.switchPanel.Controls.Add(this.switchCrossbowButton);
 			this.switchPanel.Controls.Add(this.switchCloseButton);
 			this.switchPanel.Controls.Add(this.switchCostLabel);
-			this.switchPanel.Controls.Add(this.switchPictureBox);
+			this.switchPanel.Controls.Add(this.switchCrossbowPictureBox);
 			this.switchPanel.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.switchPanel.Location = new System.Drawing.Point(1056, 476);
 			this.switchPanel.Name = "switchPanel";
@@ -480,28 +480,28 @@
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(222, 23);
 			this.button3.TabIndex = 23;
-			this.button3.Text = "Sell (+ 2$)";
+			this.button3.Text = "Sell (+ $)";
 			this.button3.UseVisualStyleBackColor = true;
 			// 
-			// label6
+			// switchSniperPowerTower
 			// 
-			this.label6.AutoSize = true;
-			this.label6.ForeColor = System.Drawing.SystemColors.Info;
-			this.label6.Location = new System.Drawing.Point(156, 202);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(55, 13);
-			this.label6.TabIndex = 22;
-			this.label6.Text = "Damage: 1";
+			this.switchSniperPowerTower.AutoSize = true;
+			this.switchSniperPowerTower.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchSniperPowerTower.Location = new System.Drawing.Point(156, 202);
+			this.switchSniperPowerTower.Name = "switchSniperPowerTower";
+			this.switchSniperPowerTower.Size = new System.Drawing.Size(36, 13);
+			this.switchSniperPowerTower.TabIndex = 22;
+			this.switchSniperPowerTower.Text = "Power";
 			// 
-			// label7
+			// switchSniperRangeTower
 			// 
-			this.label7.AutoSize = true;
-			this.label7.ForeColor = System.Drawing.SystemColors.Info;
-			this.label7.Location = new System.Drawing.Point(156, 182);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(45, 13);
-			this.label7.TabIndex = 21;
-			this.label7.Text = "Range: 1";
+			this.switchSniperRangeTower.AutoSize = true;
+			this.switchSniperRangeTower.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchSniperRangeTower.Location = new System.Drawing.Point(156, 182);
+			this.switchSniperRangeTower.Name = "switchSniperRangeTower";
+			this.switchSniperRangeTower.Size = new System.Drawing.Size(42, 13);
+			this.switchSniperRangeTower.TabIndex = 21;
+			this.switchSniperRangeTower.Text = "Range: ";
 			// 
 			// button2
 			// 
@@ -518,38 +518,38 @@
 			this.label8.ForeColor = System.Drawing.SystemColors.Info;
 			this.label8.Location = new System.Drawing.Point(156, 164);
 			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(48, 13);
+			this.label8.Size = new System.Drawing.Size(34, 13);
 			this.label8.TabIndex = 19;
-			this.label8.Text = "Cost: $10";
+			this.label8.Text = "Cost: ";
 			// 
-			// pictureBox2
+			// switchSniperPictureBox
 			// 
-			this.pictureBox2.Image = global::Ragnarok.Properties.Resources.Sniper_Tower;
-			this.pictureBox2.Location = new System.Drawing.Point(156, 83);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(70, 70);
-			this.pictureBox2.TabIndex = 18;
-			this.pictureBox2.TabStop = false;
+			this.switchSniperPictureBox.Image = global::Ragnarok.Properties.Resources.Sniper_Tower;
+			this.switchSniperPictureBox.Location = new System.Drawing.Point(156, 83);
+			this.switchSniperPictureBox.Name = "switchSniperPictureBox";
+			this.switchSniperPictureBox.Size = new System.Drawing.Size(70, 70);
+			this.switchSniperPictureBox.TabIndex = 18;
+			this.switchSniperPictureBox.TabStop = false;
 			// 
-			// label3
+			// switchMagePowerLabel
 			// 
-			this.label3.AutoSize = true;
-			this.label3.ForeColor = System.Drawing.SystemColors.Info;
-			this.label3.Location = new System.Drawing.Point(80, 202);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(55, 13);
-			this.label3.TabIndex = 17;
-			this.label3.Text = "Damage: 1";
+			this.switchMagePowerLabel.AutoSize = true;
+			this.switchMagePowerLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchMagePowerLabel.Location = new System.Drawing.Point(80, 202);
+			this.switchMagePowerLabel.Name = "switchMagePowerLabel";
+			this.switchMagePowerLabel.Size = new System.Drawing.Size(42, 13);
+			this.switchMagePowerLabel.TabIndex = 17;
+			this.switchMagePowerLabel.Text = "Power: ";
 			// 
-			// label4
+			// switchMageRangeLabel
 			// 
-			this.label4.AutoSize = true;
-			this.label4.ForeColor = System.Drawing.SystemColors.Info;
-			this.label4.Location = new System.Drawing.Point(80, 182);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(45, 13);
-			this.label4.TabIndex = 16;
-			this.label4.Text = "Range: 1";
+			this.switchMageRangeLabel.AutoSize = true;
+			this.switchMageRangeLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchMageRangeLabel.Location = new System.Drawing.Point(80, 182);
+			this.switchMageRangeLabel.Name = "switchMageRangeLabel";
+			this.switchMageRangeLabel.Size = new System.Drawing.Size(42, 13);
+			this.switchMageRangeLabel.TabIndex = 16;
+			this.switchMageRangeLabel.Text = "Range: ";
 			// 
 			// button1
 			// 
@@ -566,38 +566,38 @@
 			this.label5.ForeColor = System.Drawing.SystemColors.Info;
 			this.label5.Location = new System.Drawing.Point(80, 164);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(48, 13);
+			this.label5.Size = new System.Drawing.Size(34, 13);
 			this.label5.TabIndex = 14;
-			this.label5.Text = "Cost: $10";
+			this.label5.Text = "Cost: ";
 			// 
-			// pictureBox1
+			// switchMagePictureBox
 			// 
-			this.pictureBox1.Image = global::Ragnarok.Properties.Resources.Mage_Tower;
-			this.pictureBox1.Location = new System.Drawing.Point(80, 83);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-			this.pictureBox1.TabIndex = 13;
-			this.pictureBox1.TabStop = false;
+			this.switchMagePictureBox.Image = global::Ragnarok.Properties.Resources.Mage_Tower;
+			this.switchMagePictureBox.Location = new System.Drawing.Point(80, 83);
+			this.switchMagePictureBox.Name = "switchMagePictureBox";
+			this.switchMagePictureBox.Size = new System.Drawing.Size(70, 70);
+			this.switchMagePictureBox.TabIndex = 13;
+			this.switchMagePictureBox.TabStop = false;
 			// 
-			// label2
+			// switchCrossbowPowerLabel
 			// 
-			this.label2.AutoSize = true;
-			this.label2.ForeColor = System.Drawing.SystemColors.Info;
-			this.label2.Location = new System.Drawing.Point(4, 202);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(55, 13);
-			this.label2.TabIndex = 12;
-			this.label2.Text = "Damage: 1";
+			this.switchCrossbowPowerLabel.AutoSize = true;
+			this.switchCrossbowPowerLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchCrossbowPowerLabel.Location = new System.Drawing.Point(4, 202);
+			this.switchCrossbowPowerLabel.Name = "switchCrossbowPowerLabel";
+			this.switchCrossbowPowerLabel.Size = new System.Drawing.Size(42, 13);
+			this.switchCrossbowPowerLabel.TabIndex = 12;
+			this.switchCrossbowPowerLabel.Text = "Power: ";
 			// 
-			// label1
+			// switchCrossbowRangeLabel
 			// 
-			this.label1.AutoSize = true;
-			this.label1.ForeColor = System.Drawing.SystemColors.Info;
-			this.label1.Location = new System.Drawing.Point(4, 182);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(45, 13);
-			this.label1.TabIndex = 11;
-			this.label1.Text = "Range: 1";
+			this.switchCrossbowRangeLabel.AutoSize = true;
+			this.switchCrossbowRangeLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchCrossbowRangeLabel.Location = new System.Drawing.Point(4, 182);
+			this.switchCrossbowRangeLabel.Name = "switchCrossbowRangeLabel";
+			this.switchCrossbowRangeLabel.Size = new System.Drawing.Size(42, 13);
+			this.switchCrossbowRangeLabel.TabIndex = 11;
+			this.switchCrossbowRangeLabel.Text = "Range: ";
 			// 
 			// switchTowerLabel
 			// 
@@ -641,18 +641,18 @@
 			this.switchCostLabel.ForeColor = System.Drawing.SystemColors.Info;
 			this.switchCostLabel.Location = new System.Drawing.Point(4, 164);
 			this.switchCostLabel.Name = "switchCostLabel";
-			this.switchCostLabel.Size = new System.Drawing.Size(48, 13);
+			this.switchCostLabel.Size = new System.Drawing.Size(34, 13);
 			this.switchCostLabel.TabIndex = 2;
-			this.switchCostLabel.Text = "Cost: $10";
+			this.switchCostLabel.Text = "Cost: ";
 			// 
-			// switchPictureBox
+			// switchCrossbowPictureBox
 			// 
-			this.switchPictureBox.Image = global::Ragnarok.Properties.Resources.Crossbow_Tower;
-			this.switchPictureBox.Location = new System.Drawing.Point(4, 83);
-			this.switchPictureBox.Name = "switchPictureBox";
-			this.switchPictureBox.Size = new System.Drawing.Size(70, 70);
-			this.switchPictureBox.TabIndex = 1;
-			this.switchPictureBox.TabStop = false;
+			this.switchCrossbowPictureBox.Image = global::Ragnarok.Properties.Resources.Crossbow_Tower;
+			this.switchCrossbowPictureBox.Location = new System.Drawing.Point(4, 83);
+			this.switchCrossbowPictureBox.Name = "switchCrossbowPictureBox";
+			this.switchCrossbowPictureBox.Size = new System.Drawing.Size(70, 70);
+			this.switchCrossbowPictureBox.TabIndex = 1;
+			this.switchCrossbowPictureBox.TabStop = false;
 			// 
 			// panel1
 			// 
@@ -770,9 +770,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.upgradePanelImage)).EndInit();
 			this.switchPanel.ResumeLayout(false);
 			this.switchPanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.switchPictureBox)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.switchSniperPictureBox)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.switchMagePictureBox)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.switchCrossbowPictureBox)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -809,7 +809,7 @@
 		private System.Windows.Forms.Button switchCrossbowButton;
 		private System.Windows.Forms.Button switchCloseButton;
 		private System.Windows.Forms.Label switchCostLabel;
-		private System.Windows.Forms.PictureBox switchPictureBox;
+		private System.Windows.Forms.PictureBox switchCrossbowPictureBox;
 		private System.Windows.Forms.Label basicTowerLabel;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.Label label12;
@@ -817,18 +817,18 @@
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.Label switchSniperPowerTower;
+		private System.Windows.Forms.Label switchSniperRangeTower;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.PictureBox switchSniperPictureBox;
+		private System.Windows.Forms.Label switchMagePowerLabel;
+		private System.Windows.Forms.Label switchMageRangeLabel;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.PictureBox switchMagePictureBox;
+		private System.Windows.Forms.Label switchCrossbowPowerLabel;
+		private System.Windows.Forms.Label switchCrossbowRangeLabel;
 		private System.Windows.Forms.Label switchTowerLabel;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label label14;

@@ -19,11 +19,12 @@ namespace Ragnarok {
 			mainMenu = new MainMenu(mainMenuPanel, closeMenuButton, startNewGameButton, loadGameButton, menuSettingsButton, menuQuitButton);
 			mainMapPanel = new MapPanel(mapPanel, game.map, game.towerSpots);
 			basicTowerPanelObj = new BasicTowerPanel(basicPanel, game.map);
+			switchTowerPanelObj = new SwitchTowerPanel(switchPanel, game.map);
 
 			//Ukrywam kolejne panele programu
 			mainMenu.Hide();
 			mainMapPanel.Hide();
-			basicTowerPanelObj.Hide();
+			TowerPanel.HideAllPanels(basicTowerPanelObj, switchTowerPanelObj);
 
 			mainMenu.ShowMenuWithoutCloseButtonIn(this);
 		}
@@ -31,6 +32,7 @@ namespace Ragnarok {
 		private MainMenu mainMenu;
 		private MapPanel mainMapPanel;
 		private BasicTowerPanel basicTowerPanelObj;
+		private SwitchTowerPanel switchTowerPanelObj;
 		private Game game;
 
 
@@ -69,6 +71,10 @@ namespace Ragnarok {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
+			} else if (tower is BasicTower) {
+				switchTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
 			}
 		}
 
@@ -77,6 +83,10 @@ namespace Ragnarok {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
+			} else if (tower is BasicTower) {
+				switchTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
 			}
 		}
 
@@ -85,6 +95,10 @@ namespace Ragnarok {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
+			} else if (tower is BasicTower) {
+				switchTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
 			}
 		}
 
@@ -93,6 +107,10 @@ namespace Ragnarok {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
+			} else if (tower is BasicTower) {
+				switchTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
 			}
 		}
 
@@ -101,6 +119,10 @@ namespace Ragnarok {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
+			} else if (tower is BasicTower) {
+				switchTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
 			}
 		}
 
@@ -109,6 +131,10 @@ namespace Ragnarok {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
+			} else if (tower is BasicTower) {
+				switchTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
 			}
 		}
 
@@ -117,6 +143,10 @@ namespace Ragnarok {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
+			} else if (tower is BasicTower) {
+				switchTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
 			}
 		}
 
@@ -125,6 +155,10 @@ namespace Ragnarok {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
+			} else if (tower is BasicTower) {
+				switchTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
 			}
 		}
 
@@ -133,6 +167,10 @@ namespace Ragnarok {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
+			} else if (tower is BasicTower) {
+				switchTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
 			}
 		}
 
@@ -141,6 +179,10 @@ namespace Ragnarok {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
+			} else if (tower is BasicTower) {
+				switchTowerPanelObj.Show(location);
+				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj);
 			}
 		}
 
@@ -149,7 +191,7 @@ namespace Ragnarok {
 		}
 
 		private void switchCloseButton_Click(object sender, EventArgs e) {
-			
+			switchTowerPanelObj.Hide();
 		}
 
 		private void upgradePanelCloseButton_Click(object sender, EventArgs e) {
