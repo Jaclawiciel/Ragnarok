@@ -16,7 +16,7 @@ namespace Ragnarok {
 		private Button quitButton;
 
 		public MainMenu(
-			Panel menuPanel, Button closeButton, Button startNewGameButton, 
+			Panel menuPanel, Button closeButton, Button startNewGameButton,
 			Button loadGameButton, Button settingsButton, Button quitButton) {
 			this.menuPanel = menuPanel;
 			this.closeButton = closeButton;
@@ -31,7 +31,7 @@ namespace Ragnarok {
 		}
 
 		public void ShowMenuIn(Form1 form) {
-			menuPanel.Location = Form1.CenterPointOf(form, menuPanel);	
+			menuPanel.Location = Form1.CenterPointOf(form, menuPanel);
 			menuPanel.Show();
 		}
 
