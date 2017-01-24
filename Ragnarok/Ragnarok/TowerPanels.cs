@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ragnarok {
+	static class TowerPanel {
+		z
+	}
+
 	class BasicTowerPanel {
 		private Panel basicTowerPanel;
 		private PictureBox towerImage;
@@ -22,11 +26,10 @@ namespace Ragnarok {
 			this.rangeLabel = rangeLabel;
 		}
 
-		public void Show(MapLocation towerSpotLocation) {
+		public void Show(MapLocation towerSpotLocation, Tower[] towers) {
 			towerImage.Image = Image.FromFile("../../Resources/Basic Tower.png");
-
-			//********************************//
-			//costLabel = tower.GetCost();
+			
+			costLabel =
 			//damageLabel = tower.GetDamage();
 			//rangeLabel = tower.GetRange();
 			//*******************************//
@@ -139,5 +142,9 @@ namespace Ragnarok {
 				}
 			}
 		}
+	}
+
+	class RagnarokTowerPanel {
+
 	}
 }
