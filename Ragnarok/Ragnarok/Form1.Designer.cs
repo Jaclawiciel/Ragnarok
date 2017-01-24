@@ -1,7 +1,5 @@
-﻿namespace Ragnarok
-{
-	partial class Form1
-	{
+﻿namespace Ragnarok {
+	partial class Form1 {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -11,13 +9,27 @@
 		/// Clean up any resources being used.
 		/// </summary>
 		/// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing && (components != null))
-			{
+		protected override void Dispose(bool disposing) {
+			if (disposing && (components != null)) {
 				components.Dispose();
 			}
 			base.Dispose(disposing);
+		}
+
+		private void InitializePictureBoxEvents() {
+			//
+			// towerSpotsPB
+			// 
+			this.mainMapPanel.PBTowerSpots[0].Click += new System.EventHandler(this.PBTowerSpots0_Click);
+			this.mainMapPanel.PBTowerSpots[1].Click += new System.EventHandler(this.PBTowerSpots1_Click);
+			this.mainMapPanel.PBTowerSpots[2].Click += new System.EventHandler(this.PBTowerSpots2_Click);
+			this.mainMapPanel.PBTowerSpots[3].Click += new System.EventHandler(this.PBTowerSpots3_Click);
+			this.mainMapPanel.PBTowerSpots[4].Click += new System.EventHandler(this.PBTowerSpots4_Click);
+			this.mainMapPanel.PBTowerSpots[5].Click += new System.EventHandler(this.PBTowerSpots5_Click);
+			this.mainMapPanel.PBTowerSpots[6].Click += new System.EventHandler(this.PBTowerSpots6_Click);
+			this.mainMapPanel.PBTowerSpots[7].Click += new System.EventHandler(this.PBTowerSpots7_Click);
+			this.mainMapPanel.PBTowerSpots[8].Click += new System.EventHandler(this.PBTowerSpots8_Click);
+			this.mainMapPanel.PBTowerSpots[9].Click += new System.EventHandler(this.PBTowerSpots9_Click);
 		}
 
 		#region Windows Form Designer generated code
@@ -26,8 +38,7 @@
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		private void InitializeComponent()
-		{
+		private void InitializeComponent() {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.mainMenuPanel = new System.Windows.Forms.Panel();
 			this.closeMenuButton = new System.Windows.Forms.Button();
@@ -37,26 +48,35 @@
 			this.startNewGameButton = new System.Windows.Forms.Button();
 			this.mainMenuTitle = new System.Windows.Forms.Label();
 			this.mapPanel = new System.Windows.Forms.Panel();
-			this.basicTowerPanel = new System.Windows.Forms.Panel();
-			this.button4 = new System.Windows.Forms.Button();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.button1 = new System.Windows.Forms.Button();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.button5 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label5 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.button3 = new System.Windows.Forms.Button();
+			this.basicPanel = new System.Windows.Forms.Panel();
+			this.basicPanelCloseButton = new System.Windows.Forms.Button();
+			this.basicPanelDamageLabel = new System.Windows.Forms.Label();
+			this.basicPanelRangeLabel = new System.Windows.Forms.Label();
+			this.basicPanelCostLabel = new System.Windows.Forms.Label();
+			this.basicPanelTowerImage = new System.Windows.Forms.PictureBox();
+			this.buyBasicTowerButton = new System.Windows.Forms.Button();
+			this.upgradePanel = new System.Windows.Forms.Panel();
+			this.upgradePanelUpgradeButton = new System.Windows.Forms.Button();
+			this.upgradePanelCloseButton = new System.Windows.Forms.Button();
+			this.upgradePanelDamagelabel = new System.Windows.Forms.Label();
+			this.upgradePanelRangeLabel = new System.Windows.Forms.Label();
+			this.upgradePanelCostLabel = new System.Windows.Forms.Label();
+			this.upgradePanelImage = new System.Windows.Forms.PictureBox();
+			this.upgradePanelSellButton = new System.Windows.Forms.Button();
+			this.switchPanel = new System.Windows.Forms.Panel();
+			this.switchSniper = new System.Windows.Forms.Button();
+			this.switchMageButton = new System.Windows.Forms.Button();
+			this.switchCrossbowButton = new System.Windows.Forms.Button();
+			this.switchCloseButton = new System.Windows.Forms.Button();
+			this.switchCostLabel = new System.Windows.Forms.Label();
+			this.switchPictureBox = new System.Windows.Forms.PictureBox();
 			this.mainMenuPanel.SuspendLayout();
-			this.basicTowerPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			this.panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			this.basicPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.basicPanelTowerImage)).BeginInit();
+			this.upgradePanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.upgradePanelImage)).BeginInit();
+			this.switchPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.switchPictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// mainMenuPanel
@@ -142,175 +162,255 @@
 			// 
 			// mapPanel
 			// 
+			this.mapPanel.BackgroundImage = global::Ragnarok.Properties.Resources.MapOnly;
+			this.mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.mapPanel.Location = new System.Drawing.Point(0, 0);
 			this.mapPanel.Name = "mapPanel";
 			this.mapPanel.Size = new System.Drawing.Size(1050, 700);
 			this.mapPanel.TabIndex = 1;
 			this.mapPanel.Click += new System.EventHandler(this.mapPanel_Click);
 			// 
-			// basicTowerPanel
+			// basicPanel
 			// 
-			this.basicTowerPanel.BackColor = System.Drawing.SystemColors.HotTrack;
-			this.basicTowerPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.basicTowerPanel.Controls.Add(this.button4);
-			this.basicTowerPanel.Controls.Add(this.label3);
-			this.basicTowerPanel.Controls.Add(this.label2);
-			this.basicTowerPanel.Controls.Add(this.label1);
-			this.basicTowerPanel.Controls.Add(this.pictureBox1);
-			this.basicTowerPanel.Controls.Add(this.button1);
-			this.basicTowerPanel.Location = new System.Drawing.Point(1098, 241);
-			this.basicTowerPanel.Name = "basicTowerPanel";
-			this.basicTowerPanel.Size = new System.Drawing.Size(168, 110);
-			this.basicTowerPanel.TabIndex = 2;
+			this.basicPanel.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.basicPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.basicPanel.Controls.Add(this.basicPanelCloseButton);
+			this.basicPanel.Controls.Add(this.basicPanelDamageLabel);
+			this.basicPanel.Controls.Add(this.basicPanelRangeLabel);
+			this.basicPanel.Controls.Add(this.basicPanelCostLabel);
+			this.basicPanel.Controls.Add(this.basicPanelTowerImage);
+			this.basicPanel.Controls.Add(this.buyBasicTowerButton);
+			this.basicPanel.Location = new System.Drawing.Point(1098, 241);
+			this.basicPanel.Name = "basicPanel";
+			this.basicPanel.Size = new System.Drawing.Size(168, 110);
+			this.basicPanel.TabIndex = 2;
 			// 
-			// button4
+			// basicPanelCloseButton
 			// 
-			this.button4.BackColor = System.Drawing.SystemColors.HotTrack;
-			this.button4.FlatAppearance.BorderSize = 0;
-			this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.button4.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.button4.Location = new System.Drawing.Point(131, -1);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(34, 30);
-			this.button4.TabIndex = 6;
-			this.button4.Text = "X";
-			this.button4.UseVisualStyleBackColor = false;
+			this.basicPanelCloseButton.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.basicPanelCloseButton.FlatAppearance.BorderSize = 0;
+			this.basicPanelCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.basicPanelCloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.basicPanelCloseButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.basicPanelCloseButton.Location = new System.Drawing.Point(131, -1);
+			this.basicPanelCloseButton.Name = "basicPanelCloseButton";
+			this.basicPanelCloseButton.Size = new System.Drawing.Size(34, 30);
+			this.basicPanelCloseButton.TabIndex = 6;
+			this.basicPanelCloseButton.Text = "X";
+			this.basicPanelCloseButton.UseVisualStyleBackColor = false;
+			this.basicPanelCloseButton.Click += new System.EventHandler(this.basicPanelCloseButton_Click);
 			// 
-			// label3
+			// basicPanelDamageLabel
 			// 
-			this.label3.AutoSize = true;
-			this.label3.ForeColor = System.Drawing.SystemColors.Info;
-			this.label3.Location = new System.Drawing.Point(79, 59);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(59, 13);
-			this.label3.TabIndex = 4;
-			this.label3.Text = "Damage: 1";
+			this.basicPanelDamageLabel.AutoSize = true;
+			this.basicPanelDamageLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.basicPanelDamageLabel.Location = new System.Drawing.Point(79, 59);
+			this.basicPanelDamageLabel.Name = "basicPanelDamageLabel";
+			this.basicPanelDamageLabel.Size = new System.Drawing.Size(59, 13);
+			this.basicPanelDamageLabel.TabIndex = 4;
+			this.basicPanelDamageLabel.Text = "Damage: 1";
 			// 
-			// label2
+			// basicPanelRangeLabel
 			// 
-			this.label2.AutoSize = true;
-			this.label2.ForeColor = System.Drawing.SystemColors.Info;
-			this.label2.Location = new System.Drawing.Point(79, 35);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(51, 13);
-			this.label2.TabIndex = 3;
-			this.label2.Text = "Range: 1";
+			this.basicPanelRangeLabel.AutoSize = true;
+			this.basicPanelRangeLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.basicPanelRangeLabel.Location = new System.Drawing.Point(79, 35);
+			this.basicPanelRangeLabel.Name = "basicPanelRangeLabel";
+			this.basicPanelRangeLabel.Size = new System.Drawing.Size(51, 13);
+			this.basicPanelRangeLabel.TabIndex = 3;
+			this.basicPanelRangeLabel.Text = "Range: 1";
 			// 
-			// label1
+			// basicPanelCostLabel
 			// 
-			this.label1.AutoSize = true;
-			this.label1.ForeColor = System.Drawing.SystemColors.Info;
-			this.label1.Location = new System.Drawing.Point(79, 12);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(46, 13);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Cost: $5";
+			this.basicPanelCostLabel.AutoSize = true;
+			this.basicPanelCostLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.basicPanelCostLabel.Location = new System.Drawing.Point(79, 12);
+			this.basicPanelCostLabel.Name = "basicPanelCostLabel";
+			this.basicPanelCostLabel.Size = new System.Drawing.Size(46, 13);
+			this.basicPanelCostLabel.TabIndex = 2;
+			this.basicPanelCostLabel.Text = "Cost: $5";
 			// 
-			// pictureBox1
+			// basicPanelTowerImage
 			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-			this.pictureBox1.TabIndex = 1;
-			this.pictureBox1.TabStop = false;
+			this.basicPanelTowerImage.Image = ((System.Drawing.Image)(resources.GetObject("basicPanelTowerImage.Image")));
+			this.basicPanelTowerImage.Location = new System.Drawing.Point(3, 3);
+			this.basicPanelTowerImage.Name = "basicPanelTowerImage";
+			this.basicPanelTowerImage.Size = new System.Drawing.Size(70, 70);
+			this.basicPanelTowerImage.TabIndex = 1;
+			this.basicPanelTowerImage.TabStop = false;
 			// 
-			// button1
+			// buyBasicTowerButton
 			// 
-			this.button1.Location = new System.Drawing.Point(32, 79);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(99, 23);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "Buy basic tower";
-			this.button1.UseVisualStyleBackColor = true;
+			this.buyBasicTowerButton.Location = new System.Drawing.Point(32, 79);
+			this.buyBasicTowerButton.Name = "buyBasicTowerButton";
+			this.buyBasicTowerButton.Size = new System.Drawing.Size(99, 23);
+			this.buyBasicTowerButton.TabIndex = 0;
+			this.buyBasicTowerButton.Text = "Buy basic tower";
+			this.buyBasicTowerButton.UseVisualStyleBackColor = true;
 			// 
-			// panel2
+			// upgradePanel
 			// 
-			this.panel2.BackColor = System.Drawing.SystemColors.HotTrack;
-			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel2.Controls.Add(this.button5);
-			this.panel2.Controls.Add(this.button2);
-			this.panel2.Controls.Add(this.label4);
-			this.panel2.Controls.Add(this.label5);
-			this.panel2.Controls.Add(this.label6);
-			this.panel2.Controls.Add(this.pictureBox2);
-			this.panel2.Controls.Add(this.button3);
-			this.panel2.Location = new System.Drawing.Point(1098, 402);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(168, 111);
-			this.panel2.TabIndex = 7;
+			this.upgradePanel.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.upgradePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.upgradePanel.Controls.Add(this.upgradePanelUpgradeButton);
+			this.upgradePanel.Controls.Add(this.upgradePanelCloseButton);
+			this.upgradePanel.Controls.Add(this.upgradePanelDamagelabel);
+			this.upgradePanel.Controls.Add(this.upgradePanelRangeLabel);
+			this.upgradePanel.Controls.Add(this.upgradePanelCostLabel);
+			this.upgradePanel.Controls.Add(this.upgradePanelImage);
+			this.upgradePanel.Controls.Add(this.upgradePanelSellButton);
+			this.upgradePanel.Location = new System.Drawing.Point(1098, 518);
+			this.upgradePanel.Name = "upgradePanel";
+			this.upgradePanel.Size = new System.Drawing.Size(168, 111);
+			this.upgradePanel.TabIndex = 7;
 			// 
-			// button5
+			// upgradePanelUpgradeButton
 			// 
-			this.button5.Location = new System.Drawing.Point(76, 79);
-			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(62, 23);
-			this.button5.TabIndex = 7;
-			this.button5.Text = "Upgrade";
-			this.button5.UseVisualStyleBackColor = true;
+			this.upgradePanelUpgradeButton.Location = new System.Drawing.Point(76, 79);
+			this.upgradePanelUpgradeButton.Name = "upgradePanelUpgradeButton";
+			this.upgradePanelUpgradeButton.Size = new System.Drawing.Size(62, 23);
+			this.upgradePanelUpgradeButton.TabIndex = 7;
+			this.upgradePanelUpgradeButton.Text = "Upgrade";
+			this.upgradePanelUpgradeButton.UseVisualStyleBackColor = true;
 			// 
-			// button2
+			// upgradePanelCloseButton
 			// 
-			this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
-			this.button2.FlatAppearance.BorderSize = 0;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.button2.Location = new System.Drawing.Point(133, -1);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(34, 30);
-			this.button2.TabIndex = 6;
-			this.button2.Text = "X";
-			this.button2.UseVisualStyleBackColor = false;
+			this.upgradePanelCloseButton.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.upgradePanelCloseButton.FlatAppearance.BorderSize = 0;
+			this.upgradePanelCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.upgradePanelCloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.upgradePanelCloseButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.upgradePanelCloseButton.Location = new System.Drawing.Point(133, -1);
+			this.upgradePanelCloseButton.Name = "upgradePanelCloseButton";
+			this.upgradePanelCloseButton.Size = new System.Drawing.Size(34, 30);
+			this.upgradePanelCloseButton.TabIndex = 6;
+			this.upgradePanelCloseButton.Text = "X";
+			this.upgradePanelCloseButton.UseVisualStyleBackColor = false;
+			this.upgradePanelCloseButton.Click += new System.EventHandler(this.upgradePanelCloseButton_Click);
 			// 
-			// label4
+			// upgradePanelDamagelabel
 			// 
-			this.label4.AutoSize = true;
-			this.label4.ForeColor = System.Drawing.SystemColors.Info;
-			this.label4.Location = new System.Drawing.Point(79, 59);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(59, 13);
-			this.label4.TabIndex = 4;
-			this.label4.Text = "Damage: 1";
+			this.upgradePanelDamagelabel.AutoSize = true;
+			this.upgradePanelDamagelabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.upgradePanelDamagelabel.Location = new System.Drawing.Point(79, 59);
+			this.upgradePanelDamagelabel.Name = "upgradePanelDamagelabel";
+			this.upgradePanelDamagelabel.Size = new System.Drawing.Size(59, 13);
+			this.upgradePanelDamagelabel.TabIndex = 4;
+			this.upgradePanelDamagelabel.Text = "Damage: 1";
 			// 
-			// label5
+			// upgradePanelRangeLabel
 			// 
-			this.label5.AutoSize = true;
-			this.label5.ForeColor = System.Drawing.SystemColors.Info;
-			this.label5.Location = new System.Drawing.Point(79, 35);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(51, 13);
-			this.label5.TabIndex = 3;
-			this.label5.Text = "Range: 1";
+			this.upgradePanelRangeLabel.AutoSize = true;
+			this.upgradePanelRangeLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.upgradePanelRangeLabel.Location = new System.Drawing.Point(79, 35);
+			this.upgradePanelRangeLabel.Name = "upgradePanelRangeLabel";
+			this.upgradePanelRangeLabel.Size = new System.Drawing.Size(51, 13);
+			this.upgradePanelRangeLabel.TabIndex = 3;
+			this.upgradePanelRangeLabel.Text = "Range: 1";
 			// 
-			// label6
+			// upgradePanelCostLabel
 			// 
-			this.label6.AutoSize = true;
-			this.label6.ForeColor = System.Drawing.SystemColors.Info;
-			this.label6.Location = new System.Drawing.Point(79, 12);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(52, 13);
-			this.label6.TabIndex = 2;
-			this.label6.Text = "Cost: $10";
+			this.upgradePanelCostLabel.AutoSize = true;
+			this.upgradePanelCostLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.upgradePanelCostLabel.Location = new System.Drawing.Point(79, 12);
+			this.upgradePanelCostLabel.Name = "upgradePanelCostLabel";
+			this.upgradePanelCostLabel.Size = new System.Drawing.Size(52, 13);
+			this.upgradePanelCostLabel.TabIndex = 2;
+			this.upgradePanelCostLabel.Text = "Cost: $10";
 			// 
-			// pictureBox2
+			// upgradePanelImage
 			// 
-			this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-			this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(70, 70);
-			this.pictureBox2.TabIndex = 1;
-			this.pictureBox2.TabStop = false;
+			this.upgradePanelImage.Image = ((System.Drawing.Image)(resources.GetObject("upgradePanelImage.Image")));
+			this.upgradePanelImage.Location = new System.Drawing.Point(3, 3);
+			this.upgradePanelImage.Name = "upgradePanelImage";
+			this.upgradePanelImage.Size = new System.Drawing.Size(70, 70);
+			this.upgradePanelImage.TabIndex = 1;
+			this.upgradePanelImage.TabStop = false;
 			// 
-			// button3
+			// upgradePanelSellButton
 			// 
-			this.button3.Location = new System.Drawing.Point(3, 79);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(62, 23);
-			this.button3.TabIndex = 0;
-			this.button3.Text = "Sell (+ 2$)";
-			this.button3.UseVisualStyleBackColor = true;
+			this.upgradePanelSellButton.Location = new System.Drawing.Point(3, 79);
+			this.upgradePanelSellButton.Name = "upgradePanelSellButton";
+			this.upgradePanelSellButton.Size = new System.Drawing.Size(62, 23);
+			this.upgradePanelSellButton.TabIndex = 0;
+			this.upgradePanelSellButton.Text = "Sell (+ 2$)";
+			this.upgradePanelSellButton.UseVisualStyleBackColor = true;
+			// 
+			// switchPanel
+			// 
+			this.switchPanel.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.switchPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.switchPanel.Controls.Add(this.switchSniper);
+			this.switchPanel.Controls.Add(this.switchMageButton);
+			this.switchPanel.Controls.Add(this.switchCrossbowButton);
+			this.switchPanel.Controls.Add(this.switchCloseButton);
+			this.switchPanel.Controls.Add(this.switchCostLabel);
+			this.switchPanel.Controls.Add(this.switchPictureBox);
+			this.switchPanel.Location = new System.Drawing.Point(1098, 370);
+			this.switchPanel.Name = "switchPanel";
+			this.switchPanel.Size = new System.Drawing.Size(206, 111);
+			this.switchPanel.TabIndex = 8;
+			// 
+			// switchSniper
+			// 
+			this.switchSniper.Location = new System.Drawing.Point(139, 79);
+			this.switchSniper.Name = "switchSniper";
+			this.switchSniper.Size = new System.Drawing.Size(62, 23);
+			this.switchSniper.TabIndex = 9;
+			this.switchSniper.Text = "Sniper";
+			this.switchSniper.UseVisualStyleBackColor = true;
+			// 
+			// switchMageButton
+			// 
+			this.switchMageButton.Location = new System.Drawing.Point(71, 79);
+			this.switchMageButton.Name = "switchMageButton";
+			this.switchMageButton.Size = new System.Drawing.Size(62, 23);
+			this.switchMageButton.TabIndex = 8;
+			this.switchMageButton.Text = "Mage";
+			this.switchMageButton.UseVisualStyleBackColor = true;
+			// 
+			// switchCrossbowButton
+			// 
+			this.switchCrossbowButton.Location = new System.Drawing.Point(3, 79);
+			this.switchCrossbowButton.Name = "switchCrossbowButton";
+			this.switchCrossbowButton.Size = new System.Drawing.Size(62, 23);
+			this.switchCrossbowButton.TabIndex = 7;
+			this.switchCrossbowButton.Text = "Crossbow";
+			this.switchCrossbowButton.UseVisualStyleBackColor = true;
+			// 
+			// switchCloseButton
+			// 
+			this.switchCloseButton.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.switchCloseButton.FlatAppearance.BorderSize = 0;
+			this.switchCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.switchCloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.switchCloseButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.switchCloseButton.Location = new System.Drawing.Point(167, 3);
+			this.switchCloseButton.Name = "switchCloseButton";
+			this.switchCloseButton.Size = new System.Drawing.Size(34, 30);
+			this.switchCloseButton.TabIndex = 6;
+			this.switchCloseButton.Text = "X";
+			this.switchCloseButton.UseVisualStyleBackColor = false;
+			this.switchCloseButton.Click += new System.EventHandler(this.switchCloseButton_Click);
+			// 
+			// switchCostLabel
+			// 
+			this.switchCostLabel.AutoSize = true;
+			this.switchCostLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchCostLabel.Location = new System.Drawing.Point(79, 12);
+			this.switchCostLabel.Name = "switchCostLabel";
+			this.switchCostLabel.Size = new System.Drawing.Size(52, 13);
+			this.switchCostLabel.TabIndex = 2;
+			this.switchCostLabel.Text = "Cost: $10";
+			// 
+			// switchPictureBox
+			// 
+			this.switchPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("switchPictureBox.Image")));
+			this.switchPictureBox.Location = new System.Drawing.Point(3, 3);
+			this.switchPictureBox.Name = "switchPictureBox";
+			this.switchPictureBox.Size = new System.Drawing.Size(70, 70);
+			this.switchPictureBox.TabIndex = 1;
+			this.switchPictureBox.TabStop = false;
 			// 
 			// Form1
 			// 
@@ -318,20 +418,24 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.ActiveCaption;
 			this.ClientSize = new System.Drawing.Size(1362, 701);
-			this.Controls.Add(this.panel2);
-			this.Controls.Add(this.basicTowerPanel);
+			this.Controls.Add(this.switchPanel);
+			this.Controls.Add(this.upgradePanel);
+			this.Controls.Add(this.basicPanel);
 			this.Controls.Add(this.mapPanel);
 			this.Controls.Add(this.mainMenuPanel);
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.mainMenuPanel.ResumeLayout(false);
 			this.mainMenuPanel.PerformLayout();
-			this.basicTowerPanel.ResumeLayout(false);
-			this.basicTowerPanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			this.panel2.ResumeLayout(false);
-			this.panel2.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			this.basicPanel.ResumeLayout(false);
+			this.basicPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.basicPanelTowerImage)).EndInit();
+			this.upgradePanel.ResumeLayout(false);
+			this.upgradePanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.upgradePanelImage)).EndInit();
+			this.switchPanel.ResumeLayout(false);
+			this.switchPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.switchPictureBox)).EndInit();
 			this.ResumeLayout(false);
 		}
 
@@ -345,22 +449,28 @@
 		private System.Windows.Forms.Label mainMenuTitle;
 		private System.Windows.Forms.Button closeMenuButton;
 		private System.Windows.Forms.Panel mapPanel;
-
-		private System.Windows.Forms.Panel basicTowerPanel;
-		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.PictureBox pictureBox1;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button4;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Button button5;
-		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.PictureBox pictureBox2;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Panel basicPanel;
+		private System.Windows.Forms.Label basicPanelDamageLabel;
+		private System.Windows.Forms.Label basicPanelRangeLabel;
+		private System.Windows.Forms.Label basicPanelCostLabel;
+		private System.Windows.Forms.PictureBox basicPanelTowerImage;
+		private System.Windows.Forms.Button buyBasicTowerButton;
+		private System.Windows.Forms.Button basicPanelCloseButton;
+		private System.Windows.Forms.Panel upgradePanel;
+		private System.Windows.Forms.Button upgradePanelUpgradeButton;
+		private System.Windows.Forms.Button upgradePanelCloseButton;
+		private System.Windows.Forms.Label upgradePanelDamagelabel;
+		private System.Windows.Forms.Label upgradePanelRangeLabel;
+		private System.Windows.Forms.Label upgradePanelCostLabel;
+		private System.Windows.Forms.PictureBox upgradePanelImage;
+		private System.Windows.Forms.Button upgradePanelSellButton;
+		private System.Windows.Forms.Panel switchPanel;
+		private System.Windows.Forms.Button switchSniper;
+		private System.Windows.Forms.Button switchMageButton;
+		private System.Windows.Forms.Button switchCrossbowButton;
+		private System.Windows.Forms.Button switchCloseButton;
+		private System.Windows.Forms.Label switchCostLabel;
+		private System.Windows.Forms.PictureBox switchPictureBox;
 	}
 }
 
