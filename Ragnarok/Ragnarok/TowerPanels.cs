@@ -113,14 +113,30 @@ namespace Ragnarok {
 			if (tower is BasicTower) {
 				return Image.FromFile("../../Resources/Basic Tower.png");
 			} else if (tower is MageTower) {
-				// Sprawdź jaki stopień upgradu wieży
-				return Image.FromFile("../../Resources/Mage Tower.png");
+				if (tower.UpgradeLevel == 1) {
+					return Image.FromFile("../../Resources/Mage Tower.png");
+				} else if (tower.UpgradeLevel == 2) {
+					return Image.FromFile("../../Resources/Mage Tower2.png");
+				} else {
+					return Image.FromFile("../../Resources/Mage Tower3.png");
+				}
+				
 			} else if (tower is SniperTower) {
-				// Sprawdź jaki stopień wieży
-				return Image.FromFile("../../Resources/Sniper Tower.png");
+				if (tower.UpgradeLevel == 1) {
+					return Image.FromFile("../../Resources/Sniper Tower.png");
+				} else if (tower.UpgradeLevel == 2) {
+					return Image.FromFile("../../Resources/Sniper Tower2.png");
+				} else {
+					return Image.FromFile("../../Resources/Sniper Tower3.png");
+				}
 			} else {
-				// Sprawdź jaki stopień wieży
-				return Image.FromFile("../../Resources/Crossbow Tower.png");
+				if (tower.UpgradeLevel == 1) {
+					return Image.FromFile("../../Resources/Crossbow Tower.png");
+				} else if (tower.UpgradeLevel == 2) {
+					return Image.FromFile("../../Resources/Crossbow Tower2.png");
+				} else {
+					return Image.FromFile("../../Resources/Crossbow Tower3.png");
+				}
 			}
 		}
 	}

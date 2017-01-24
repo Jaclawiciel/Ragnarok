@@ -128,31 +128,129 @@ namespace Ragnarok {
 		}
 
 		private void PBTowerSpots3_Click(object sender, EventArgs e) {
-			//basicTowerPanelObj.Show(new MapLocation(game.towerSpots[3].X, game.towerSpots[3].Y, game.map), game.towers.ToArray());
+			MapLocation location = new MapLocation(game.towerSpots[3].X, game.towerSpots[3].Y, game.map);
+			Tower tempTower = mainMapPanel.WhatTowerIsPlaced(location, game.towers.ToArray());
+			if (tempTower == null) {
+				basicTowerPanelObj.Show(location);
+				switchTowerPanel.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is BasicTower) {
+				switchTowerPanel.Show(location);
+				basicTowerPanelObj.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is CrossbowTower || tempTower is MageTower || tempTower is SniperTower) {
+				upgradeTowerPanelObj.Show(location, game.towers.ToArray());
+				basicTowerPanelObj.Hide();
+				switchTowerPanel.Hide();
+			}
 		}
 
 		private void PBTowerSpots4_Click(object sender, EventArgs e) {
-			//basicTowerPanelObj.Show(new MapLocation(game.towerSpots[4].X, game.towerSpots[4].Y, game.map), game.towers.ToArray());
+			MapLocation location = new MapLocation(game.towerSpots[4].X, game.towerSpots[4].Y, game.map);
+			Tower tempTower = mainMapPanel.WhatTowerIsPlaced(location, game.towers.ToArray());
+			if (tempTower == null) {
+				basicTowerPanelObj.Show(location);
+				switchTowerPanel.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is BasicTower) {
+				switchTowerPanel.Show(location);
+				basicTowerPanelObj.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is CrossbowTower || tempTower is MageTower || tempTower is SniperTower) {
+				upgradeTowerPanelObj.Show(location, game.towers.ToArray());
+				basicTowerPanelObj.Hide();
+				switchTowerPanel.Hide();
+			}
 		}
 
 		private void PBTowerSpots5_Click(object sender, EventArgs e) {
-			//basicTowerPanelObj.Show(new MapLocation(game.towerSpots[5].X, game.towerSpots[5].Y, game.map), game.towers.ToArray());
+			MapLocation location = new MapLocation(game.towerSpots[5].X, game.towerSpots[6].Y, game.map);
+			Tower tempTower = mainMapPanel.WhatTowerIsPlaced(location, game.towers.ToArray());
+			if (tempTower == null) {
+				basicTowerPanelObj.Show(location);
+				switchTowerPanel.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is BasicTower) {
+				switchTowerPanel.Show(location);
+				basicTowerPanelObj.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is CrossbowTower || tempTower is MageTower || tempTower is SniperTower) {
+				upgradeTowerPanelObj.Show(location, game.towers.ToArray());
+				basicTowerPanelObj.Hide();
+				switchTowerPanel.Hide();
+			}
 		}
 
 		private void PBTowerSpots6_Click(object sender, EventArgs e) {
-			//basicTowerPanelObj.Show(new MapLocation(game.towerSpots[6].X, game.towerSpots[6].Y, game.map), game.towers.ToArray());
+			MapLocation location = new MapLocation(game.towerSpots[6].X, game.towerSpots[6].Y, game.map);
+			Tower tempTower = mainMapPanel.WhatTowerIsPlaced(location, game.towers.ToArray());
+			if (tempTower == null) {
+				basicTowerPanelObj.Show(location);
+				switchTowerPanel.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is BasicTower) {
+				switchTowerPanel.Show(location);
+				basicTowerPanelObj.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is CrossbowTower || tempTower is MageTower || tempTower is SniperTower) {
+				upgradeTowerPanelObj.Show(location, game.towers.ToArray());
+				basicTowerPanelObj.Hide();
+				switchTowerPanel.Hide();
+			}
 		}
 
 		private void PBTowerSpots7_Click(object sender, EventArgs e) {
-			//basicTowerPanelObj.Show(new MapLocation(game.towerSpots[7].X, game.towerSpots[7].Y, game.map), game.towers.ToArray());
+			MapLocation location = new MapLocation(game.towerSpots[7].X, game.towerSpots[7].Y, game.map);
+			Tower tempTower = mainMapPanel.WhatTowerIsPlaced(location, game.towers.ToArray());
+			if (tempTower == null) {
+				basicTowerPanelObj.Show(location);
+				switchTowerPanel.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is BasicTower) {
+				switchTowerPanel.Show(location);
+				basicTowerPanelObj.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is CrossbowTower || tempTower is MageTower || tempTower is SniperTower) {
+				upgradeTowerPanelObj.Show(location, game.towers.ToArray());
+				basicTowerPanelObj.Hide();
+				switchTowerPanel.Hide();
+			}
 		}
 
 		private void PBTowerSpots8_Click(object sender, EventArgs e) {
-			//basicTowerPanelObj.Show(new MapLocation(game.towerSpots[8].X, game.towerSpots[8].Y, game.map), game.towers.ToArray());
+			MapLocation location = new MapLocation(game.towerSpots[8].X, game.towerSpots[8].Y, game.map);
+			Tower tempTower = mainMapPanel.WhatTowerIsPlaced(location, game.towers.ToArray());
+			if (tempTower == null) {
+				basicTowerPanelObj.Show(location);
+				switchTowerPanel.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is BasicTower) {
+				switchTowerPanel.Show(location);
+				basicTowerPanelObj.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is CrossbowTower || tempTower is MageTower || tempTower is SniperTower) {
+				upgradeTowerPanelObj.Show(location, game.towers.ToArray());
+				basicTowerPanelObj.Hide();
+				switchTowerPanel.Hide();
+			}
 		}
 
 		private void PBTowerSpots9_Click(object sender, EventArgs e) {
-			//basicTowerPanelObj.Show(new MapLocation(game.towerSpots[9].X, game.towerSpots[9].Y, game.map), game.towers.ToArray());
+			MapLocation location = new MapLocation(game.towerSpots[9].X, game.towerSpots[9].Y, game.map);
+			Tower tempTower = mainMapPanel.WhatTowerIsPlaced(location, game.towers.ToArray());
+			if (tempTower == null) {
+				basicTowerPanelObj.Show(location);
+				switchTowerPanel.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is BasicTower) {
+				switchTowerPanel.Show(location);
+				basicTowerPanelObj.Hide();
+				upgradeTowerPanelObj.Hide();
+			} else if (tempTower is CrossbowTower || tempTower is MageTower || tempTower is SniperTower) {
+				upgradeTowerPanelObj.Show(location, game.towers.ToArray());
+				basicTowerPanelObj.Hide();
+				switchTowerPanel.Hide();
+			}
 		}
 
 		private void basicPanelCloseButton_Click(object sender, EventArgs e) {
