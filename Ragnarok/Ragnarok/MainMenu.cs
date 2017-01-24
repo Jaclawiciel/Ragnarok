@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ragnarok {
-	class MainMenu : IPanel {
+	class MainMenu {
 
 		private Panel menuPanel;
 		private Button closeButton;

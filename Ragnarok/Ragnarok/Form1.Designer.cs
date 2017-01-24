@@ -48,13 +48,16 @@
 			this.mainMenuTitle = new System.Windows.Forms.Label();
 			this.mapPanel = new System.Windows.Forms.Panel();
 			this.basicPanel = new System.Windows.Forms.Panel();
+			this.basicTowerLabel = new System.Windows.Forms.Label();
 			this.basicPanelCloseButton = new System.Windows.Forms.Button();
-			this.basicPanelDamageLabel = new System.Windows.Forms.Label();
+			this.basicPanelPowerLabel = new System.Windows.Forms.Label();
 			this.basicPanelRangeLabel = new System.Windows.Forms.Label();
 			this.basicPanelCostLabel = new System.Windows.Forms.Label();
 			this.basicPanelTowerImage = new System.Windows.Forms.PictureBox();
 			this.buyBasicTowerButton = new System.Windows.Forms.Button();
 			this.upgradePanel = new System.Windows.Forms.Panel();
+			this.label13 = new System.Windows.Forms.Label();
+			this.label12 = new System.Windows.Forms.Label();
 			this.upgradePanelUpgradeButton = new System.Windows.Forms.Button();
 			this.upgradePanelCloseButton = new System.Windows.Forms.Button();
 			this.upgradePanelDamagelabel = new System.Windows.Forms.Label();
@@ -63,30 +66,27 @@
 			this.upgradePanelImage = new System.Windows.Forms.PictureBox();
 			this.upgradePanelSellButton = new System.Windows.Forms.Button();
 			this.switchPanel = new System.Windows.Forms.Panel();
-			this.switchCrossbowButton = new System.Windows.Forms.Button();
-			this.switchCloseButton = new System.Windows.Forms.Button();
-			this.switchCostLabel = new System.Windows.Forms.Label();
-			this.switchPictureBox = new System.Windows.Forms.PictureBox();
-			this.basicTowerLabel = new System.Windows.Forms.Label();
-			this.switchTowerLabel = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.label5 = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.button3 = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
 			this.label8 = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.button3 = new System.Windows.Forms.Button();
-			this.label9 = new System.Windows.Forms.Label();
-			this.label10 = new System.Windows.Forms.Label();
-			this.label11 = new System.Windows.Forms.Label();
-			this.label12 = new System.Windows.Forms.Label();
-			this.label13 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
+			this.label5 = new System.Windows.Forms.Label();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.switchTowerLabel = new System.Windows.Forms.Label();
+			this.switchCrossbowButton = new System.Windows.Forms.Button();
+			this.switchCloseButton = new System.Windows.Forms.Button();
+			this.switchCostLabel = new System.Windows.Forms.Label();
+			this.switchPictureBox = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label14 = new System.Windows.Forms.Label();
 			this.label15 = new System.Windows.Forms.Label();
@@ -101,9 +101,9 @@
 			this.upgradePanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.upgradePanelImage)).BeginInit();
 			this.switchPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.switchPictureBox)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.switchPictureBox)).BeginInit();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
 			this.SuspendLayout();
@@ -201,7 +201,6 @@
 			this.mapPanel.Name = "mapPanel";
 			this.mapPanel.Size = new System.Drawing.Size(1050, 700);
 			this.mapPanel.TabIndex = 1;
-			this.mapPanel.Click += new System.EventHandler(this.mapPanel_Click);
 			// 
 			// basicPanel
 			// 
@@ -209,7 +208,7 @@
 			this.basicPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.basicPanel.Controls.Add(this.basicTowerLabel);
 			this.basicPanel.Controls.Add(this.basicPanelCloseButton);
-			this.basicPanel.Controls.Add(this.basicPanelDamageLabel);
+			this.basicPanel.Controls.Add(this.basicPanelPowerLabel);
 			this.basicPanel.Controls.Add(this.basicPanelRangeLabel);
 			this.basicPanel.Controls.Add(this.basicPanelCostLabel);
 			this.basicPanel.Controls.Add(this.basicPanelTowerImage);
@@ -219,6 +218,17 @@
 			this.basicPanel.Name = "basicPanel";
 			this.basicPanel.Size = new System.Drawing.Size(160, 260);
 			this.basicPanel.TabIndex = 2;
+			// 
+			// basicTowerLabel
+			// 
+			this.basicTowerLabel.AutoSize = true;
+			this.basicTowerLabel.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.basicTowerLabel.ForeColor = System.Drawing.Color.White;
+			this.basicTowerLabel.Location = new System.Drawing.Point(12, 36);
+			this.basicTowerLabel.Name = "basicTowerLabel";
+			this.basicTowerLabel.Size = new System.Drawing.Size(136, 29);
+			this.basicTowerLabel.TabIndex = 7;
+			this.basicTowerLabel.Text = "Basic Tower";
 			// 
 			// basicPanelCloseButton
 			// 
@@ -235,16 +245,16 @@
 			this.basicPanelCloseButton.UseVisualStyleBackColor = false;
 			this.basicPanelCloseButton.Click += new System.EventHandler(this.basicPanelCloseButton_Click);
 			// 
-			// basicPanelDamageLabel
+			// basicPanelPowerLabel
 			// 
-			this.basicPanelDamageLabel.AutoSize = true;
-			this.basicPanelDamageLabel.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.basicPanelDamageLabel.ForeColor = System.Drawing.SystemColors.Info;
-			this.basicPanelDamageLabel.Location = new System.Drawing.Point(50, 188);
-			this.basicPanelDamageLabel.Name = "basicPanelDamageLabel";
-			this.basicPanelDamageLabel.Size = new System.Drawing.Size(63, 15);
-			this.basicPanelDamageLabel.TabIndex = 4;
-			this.basicPanelDamageLabel.Text = "Damage: 1";
+			this.basicPanelPowerLabel.AutoSize = true;
+			this.basicPanelPowerLabel.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.basicPanelPowerLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.basicPanelPowerLabel.Location = new System.Drawing.Point(50, 188);
+			this.basicPanelPowerLabel.Name = "basicPanelPowerLabel";
+			this.basicPanelPowerLabel.Size = new System.Drawing.Size(49, 15);
+			this.basicPanelPowerLabel.TabIndex = 4;
+			this.basicPanelPowerLabel.Text = "Power: ";
 			// 
 			// basicPanelRangeLabel
 			// 
@@ -253,9 +263,9 @@
 			this.basicPanelRangeLabel.ForeColor = System.Drawing.SystemColors.Info;
 			this.basicPanelRangeLabel.Location = new System.Drawing.Point(50, 164);
 			this.basicPanelRangeLabel.Name = "basicPanelRangeLabel";
-			this.basicPanelRangeLabel.Size = new System.Drawing.Size(52, 15);
+			this.basicPanelRangeLabel.Size = new System.Drawing.Size(48, 15);
 			this.basicPanelRangeLabel.TabIndex = 3;
-			this.basicPanelRangeLabel.Text = "Range: 1";
+			this.basicPanelRangeLabel.Text = "Range: ";
 			// 
 			// basicPanelCostLabel
 			// 
@@ -270,7 +280,6 @@
 			// 
 			// basicPanelTowerImage
 			// 
-			this.basicPanelTowerImage.Image = global::Ragnarok.Properties.Resources.Basic_Tower;
 			this.basicPanelTowerImage.Location = new System.Drawing.Point(43, 68);
 			this.basicPanelTowerImage.Name = "basicPanelTowerImage";
 			this.basicPanelTowerImage.Size = new System.Drawing.Size(70, 70);
@@ -305,6 +314,28 @@
 			this.upgradePanel.Name = "upgradePanel";
 			this.upgradePanel.Size = new System.Drawing.Size(159, 265);
 			this.upgradePanel.TabIndex = 7;
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label13.ForeColor = System.Drawing.SystemColors.Info;
+			this.label13.Location = new System.Drawing.Point(40, 139);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(63, 19);
+			this.label13.TabIndex = 9;
+			this.label13.Text = "Level: 2";
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label12.ForeColor = System.Drawing.Color.White;
+			this.label12.Location = new System.Drawing.Point(3, 36);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(149, 26);
+			this.label12.TabIndex = 8;
+			this.label12.Text = "Upgrade Tower";
 			// 
 			// upgradePanelUpgradeButton
 			// 
@@ -410,139 +441,47 @@
 			this.switchPanel.Size = new System.Drawing.Size(232, 283);
 			this.switchPanel.TabIndex = 8;
 			// 
-			// switchCrossbowButton
+			// label11
 			// 
-			this.switchCrossbowButton.Location = new System.Drawing.Point(4, 218);
-			this.switchCrossbowButton.Name = "switchCrossbowButton";
-			this.switchCrossbowButton.Size = new System.Drawing.Size(62, 23);
-			this.switchCrossbowButton.TabIndex = 7;
-			this.switchCrossbowButton.Text = "Buy";
-			this.switchCrossbowButton.UseVisualStyleBackColor = true;
+			this.label11.AutoSize = true;
+			this.label11.Font = new System.Drawing.Font("Constantia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label11.ForeColor = System.Drawing.Color.White;
+			this.label11.Location = new System.Drawing.Point(168, 62);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(50, 18);
+			this.label11.TabIndex = 26;
+			this.label11.Text = "Sniper";
 			// 
-			// switchCloseButton
+			// label10
 			// 
-			this.switchCloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.switchCloseButton.BackColor = System.Drawing.Color.Maroon;
-			this.switchCloseButton.FlatAppearance.BorderSize = 0;
-			this.switchCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.switchCloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.switchCloseButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.switchCloseButton.Location = new System.Drawing.Point(193, 3);
-			this.switchCloseButton.Name = "switchCloseButton";
-			this.switchCloseButton.Size = new System.Drawing.Size(34, 30);
-			this.switchCloseButton.TabIndex = 6;
-			this.switchCloseButton.Text = "X";
-			this.switchCloseButton.UseVisualStyleBackColor = false;
-			this.switchCloseButton.Click += new System.EventHandler(this.switchCloseButton_Click);
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Constantia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label10.ForeColor = System.Drawing.Color.White;
+			this.label10.Location = new System.Drawing.Point(91, 62);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(44, 18);
+			this.label10.TabIndex = 25;
+			this.label10.Text = "Mage";
 			// 
-			// switchCostLabel
+			// label9
 			// 
-			this.switchCostLabel.AutoSize = true;
-			this.switchCostLabel.ForeColor = System.Drawing.SystemColors.Info;
-			this.switchCostLabel.Location = new System.Drawing.Point(4, 164);
-			this.switchCostLabel.Name = "switchCostLabel";
-			this.switchCostLabel.Size = new System.Drawing.Size(48, 13);
-			this.switchCostLabel.TabIndex = 2;
-			this.switchCostLabel.Text = "Cost: $10";
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Constantia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label9.ForeColor = System.Drawing.Color.White;
+			this.label9.Location = new System.Drawing.Point(4, 62);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(71, 18);
+			this.label9.TabIndex = 24;
+			this.label9.Text = "Crossbow";
 			// 
-			// switchPictureBox
+			// button3
 			// 
-			this.switchPictureBox.Image = global::Ragnarok.Properties.Resources.Crossbow_Tower;
-			this.switchPictureBox.Location = new System.Drawing.Point(4, 83);
-			this.switchPictureBox.Name = "switchPictureBox";
-			this.switchPictureBox.Size = new System.Drawing.Size(70, 70);
-			this.switchPictureBox.TabIndex = 1;
-			this.switchPictureBox.TabStop = false;
-			// 
-			// basicTowerLabel
-			// 
-			this.basicTowerLabel.AutoSize = true;
-			this.basicTowerLabel.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.basicTowerLabel.ForeColor = System.Drawing.Color.White;
-			this.basicTowerLabel.Location = new System.Drawing.Point(12, 36);
-			this.basicTowerLabel.Name = "basicTowerLabel";
-			this.basicTowerLabel.Size = new System.Drawing.Size(136, 29);
-			this.basicTowerLabel.TabIndex = 7;
-			this.basicTowerLabel.Text = "Basic Tower";
-			// 
-			// switchTowerLabel
-			// 
-			this.switchTowerLabel.AutoSize = true;
-			this.switchTowerLabel.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.switchTowerLabel.ForeColor = System.Drawing.Color.White;
-			this.switchTowerLabel.Location = new System.Drawing.Point(40, 27);
-			this.switchTowerLabel.Name = "switchTowerLabel";
-			this.switchTowerLabel.Size = new System.Drawing.Size(152, 29);
-			this.switchTowerLabel.TabIndex = 10;
-			this.switchTowerLabel.Text = "Switch Tower";
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.ForeColor = System.Drawing.SystemColors.Info;
-			this.label1.Location = new System.Drawing.Point(4, 182);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(45, 13);
-			this.label1.TabIndex = 11;
-			this.label1.Text = "Range: 1";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.ForeColor = System.Drawing.SystemColors.Info;
-			this.label2.Location = new System.Drawing.Point(4, 202);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(55, 13);
-			this.label2.TabIndex = 12;
-			this.label2.Text = "Damage: 1";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.ForeColor = System.Drawing.SystemColors.Info;
-			this.label3.Location = new System.Drawing.Point(80, 202);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(55, 13);
-			this.label3.TabIndex = 17;
-			this.label3.Text = "Damage: 1";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.ForeColor = System.Drawing.SystemColors.Info;
-			this.label4.Location = new System.Drawing.Point(80, 182);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(45, 13);
-			this.label4.TabIndex = 16;
-			this.label4.Text = "Range: 1";
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(80, 218);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(62, 23);
-			this.button1.TabIndex = 15;
-			this.button1.Text = "Buy";
-			this.button1.UseVisualStyleBackColor = true;
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.ForeColor = System.Drawing.SystemColors.Info;
-			this.label5.Location = new System.Drawing.Point(80, 164);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(48, 13);
-			this.label5.TabIndex = 14;
-			this.label5.Text = "Cost: $10";
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.Image = global::Ragnarok.Properties.Resources.Mage_Tower;
-			this.pictureBox1.Location = new System.Drawing.Point(80, 83);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(70, 70);
-			this.pictureBox1.TabIndex = 13;
-			this.pictureBox1.TabStop = false;
+			this.button3.Location = new System.Drawing.Point(4, 247);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(222, 23);
+			this.button3.TabIndex = 23;
+			this.button3.Text = "Sell (+ 2$)";
+			this.button3.UseVisualStyleBackColor = true;
 			// 
 			// label6
 			// 
@@ -592,69 +531,128 @@
 			this.pictureBox2.TabIndex = 18;
 			this.pictureBox2.TabStop = false;
 			// 
-			// button3
+			// label3
 			// 
-			this.button3.Location = new System.Drawing.Point(4, 247);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(222, 23);
-			this.button3.TabIndex = 23;
-			this.button3.Text = "Sell (+ 2$)";
-			this.button3.UseVisualStyleBackColor = true;
+			this.label3.AutoSize = true;
+			this.label3.ForeColor = System.Drawing.SystemColors.Info;
+			this.label3.Location = new System.Drawing.Point(80, 202);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(55, 13);
+			this.label3.TabIndex = 17;
+			this.label3.Text = "Damage: 1";
 			// 
-			// label9
+			// label4
 			// 
-			this.label9.AutoSize = true;
-			this.label9.Font = new System.Drawing.Font("Constantia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label9.ForeColor = System.Drawing.Color.White;
-			this.label9.Location = new System.Drawing.Point(4, 62);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(71, 18);
-			this.label9.TabIndex = 24;
-			this.label9.Text = "Crossbow";
+			this.label4.AutoSize = true;
+			this.label4.ForeColor = System.Drawing.SystemColors.Info;
+			this.label4.Location = new System.Drawing.Point(80, 182);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(45, 13);
+			this.label4.TabIndex = 16;
+			this.label4.Text = "Range: 1";
 			// 
-			// label10
+			// button1
 			// 
-			this.label10.AutoSize = true;
-			this.label10.Font = new System.Drawing.Font("Constantia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label10.ForeColor = System.Drawing.Color.White;
-			this.label10.Location = new System.Drawing.Point(91, 62);
-			this.label10.Name = "label10";
-			this.label10.Size = new System.Drawing.Size(44, 18);
-			this.label10.TabIndex = 25;
-			this.label10.Text = "Mage";
+			this.button1.Location = new System.Drawing.Point(80, 218);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(62, 23);
+			this.button1.TabIndex = 15;
+			this.button1.Text = "Buy";
+			this.button1.UseVisualStyleBackColor = true;
 			// 
-			// label11
+			// label5
 			// 
-			this.label11.AutoSize = true;
-			this.label11.Font = new System.Drawing.Font("Constantia", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label11.ForeColor = System.Drawing.Color.White;
-			this.label11.Location = new System.Drawing.Point(168, 62);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(50, 18);
-			this.label11.TabIndex = 26;
-			this.label11.Text = "Sniper";
+			this.label5.AutoSize = true;
+			this.label5.ForeColor = System.Drawing.SystemColors.Info;
+			this.label5.Location = new System.Drawing.Point(80, 164);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(48, 13);
+			this.label5.TabIndex = 14;
+			this.label5.Text = "Cost: $10";
 			// 
-			// label12
+			// pictureBox1
 			// 
-			this.label12.AutoSize = true;
-			this.label12.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label12.ForeColor = System.Drawing.Color.White;
-			this.label12.Location = new System.Drawing.Point(3, 36);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(149, 26);
-			this.label12.TabIndex = 8;
-			this.label12.Text = "Upgrade Tower";
+			this.pictureBox1.Image = global::Ragnarok.Properties.Resources.Mage_Tower;
+			this.pictureBox1.Location = new System.Drawing.Point(80, 83);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(70, 70);
+			this.pictureBox1.TabIndex = 13;
+			this.pictureBox1.TabStop = false;
 			// 
-			// label13
+			// label2
 			// 
-			this.label13.AutoSize = true;
-			this.label13.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label13.ForeColor = System.Drawing.SystemColors.Info;
-			this.label13.Location = new System.Drawing.Point(40, 139);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(63, 19);
-			this.label13.TabIndex = 9;
-			this.label13.Text = "Level: 2";
+			this.label2.AutoSize = true;
+			this.label2.ForeColor = System.Drawing.SystemColors.Info;
+			this.label2.Location = new System.Drawing.Point(4, 202);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(55, 13);
+			this.label2.TabIndex = 12;
+			this.label2.Text = "Damage: 1";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.ForeColor = System.Drawing.SystemColors.Info;
+			this.label1.Location = new System.Drawing.Point(4, 182);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(45, 13);
+			this.label1.TabIndex = 11;
+			this.label1.Text = "Range: 1";
+			// 
+			// switchTowerLabel
+			// 
+			this.switchTowerLabel.AutoSize = true;
+			this.switchTowerLabel.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.switchTowerLabel.ForeColor = System.Drawing.Color.White;
+			this.switchTowerLabel.Location = new System.Drawing.Point(40, 27);
+			this.switchTowerLabel.Name = "switchTowerLabel";
+			this.switchTowerLabel.Size = new System.Drawing.Size(152, 29);
+			this.switchTowerLabel.TabIndex = 10;
+			this.switchTowerLabel.Text = "Switch Tower";
+			// 
+			// switchCrossbowButton
+			// 
+			this.switchCrossbowButton.Location = new System.Drawing.Point(4, 218);
+			this.switchCrossbowButton.Name = "switchCrossbowButton";
+			this.switchCrossbowButton.Size = new System.Drawing.Size(62, 23);
+			this.switchCrossbowButton.TabIndex = 7;
+			this.switchCrossbowButton.Text = "Buy";
+			this.switchCrossbowButton.UseVisualStyleBackColor = true;
+			// 
+			// switchCloseButton
+			// 
+			this.switchCloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.switchCloseButton.BackColor = System.Drawing.Color.Maroon;
+			this.switchCloseButton.FlatAppearance.BorderSize = 0;
+			this.switchCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.switchCloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.switchCloseButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.switchCloseButton.Location = new System.Drawing.Point(193, 3);
+			this.switchCloseButton.Name = "switchCloseButton";
+			this.switchCloseButton.Size = new System.Drawing.Size(34, 30);
+			this.switchCloseButton.TabIndex = 6;
+			this.switchCloseButton.Text = "X";
+			this.switchCloseButton.UseVisualStyleBackColor = false;
+			this.switchCloseButton.Click += new System.EventHandler(this.switchCloseButton_Click);
+			// 
+			// switchCostLabel
+			// 
+			this.switchCostLabel.AutoSize = true;
+			this.switchCostLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchCostLabel.Location = new System.Drawing.Point(4, 164);
+			this.switchCostLabel.Name = "switchCostLabel";
+			this.switchCostLabel.Size = new System.Drawing.Size(48, 13);
+			this.switchCostLabel.TabIndex = 2;
+			this.switchCostLabel.Text = "Cost: $10";
+			// 
+			// switchPictureBox
+			// 
+			this.switchPictureBox.Image = global::Ragnarok.Properties.Resources.Crossbow_Tower;
+			this.switchPictureBox.Location = new System.Drawing.Point(4, 83);
+			this.switchPictureBox.Name = "switchPictureBox";
+			this.switchPictureBox.Size = new System.Drawing.Size(70, 70);
+			this.switchPictureBox.TabIndex = 1;
+			this.switchPictureBox.TabStop = false;
 			// 
 			// panel1
 			// 
@@ -772,9 +770,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.upgradePanelImage)).EndInit();
 			this.switchPanel.ResumeLayout(false);
 			this.switchPanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.switchPictureBox)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.switchPictureBox)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -793,7 +791,7 @@
 		private System.Windows.Forms.Button closeMenuButton;
 		private System.Windows.Forms.Panel mapPanel;
 		private System.Windows.Forms.Panel basicPanel;
-		private System.Windows.Forms.Label basicPanelDamageLabel;
+		private System.Windows.Forms.Label basicPanelPowerLabel;
 		private System.Windows.Forms.Label basicPanelRangeLabel;
 		private System.Windows.Forms.Label basicPanelCostLabel;
 		private System.Windows.Forms.PictureBox basicPanelTowerImage;

@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Ragnarok {
     class Tower {
-        protected virtual int Range { get; set; } = 1;
-        protected virtual int Power { get; set; } = 1;
+        public virtual int Range { get; protected set; } = 1;
+        public virtual int Power { get; protected set; } = 1;
         protected virtual double Accuracy { get; } = .75;
         private MapLocation location;
         public int UpgradeLevel { get; protected set; } = 1;

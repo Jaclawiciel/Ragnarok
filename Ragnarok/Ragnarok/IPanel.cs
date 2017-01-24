@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ragnarok {
 	interface IPanel {
-		void Show();
+		void Show(MapLocation spotLocation);
 		void Hide();
 	}
 }
