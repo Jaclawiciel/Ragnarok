@@ -137,7 +137,6 @@ namespace Ragnarok {
 				} else {
 					return Image.FromFile("../../Resources/Crossbow Tower3.png");
 				}
-				return Image.FromFile("../../Resources/Crossbow Tower.png");
 			}
 		}
 	}
