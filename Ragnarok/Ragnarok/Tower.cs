@@ -24,7 +24,7 @@ namespace Ragnarok {
         public int GetPower() { return Power; }
 
         public void Upgrade() {
-            if (UpgradeLevel <= 3) {
+            if (UpgradeLevel < 3) {
                 Range += 1;
                 Power += 1;
                 UpgradeLevel += 1;
