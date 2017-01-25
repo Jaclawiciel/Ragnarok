@@ -56,36 +56,36 @@
 			this.basicPanelTowerImage = new System.Windows.Forms.PictureBox();
 			this.buyBasicTowerButton = new System.Windows.Forms.Button();
 			this.upgradePanel = new System.Windows.Forms.Panel();
-			this.label13 = new System.Windows.Forms.Label();
-			this.label12 = new System.Windows.Forms.Label();
+			this.upgradePanelLevelLabel = new System.Windows.Forms.Label();
+			this.upgradePanelTitleLabel = new System.Windows.Forms.Label();
 			this.upgradePanelUpgradeButton = new System.Windows.Forms.Button();
 			this.upgradePanelCloseButton = new System.Windows.Forms.Button();
-			this.upgradePanelDamagelabel = new System.Windows.Forms.Label();
+			this.upgradePanelPowerLabel = new System.Windows.Forms.Label();
 			this.upgradePanelRangeLabel = new System.Windows.Forms.Label();
 			this.upgradePanelCostLabel = new System.Windows.Forms.Label();
-			this.upgradePanelImage = new System.Windows.Forms.PictureBox();
+			this.upgradePanelPictureBox = new System.Windows.Forms.PictureBox();
 			this.upgradePanelSellButton = new System.Windows.Forms.Button();
 			this.switchPanel = new System.Windows.Forms.Panel();
 			this.label11 = new System.Windows.Forms.Label();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
-			this.button3 = new System.Windows.Forms.Button();
+			this.switchSellButton = new System.Windows.Forms.Button();
 			this.switchSniperPowerTower = new System.Windows.Forms.Label();
 			this.switchSniperRangeTower = new System.Windows.Forms.Label();
 			this.button2 = new System.Windows.Forms.Button();
-			this.label8 = new System.Windows.Forms.Label();
+			this.switchSniperCostLabel = new System.Windows.Forms.Label();
 			this.switchSniperPictureBox = new System.Windows.Forms.PictureBox();
 			this.switchMagePowerLabel = new System.Windows.Forms.Label();
 			this.switchMageRangeLabel = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
-			this.label5 = new System.Windows.Forms.Label();
+			this.switchMageCostLabel = new System.Windows.Forms.Label();
 			this.switchMagePictureBox = new System.Windows.Forms.PictureBox();
 			this.switchCrossbowPowerLabel = new System.Windows.Forms.Label();
 			this.switchCrossbowRangeLabel = new System.Windows.Forms.Label();
 			this.switchTowerLabel = new System.Windows.Forms.Label();
 			this.switchCrossbowButton = new System.Windows.Forms.Button();
 			this.switchCloseButton = new System.Windows.Forms.Button();
-			this.switchCostLabel = new System.Windows.Forms.Label();
+			this.switchCrossbowCostLabel = new System.Windows.Forms.Label();
 			this.switchCrossbowPictureBox = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label14 = new System.Windows.Forms.Label();
@@ -99,7 +99,7 @@
 			this.basicPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.basicPanelTowerImage)).BeginInit();
 			this.upgradePanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.upgradePanelImage)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.upgradePanelPictureBox)).BeginInit();
 			this.switchPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.switchSniperPictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchMagePictureBox)).BeginInit();
@@ -300,14 +300,14 @@
 			// 
 			this.upgradePanel.BackColor = System.Drawing.Color.Maroon;
 			this.upgradePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.upgradePanel.Controls.Add(this.label13);
-			this.upgradePanel.Controls.Add(this.label12);
+			this.upgradePanel.Controls.Add(this.upgradePanelLevelLabel);
+			this.upgradePanel.Controls.Add(this.upgradePanelTitleLabel);
 			this.upgradePanel.Controls.Add(this.upgradePanelUpgradeButton);
 			this.upgradePanel.Controls.Add(this.upgradePanelCloseButton);
-			this.upgradePanel.Controls.Add(this.upgradePanelDamagelabel);
+			this.upgradePanel.Controls.Add(this.upgradePanelPowerLabel);
 			this.upgradePanel.Controls.Add(this.upgradePanelRangeLabel);
 			this.upgradePanel.Controls.Add(this.upgradePanelCostLabel);
-			this.upgradePanel.Controls.Add(this.upgradePanelImage);
+			this.upgradePanel.Controls.Add(this.upgradePanelPictureBox);
 			this.upgradePanel.Controls.Add(this.upgradePanelSellButton);
 			this.upgradePanel.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.upgradePanel.Location = new System.Drawing.Point(1222, 210);
@@ -315,27 +315,27 @@
 			this.upgradePanel.Size = new System.Drawing.Size(159, 265);
 			this.upgradePanel.TabIndex = 7;
 			// 
-			// label13
+			// upgradePanelLevelLabel
 			// 
-			this.label13.AutoSize = true;
-			this.label13.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label13.ForeColor = System.Drawing.SystemColors.Info;
-			this.label13.Location = new System.Drawing.Point(40, 139);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(63, 19);
-			this.label13.TabIndex = 9;
-			this.label13.Text = "Level: 2";
+			this.upgradePanelLevelLabel.AutoSize = true;
+			this.upgradePanelLevelLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.upgradePanelLevelLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.upgradePanelLevelLabel.Location = new System.Drawing.Point(40, 139);
+			this.upgradePanelLevelLabel.Name = "upgradePanelLevelLabel";
+			this.upgradePanelLevelLabel.Size = new System.Drawing.Size(51, 19);
+			this.upgradePanelLevelLabel.TabIndex = 9;
+			this.upgradePanelLevelLabel.Text = "Level:";
 			// 
-			// label12
+			// upgradePanelTitleLabel
 			// 
-			this.label12.AutoSize = true;
-			this.label12.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label12.ForeColor = System.Drawing.Color.White;
-			this.label12.Location = new System.Drawing.Point(3, 36);
-			this.label12.Name = "label12";
-			this.label12.Size = new System.Drawing.Size(149, 26);
-			this.label12.TabIndex = 8;
-			this.label12.Text = "Upgrade Tower";
+			this.upgradePanelTitleLabel.AutoSize = true;
+			this.upgradePanelTitleLabel.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.upgradePanelTitleLabel.ForeColor = System.Drawing.Color.White;
+			this.upgradePanelTitleLabel.Location = new System.Drawing.Point(3, 36);
+			this.upgradePanelTitleLabel.Name = "upgradePanelTitleLabel";
+			this.upgradePanelTitleLabel.Size = new System.Drawing.Size(149, 26);
+			this.upgradePanelTitleLabel.TabIndex = 8;
+			this.upgradePanelTitleLabel.Text = "Upgrade Tower";
 			// 
 			// upgradePanelUpgradeButton
 			// 
@@ -362,15 +362,15 @@
 			this.upgradePanelCloseButton.UseVisualStyleBackColor = false;
 			this.upgradePanelCloseButton.Click += new System.EventHandler(this.upgradePanelCloseButton_Click);
 			// 
-			// upgradePanelDamagelabel
+			// upgradePanelPowerLabel
 			// 
-			this.upgradePanelDamagelabel.AutoSize = true;
-			this.upgradePanelDamagelabel.ForeColor = System.Drawing.SystemColors.Info;
-			this.upgradePanelDamagelabel.Location = new System.Drawing.Point(41, 214);
-			this.upgradePanelDamagelabel.Name = "upgradePanelDamagelabel";
-			this.upgradePanelDamagelabel.Size = new System.Drawing.Size(55, 13);
-			this.upgradePanelDamagelabel.TabIndex = 4;
-			this.upgradePanelDamagelabel.Text = "Damage: 1";
+			this.upgradePanelPowerLabel.AutoSize = true;
+			this.upgradePanelPowerLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.upgradePanelPowerLabel.Location = new System.Drawing.Point(41, 214);
+			this.upgradePanelPowerLabel.Name = "upgradePanelPowerLabel";
+			this.upgradePanelPowerLabel.Size = new System.Drawing.Size(42, 13);
+			this.upgradePanelPowerLabel.TabIndex = 4;
+			this.upgradePanelPowerLabel.Text = "Power: ";
 			// 
 			// upgradePanelRangeLabel
 			// 
@@ -378,9 +378,9 @@
 			this.upgradePanelRangeLabel.ForeColor = System.Drawing.SystemColors.Info;
 			this.upgradePanelRangeLabel.Location = new System.Drawing.Point(41, 190);
 			this.upgradePanelRangeLabel.Name = "upgradePanelRangeLabel";
-			this.upgradePanelRangeLabel.Size = new System.Drawing.Size(45, 13);
+			this.upgradePanelRangeLabel.Size = new System.Drawing.Size(39, 13);
 			this.upgradePanelRangeLabel.TabIndex = 3;
-			this.upgradePanelRangeLabel.Text = "Range: 1";
+			this.upgradePanelRangeLabel.Text = "Range:";
 			// 
 			// upgradePanelCostLabel
 			// 
@@ -388,18 +388,18 @@
 			this.upgradePanelCostLabel.ForeColor = System.Drawing.SystemColors.Info;
 			this.upgradePanelCostLabel.Location = new System.Drawing.Point(41, 167);
 			this.upgradePanelCostLabel.Name = "upgradePanelCostLabel";
-			this.upgradePanelCostLabel.Size = new System.Drawing.Size(48, 13);
+			this.upgradePanelCostLabel.Size = new System.Drawing.Size(39, 13);
 			this.upgradePanelCostLabel.TabIndex = 2;
-			this.upgradePanelCostLabel.Text = "Cost: $10";
+			this.upgradePanelCostLabel.Text = "Cost: $";
 			// 
-			// upgradePanelImage
+			// upgradePanelPictureBox
 			// 
-			this.upgradePanelImage.Image = global::Ragnarok.Properties.Resources.Mage_Tower2;
-			this.upgradePanelImage.Location = new System.Drawing.Point(44, 65);
-			this.upgradePanelImage.Name = "upgradePanelImage";
-			this.upgradePanelImage.Size = new System.Drawing.Size(70, 70);
-			this.upgradePanelImage.TabIndex = 1;
-			this.upgradePanelImage.TabStop = false;
+			this.upgradePanelPictureBox.Image = global::Ragnarok.Properties.Resources.Mage_Tower2;
+			this.upgradePanelPictureBox.Location = new System.Drawing.Point(44, 65);
+			this.upgradePanelPictureBox.Name = "upgradePanelPictureBox";
+			this.upgradePanelPictureBox.Size = new System.Drawing.Size(70, 70);
+			this.upgradePanelPictureBox.TabIndex = 1;
+			this.upgradePanelPictureBox.TabStop = false;
 			// 
 			// upgradePanelSellButton
 			// 
@@ -407,7 +407,7 @@
 			this.upgradePanelSellButton.Name = "upgradePanelSellButton";
 			this.upgradePanelSellButton.Size = new System.Drawing.Size(66, 23);
 			this.upgradePanelSellButton.TabIndex = 0;
-			this.upgradePanelSellButton.Text = "Sell (+ 2$)";
+			this.upgradePanelSellButton.Text = "Sell (+ $)";
 			this.upgradePanelSellButton.UseVisualStyleBackColor = true;
 			// 
 			// switchPanel
@@ -417,23 +417,23 @@
 			this.switchPanel.Controls.Add(this.label11);
 			this.switchPanel.Controls.Add(this.label10);
 			this.switchPanel.Controls.Add(this.label9);
-			this.switchPanel.Controls.Add(this.button3);
+			this.switchPanel.Controls.Add(this.switchSellButton);
 			this.switchPanel.Controls.Add(this.switchSniperPowerTower);
 			this.switchPanel.Controls.Add(this.switchSniperRangeTower);
 			this.switchPanel.Controls.Add(this.button2);
-			this.switchPanel.Controls.Add(this.label8);
+			this.switchPanel.Controls.Add(this.switchSniperCostLabel);
 			this.switchPanel.Controls.Add(this.switchSniperPictureBox);
 			this.switchPanel.Controls.Add(this.switchMagePowerLabel);
 			this.switchPanel.Controls.Add(this.switchMageRangeLabel);
 			this.switchPanel.Controls.Add(this.button1);
-			this.switchPanel.Controls.Add(this.label5);
+			this.switchPanel.Controls.Add(this.switchMageCostLabel);
 			this.switchPanel.Controls.Add(this.switchMagePictureBox);
 			this.switchPanel.Controls.Add(this.switchCrossbowPowerLabel);
 			this.switchPanel.Controls.Add(this.switchCrossbowRangeLabel);
 			this.switchPanel.Controls.Add(this.switchTowerLabel);
 			this.switchPanel.Controls.Add(this.switchCrossbowButton);
 			this.switchPanel.Controls.Add(this.switchCloseButton);
-			this.switchPanel.Controls.Add(this.switchCostLabel);
+			this.switchPanel.Controls.Add(this.switchCrossbowCostLabel);
 			this.switchPanel.Controls.Add(this.switchCrossbowPictureBox);
 			this.switchPanel.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.switchPanel.Location = new System.Drawing.Point(1056, 476);
@@ -474,14 +474,14 @@
 			this.label9.TabIndex = 24;
 			this.label9.Text = "Crossbow";
 			// 
-			// button3
+			// switchSellButton
 			// 
-			this.button3.Location = new System.Drawing.Point(4, 247);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(222, 23);
-			this.button3.TabIndex = 23;
-			this.button3.Text = "Sell (+ $)";
-			this.button3.UseVisualStyleBackColor = true;
+			this.switchSellButton.Location = new System.Drawing.Point(4, 247);
+			this.switchSellButton.Name = "switchSellButton";
+			this.switchSellButton.Size = new System.Drawing.Size(222, 23);
+			this.switchSellButton.TabIndex = 23;
+			this.switchSellButton.Text = "Sell (+ $)";
+			this.switchSellButton.UseVisualStyleBackColor = true;
 			// 
 			// switchSniperPowerTower
 			// 
@@ -512,15 +512,15 @@
 			this.button2.Text = "Buy";
 			this.button2.UseVisualStyleBackColor = true;
 			// 
-			// label8
+			// switchSniperCostLabel
 			// 
-			this.label8.AutoSize = true;
-			this.label8.ForeColor = System.Drawing.SystemColors.Info;
-			this.label8.Location = new System.Drawing.Point(156, 164);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(34, 13);
-			this.label8.TabIndex = 19;
-			this.label8.Text = "Cost: ";
+			this.switchSniperCostLabel.AutoSize = true;
+			this.switchSniperCostLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchSniperCostLabel.Location = new System.Drawing.Point(156, 164);
+			this.switchSniperCostLabel.Name = "switchSniperCostLabel";
+			this.switchSniperCostLabel.Size = new System.Drawing.Size(34, 13);
+			this.switchSniperCostLabel.TabIndex = 19;
+			this.switchSniperCostLabel.Text = "Cost: ";
 			// 
 			// switchSniperPictureBox
 			// 
@@ -560,15 +560,15 @@
 			this.button1.Text = "Buy";
 			this.button1.UseVisualStyleBackColor = true;
 			// 
-			// label5
+			// switchMageCostLabel
 			// 
-			this.label5.AutoSize = true;
-			this.label5.ForeColor = System.Drawing.SystemColors.Info;
-			this.label5.Location = new System.Drawing.Point(80, 164);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(34, 13);
-			this.label5.TabIndex = 14;
-			this.label5.Text = "Cost: ";
+			this.switchMageCostLabel.AutoSize = true;
+			this.switchMageCostLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchMageCostLabel.Location = new System.Drawing.Point(80, 164);
+			this.switchMageCostLabel.Name = "switchMageCostLabel";
+			this.switchMageCostLabel.Size = new System.Drawing.Size(34, 13);
+			this.switchMageCostLabel.TabIndex = 14;
+			this.switchMageCostLabel.Text = "Cost: ";
 			// 
 			// switchMagePictureBox
 			// 
@@ -635,15 +635,15 @@
 			this.switchCloseButton.UseVisualStyleBackColor = false;
 			this.switchCloseButton.Click += new System.EventHandler(this.switchCloseButton_Click);
 			// 
-			// switchCostLabel
+			// switchCrossbowCostLabel
 			// 
-			this.switchCostLabel.AutoSize = true;
-			this.switchCostLabel.ForeColor = System.Drawing.SystemColors.Info;
-			this.switchCostLabel.Location = new System.Drawing.Point(4, 164);
-			this.switchCostLabel.Name = "switchCostLabel";
-			this.switchCostLabel.Size = new System.Drawing.Size(34, 13);
-			this.switchCostLabel.TabIndex = 2;
-			this.switchCostLabel.Text = "Cost: ";
+			this.switchCrossbowCostLabel.AutoSize = true;
+			this.switchCrossbowCostLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.switchCrossbowCostLabel.Location = new System.Drawing.Point(4, 164);
+			this.switchCrossbowCostLabel.Name = "switchCrossbowCostLabel";
+			this.switchCrossbowCostLabel.Size = new System.Drawing.Size(34, 13);
+			this.switchCrossbowCostLabel.TabIndex = 2;
+			this.switchCrossbowCostLabel.Text = "Cost: ";
 			// 
 			// switchCrossbowPictureBox
 			// 
@@ -767,7 +767,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.basicPanelTowerImage)).EndInit();
 			this.upgradePanel.ResumeLayout(false);
 			this.upgradePanel.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.upgradePanelImage)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.upgradePanelPictureBox)).EndInit();
 			this.switchPanel.ResumeLayout(false);
 			this.switchPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.switchSniperPictureBox)).EndInit();
@@ -800,32 +800,32 @@
 		private System.Windows.Forms.Panel upgradePanel;
 		private System.Windows.Forms.Button upgradePanelUpgradeButton;
 		private System.Windows.Forms.Button upgradePanelCloseButton;
-		private System.Windows.Forms.Label upgradePanelDamagelabel;
+		private System.Windows.Forms.Label upgradePanelPowerLabel;
 		private System.Windows.Forms.Label upgradePanelRangeLabel;
 		private System.Windows.Forms.Label upgradePanelCostLabel;
-		private System.Windows.Forms.PictureBox upgradePanelImage;
+		private System.Windows.Forms.PictureBox upgradePanelPictureBox;
 		private System.Windows.Forms.Button upgradePanelSellButton;
 		private System.Windows.Forms.Panel switchPanel;
 		private System.Windows.Forms.Button switchCrossbowButton;
 		private System.Windows.Forms.Button switchCloseButton;
-		private System.Windows.Forms.Label switchCostLabel;
+		private System.Windows.Forms.Label switchCrossbowCostLabel;
 		private System.Windows.Forms.PictureBox switchCrossbowPictureBox;
 		private System.Windows.Forms.Label basicTowerLabel;
-		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label upgradePanelLevelLabel;
+		private System.Windows.Forms.Label upgradePanelTitleLabel;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button switchSellButton;
 		private System.Windows.Forms.Label switchSniperPowerTower;
 		private System.Windows.Forms.Label switchSniperRangeTower;
 		private System.Windows.Forms.Button button2;
-		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Label switchSniperCostLabel;
 		private System.Windows.Forms.PictureBox switchSniperPictureBox;
 		private System.Windows.Forms.Label switchMagePowerLabel;
 		private System.Windows.Forms.Label switchMageRangeLabel;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.Label switchMageCostLabel;
 		private System.Windows.Forms.PictureBox switchMagePictureBox;
 		private System.Windows.Forms.Label switchCrossbowPowerLabel;
 		private System.Windows.Forms.Label switchCrossbowRangeLabel;
