@@ -87,15 +87,16 @@
 			this.switchCloseButton = new System.Windows.Forms.Button();
 			this.switchCrossbowCostLabel = new System.Windows.Forms.Label();
 			this.switchCrossbowPictureBox = new System.Windows.Forms.PictureBox();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.label14 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
-			this.button5 = new System.Windows.Forms.Button();
-			this.label16 = new System.Windows.Forms.Label();
-			this.label17 = new System.Windows.Forms.Label();
-			this.pictureBox3 = new System.Windows.Forms.PictureBox();
-			this.button6 = new System.Windows.Forms.Button();
+			this.ragnarokPanel = new System.Windows.Forms.Panel();
+			this.ragnarokPanelLevelLabel = new System.Windows.Forms.Label();
+			this.ragnarokPanelTitleLabel = new System.Windows.Forms.Label();
+			this.ragnarokPanelCloseButton = new System.Windows.Forms.Button();
+			this.ragnarokPanelPowerLabel = new System.Windows.Forms.Label();
+			this.ragnarokPanelRangeLabel = new System.Windows.Forms.Label();
+			this.ragnarokPanelPictureBox = new System.Windows.Forms.PictureBox();
+			this.ragnarokPanelSellButton = new System.Windows.Forms.Button();
 			this.mainMenuPanel.SuspendLayout();
+			this.mapPanel.SuspendLayout();
 			this.basicPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.basicPanelTowerImage)).BeginInit();
 			this.upgradePanel.SuspendLayout();
@@ -104,8 +105,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.switchSniperPictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchMagePictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchCrossbowPictureBox)).BeginInit();
-			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+			this.ragnarokPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.ragnarokPanelPictureBox)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// mainMenuPanel
@@ -197,6 +198,7 @@
 			// mapPanel
 			// 
 			this.mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.mapPanel.Controls.Add(this.ragnarokPanel);
 			this.mapPanel.Location = new System.Drawing.Point(0, 0);
 			this.mapPanel.Name = "mapPanel";
 			this.mapPanel.Size = new System.Drawing.Size(1050, 700);
@@ -654,97 +656,98 @@
 			this.switchCrossbowPictureBox.TabIndex = 1;
 			this.switchCrossbowPictureBox.TabStop = false;
 			// 
-			// panel1
+			// ragnarokPanel
 			// 
-			this.panel1.BackColor = System.Drawing.Color.Maroon;
-			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.panel1.Controls.Add(this.label14);
-			this.panel1.Controls.Add(this.label15);
-			this.panel1.Controls.Add(this.button5);
-			this.panel1.Controls.Add(this.label16);
-			this.panel1.Controls.Add(this.label17);
-			this.panel1.Controls.Add(this.pictureBox3);
-			this.panel1.Controls.Add(this.button6);
-			this.panel1.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.panel1.Location = new System.Drawing.Point(1281, 4);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(155, 244);
-			this.panel1.TabIndex = 8;
+			this.ragnarokPanel.BackColor = System.Drawing.Color.Maroon;
+			this.ragnarokPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.ragnarokPanel.Controls.Add(this.ragnarokPanelLevelLabel);
+			this.ragnarokPanel.Controls.Add(this.ragnarokPanelTitleLabel);
+			this.ragnarokPanel.Controls.Add(this.ragnarokPanelCloseButton);
+			this.ragnarokPanel.Controls.Add(this.ragnarokPanelPowerLabel);
+			this.ragnarokPanel.Controls.Add(this.ragnarokPanelRangeLabel);
+			this.ragnarokPanel.Controls.Add(this.ragnarokPanelPictureBox);
+			this.ragnarokPanel.Controls.Add(this.ragnarokPanelSellButton);
+			this.ragnarokPanel.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.ragnarokPanel.Location = new System.Drawing.Point(894, 128);
+			this.ragnarokPanel.Name = "ragnarokPanel";
+			this.ragnarokPanel.Size = new System.Drawing.Size(155, 244);
+			this.ragnarokPanel.TabIndex = 8;
 			// 
-			// label14
+			// ragnarokPanelLevelLabel
 			// 
-			this.label14.AutoSize = true;
-			this.label14.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label14.ForeColor = System.Drawing.SystemColors.Info;
-			this.label14.Location = new System.Drawing.Point(38, 139);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(62, 19);
-			this.label14.TabIndex = 9;
-			this.label14.Text = "Level: 3";
+			this.ragnarokPanelLevelLabel.AutoSize = true;
+			this.ragnarokPanelLevelLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.ragnarokPanelLevelLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.ragnarokPanelLevelLabel.Location = new System.Drawing.Point(38, 139);
+			this.ragnarokPanelLevelLabel.Name = "ragnarokPanelLevelLabel";
+			this.ragnarokPanelLevelLabel.Size = new System.Drawing.Size(55, 19);
+			this.ragnarokPanelLevelLabel.TabIndex = 9;
+			this.ragnarokPanelLevelLabel.Text = "Level: ";
 			// 
-			// label15
+			// ragnarokPanelTitleLabel
 			// 
-			this.label15.AutoSize = true;
-			this.label15.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label15.ForeColor = System.Drawing.Color.White;
-			this.label15.Location = new System.Drawing.Point(13, 36);
-			this.label15.Name = "label15";
-			this.label15.Size = new System.Drawing.Size(126, 26);
-			this.label15.TabIndex = 8;
-			this.label15.Text = "RAGNAROK";
+			this.ragnarokPanelTitleLabel.AutoSize = true;
+			this.ragnarokPanelTitleLabel.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.ragnarokPanelTitleLabel.ForeColor = System.Drawing.Color.White;
+			this.ragnarokPanelTitleLabel.Location = new System.Drawing.Point(13, 36);
+			this.ragnarokPanelTitleLabel.Name = "ragnarokPanelTitleLabel";
+			this.ragnarokPanelTitleLabel.Size = new System.Drawing.Size(126, 26);
+			this.ragnarokPanelTitleLabel.TabIndex = 8;
+			this.ragnarokPanelTitleLabel.Text = "RAGNAROK";
 			// 
-			// button5
+			// ragnarokPanelCloseButton
 			// 
-			this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.button5.BackColor = System.Drawing.Color.Maroon;
-			this.button5.FlatAppearance.BorderSize = 0;
-			this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.button5.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.button5.Location = new System.Drawing.Point(116, 3);
-			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(34, 30);
-			this.button5.TabIndex = 6;
-			this.button5.Text = "X";
-			this.button5.UseVisualStyleBackColor = false;
+			this.ragnarokPanelCloseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.ragnarokPanelCloseButton.BackColor = System.Drawing.Color.Maroon;
+			this.ragnarokPanelCloseButton.FlatAppearance.BorderSize = 0;
+			this.ragnarokPanelCloseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.ragnarokPanelCloseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.ragnarokPanelCloseButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.ragnarokPanelCloseButton.Location = new System.Drawing.Point(116, 3);
+			this.ragnarokPanelCloseButton.Name = "ragnarokPanelCloseButton";
+			this.ragnarokPanelCloseButton.Size = new System.Drawing.Size(34, 30);
+			this.ragnarokPanelCloseButton.TabIndex = 6;
+			this.ragnarokPanelCloseButton.Text = "X";
+			this.ragnarokPanelCloseButton.UseVisualStyleBackColor = false;
+			this.ragnarokPanelCloseButton.Click += new System.EventHandler(this.ragnarokPanelCloseButton_Click);
 			// 
-			// label16
+			// ragnarokPanelPowerLabel
 			// 
-			this.label16.AutoSize = true;
-			this.label16.ForeColor = System.Drawing.SystemColors.Info;
-			this.label16.Location = new System.Drawing.Point(39, 188);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(55, 13);
-			this.label16.TabIndex = 4;
-			this.label16.Text = "Damage: 1";
+			this.ragnarokPanelPowerLabel.AutoSize = true;
+			this.ragnarokPanelPowerLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.ragnarokPanelPowerLabel.Location = new System.Drawing.Point(39, 188);
+			this.ragnarokPanelPowerLabel.Name = "ragnarokPanelPowerLabel";
+			this.ragnarokPanelPowerLabel.Size = new System.Drawing.Size(52, 13);
+			this.ragnarokPanelPowerLabel.TabIndex = 4;
+			this.ragnarokPanelPowerLabel.Text = "Damage: ";
 			// 
-			// label17
+			// ragnarokPanelRangeLabel
 			// 
-			this.label17.AutoSize = true;
-			this.label17.ForeColor = System.Drawing.SystemColors.Info;
-			this.label17.Location = new System.Drawing.Point(39, 167);
-			this.label17.Name = "label17";
-			this.label17.Size = new System.Drawing.Size(45, 13);
-			this.label17.TabIndex = 3;
-			this.label17.Text = "Range: 1";
+			this.ragnarokPanelRangeLabel.AutoSize = true;
+			this.ragnarokPanelRangeLabel.ForeColor = System.Drawing.SystemColors.Info;
+			this.ragnarokPanelRangeLabel.Location = new System.Drawing.Point(39, 167);
+			this.ragnarokPanelRangeLabel.Name = "ragnarokPanelRangeLabel";
+			this.ragnarokPanelRangeLabel.Size = new System.Drawing.Size(42, 13);
+			this.ragnarokPanelRangeLabel.TabIndex = 3;
+			this.ragnarokPanelRangeLabel.Text = "Range: ";
 			// 
-			// pictureBox3
+			// ragnarokPanelPictureBox
 			// 
-			this.pictureBox3.Image = global::Ragnarok.Properties.Resources.Mage_Tower3;
-			this.pictureBox3.Location = new System.Drawing.Point(42, 65);
-			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(70, 70);
-			this.pictureBox3.TabIndex = 1;
-			this.pictureBox3.TabStop = false;
+			this.ragnarokPanelPictureBox.Image = global::Ragnarok.Properties.Resources.Mage_Tower3;
+			this.ragnarokPanelPictureBox.Location = new System.Drawing.Point(42, 65);
+			this.ragnarokPanelPictureBox.Name = "ragnarokPanelPictureBox";
+			this.ragnarokPanelPictureBox.Size = new System.Drawing.Size(70, 70);
+			this.ragnarokPanelPictureBox.TabIndex = 1;
+			this.ragnarokPanelPictureBox.TabStop = false;
 			// 
-			// button6
+			// ragnarokPanelSellButton
 			// 
-			this.button6.Location = new System.Drawing.Point(18, 209);
-			this.button6.Name = "button6";
-			this.button6.Size = new System.Drawing.Size(121, 23);
-			this.button6.TabIndex = 0;
-			this.button6.Text = "Sell (+ 2$)";
-			this.button6.UseVisualStyleBackColor = true;
+			this.ragnarokPanelSellButton.Location = new System.Drawing.Point(18, 209);
+			this.ragnarokPanelSellButton.Name = "ragnarokPanelSellButton";
+			this.ragnarokPanelSellButton.Size = new System.Drawing.Size(121, 23);
+			this.ragnarokPanelSellButton.TabIndex = 0;
+			this.ragnarokPanelSellButton.Text = "Sell (+ $)";
+			this.ragnarokPanelSellButton.UseVisualStyleBackColor = true;
 			// 
 			// Form1
 			// 
@@ -752,7 +755,6 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Navy;
 			this.ClientSize = new System.Drawing.Size(1362, 741);
-			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.switchPanel);
 			this.Controls.Add(this.upgradePanel);
 			this.Controls.Add(this.basicPanel);
@@ -762,6 +764,7 @@
 			this.Text = "Form1";
 			this.mainMenuPanel.ResumeLayout(false);
 			this.mainMenuPanel.PerformLayout();
+			this.mapPanel.ResumeLayout(false);
 			this.basicPanel.ResumeLayout(false);
 			this.basicPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.basicPanelTowerImage)).EndInit();
@@ -773,9 +776,9 @@
 			((System.ComponentModel.ISupportInitialize)(this.switchSniperPictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchMagePictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchCrossbowPictureBox)).EndInit();
-			this.panel1.ResumeLayout(false);
-			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+			this.ragnarokPanel.ResumeLayout(false);
+			this.ragnarokPanel.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.ragnarokPanelPictureBox)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -830,14 +833,14 @@
 		private System.Windows.Forms.Label switchCrossbowPowerLabel;
 		private System.Windows.Forms.Label switchCrossbowRangeLabel;
 		private System.Windows.Forms.Label switchTowerLabel;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.Button button5;
-		private System.Windows.Forms.Label label16;
-		private System.Windows.Forms.Label label17;
-		private System.Windows.Forms.PictureBox pictureBox3;
-		private System.Windows.Forms.Button button6;
+		private System.Windows.Forms.Panel ragnarokPanel;
+		private System.Windows.Forms.Label ragnarokPanelLevelLabel;
+		private System.Windows.Forms.Label ragnarokPanelTitleLabel;
+		private System.Windows.Forms.Button ragnarokPanelCloseButton;
+		private System.Windows.Forms.Label ragnarokPanelPowerLabel;
+		private System.Windows.Forms.Label ragnarokPanelRangeLabel;
+		private System.Windows.Forms.PictureBox ragnarokPanelPictureBox;
+		private System.Windows.Forms.Button ragnarokPanelSellButton;
 	}
 }
 
