@@ -17,6 +17,7 @@ namespace Ragnarok {
 
 			// Inicjalizuję obiekty okien
 			mainMenu = new MainMenu(mainMenuPanel, closeMenuButton, startNewGameButton, loadGameButton, menuSettingsButton, menuQuitButton);
+			mainSettingsPanel = new Settings(settingsPanel, sfxCheckBox, musicCheckBox);
 			mainMapPanel = new MapPanel(mapPanel, game.map, game.towerSpots);
 			basicTowerPanelObj = new BasicTowerPanel(basicPanel, game.map);
 			switchTowerPanelObj = new SwitchTowerPanel(switchPanel, game.map);
@@ -26,6 +27,7 @@ namespace Ragnarok {
 
 			//Ukrywam kolejne panele programu
 			mainMenu.Hide();
+			mainSettingsPanel.Hide();
 			mainMapPanel.Hide();
 			TowerPanel.HideAllPanels(basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
 
@@ -33,6 +35,7 @@ namespace Ragnarok {
 		}
 
 		private MainMenu mainMenu;
+		private Settings mainSettingsPanel;
 		private MapPanel mainMapPanel;
 		private BasicTowerPanel basicTowerPanelObj;
 		private SwitchTowerPanel switchTowerPanelObj;
@@ -62,7 +65,8 @@ namespace Ragnarok {
 		}
 
 		private void menuSettingsButton_Click(object sender, EventArgs e) {
-
+			mainMenu.Hide();
+			mainSettingsPanel.Show(this);
 		}
 
 		private void menuQuitButton_Click(object sender, EventArgs e) {
@@ -286,6 +290,16 @@ namespace Ragnarok {
 
 		private void ragnarokPanelCloseButton_Click(object sender, EventArgs e) {
 			ragnarokTowerPanelObj.Hide();
+		}
+
+		private void closeButton_Click(object sender, EventArgs e) {
+			mainSettingsPanel.Close(false);
+			mainMenu.Show();
+		}
+
+		private void saveButton_Click(object sender, EventArgs e) {
+			mainSettingsPanel.Close(true);
+			mainMenu.Show();
 		}
 	}
 }
