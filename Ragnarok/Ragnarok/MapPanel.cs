@@ -44,15 +44,7 @@ namespace Ragnarok {
 		public Tower WhatTowerIsPlacedOn(MapLocation towerSpotLocation, Tower[] towers) {
 			foreach (Tower tower in towers) {
 				if (towerSpotLocation.X == tower.GetX() && towerSpotLocation.Y == tower.GetY()) {
-					if (tower is BasicTower) {
-						return new BasicTower(new MapLocation(0, 0, new Map(1, 1)));
-					} else if (tower is CrossbowTower) {
-						return new CrossbowTower(new MapLocation(0, 0, new Map(1, 1)));
-					} else if (tower is MageTower) {
-						return new MageTower(new MapLocation(0, 0, new Map(1, 1)));
-					} else if (tower is SniperTower) {
-						return new SniperTower(new MapLocation(0, 0, new Map(1, 1)));
-					}
+					return tower;
 				}
 			}
 			return null;
