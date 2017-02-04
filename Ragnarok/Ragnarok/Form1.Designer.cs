@@ -101,6 +101,9 @@
 			this.switchCloseButton = new System.Windows.Forms.Button();
 			this.switchCrossbowCostLabel = new System.Windows.Forms.Label();
 			this.switchCrossbowPictureBox = new System.Windows.Forms.PictureBox();
+			this.navyColor = new System.Windows.Forms.RadioButton();
+			this.blackColor = new System.Windows.Forms.RadioButton();
+			this.colorGroupBox = new System.Windows.Forms.GroupBox();
 			this.mainMenuPanel.SuspendLayout();
 			this.mapPanel.SuspendLayout();
 			this.settingsPanel.SuspendLayout();
@@ -114,6 +117,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.switchSniperPictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchMagePictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchCrossbowPictureBox)).BeginInit();
+			this.colorGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// mainMenuPanel
@@ -215,6 +219,7 @@
 			// 
 			this.settingsPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.settingsPanel.BackColor = System.Drawing.Color.Maroon;
+			this.settingsPanel.Controls.Add(this.colorGroupBox);
 			this.settingsPanel.Controls.Add(this.musicCheckBox);
 			this.settingsPanel.Controls.Add(this.sfxCheckBox);
 			this.settingsPanel.Controls.Add(this.closeButton);
@@ -222,7 +227,7 @@
 			this.settingsPanel.Controls.Add(this.label1);
 			this.settingsPanel.Location = new System.Drawing.Point(1056, 481);
 			this.settingsPanel.Name = "settingsPanel";
-			this.settingsPanel.Size = new System.Drawing.Size(222, 200);
+			this.settingsPanel.Size = new System.Drawing.Size(222, 230);
 			this.settingsPanel.TabIndex = 9;
 			this.settingsPanel.Visible = false;
 			// 
@@ -272,7 +277,7 @@
 			// saveButton
 			// 
 			this.saveButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.saveButton.Location = new System.Drawing.Point(74, 154);
+			this.saveButton.Location = new System.Drawing.Point(74, 196);
 			this.saveButton.Name = "saveButton";
 			this.saveButton.Size = new System.Drawing.Size(75, 23);
 			this.saveButton.TabIndex = 4;
@@ -836,6 +841,45 @@
 			this.switchCrossbowPictureBox.TabIndex = 1;
 			this.switchCrossbowPictureBox.TabStop = false;
 			// 
+			// navyColor
+			// 
+			this.navyColor.AutoSize = true;
+			this.navyColor.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.navyColor.ForeColor = System.Drawing.Color.White;
+			this.navyColor.Location = new System.Drawing.Point(16, 18);
+			this.navyColor.Name = "navyColor";
+			this.navyColor.Size = new System.Drawing.Size(50, 19);
+			this.navyColor.TabIndex = 8;
+			this.navyColor.TabStop = true;
+			this.navyColor.Text = "Blue";
+			this.navyColor.UseVisualStyleBackColor = true;
+			// 
+			// blackColor
+			// 
+			this.blackColor.AutoSize = true;
+			this.blackColor.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.blackColor.ForeColor = System.Drawing.Color.White;
+			this.blackColor.Location = new System.Drawing.Point(78, 18);
+			this.blackColor.Name = "blackColor";
+			this.blackColor.Size = new System.Drawing.Size(56, 19);
+			this.blackColor.TabIndex = 9;
+			this.blackColor.TabStop = true;
+			this.blackColor.Text = "Black";
+			this.blackColor.UseVisualStyleBackColor = true;
+			// 
+			// colorGroupBox
+			// 
+			this.colorGroupBox.Controls.Add(this.navyColor);
+			this.colorGroupBox.Controls.Add(this.blackColor);
+			this.colorGroupBox.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.colorGroupBox.ForeColor = System.Drawing.Color.White;
+			this.colorGroupBox.Location = new System.Drawing.Point(29, 127);
+			this.colorGroupBox.Name = "colorGroupBox";
+			this.colorGroupBox.Size = new System.Drawing.Size(139, 52);
+			this.colorGroupBox.TabIndex = 10;
+			this.colorGroupBox.TabStop = false;
+			this.colorGroupBox.Text = "Background Color";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -869,6 +913,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.switchSniperPictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchMagePictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchCrossbowPictureBox)).EndInit();
+			this.colorGroupBox.ResumeLayout(false);
+			this.colorGroupBox.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
@@ -937,6 +983,9 @@
 		private System.Windows.Forms.Button closeButton;
 		private System.Windows.Forms.Button saveButton;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.RadioButton blackColor;
+		private System.Windows.Forms.RadioButton navyColor;
+		private System.Windows.Forms.GroupBox colorGroupBox;
 	}
 }
 

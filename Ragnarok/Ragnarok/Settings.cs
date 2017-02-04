@@ -5,20 +5,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Ragnarok {
 	class Settings {
+		private Form form;
+		private Panel mapPanel;
 		private Panel settingsPanel;
 		private CheckBox sfxCheckBox;
 		private CheckBox musicCheckBox;
 		public bool AudioState;
 		public bool MusicState;
+		private RadioButton blueButton;
+		private RadioButton blackButton;
+		private string color;
+		private string _color {
+			get {
+				return color;
+			}
+			set {
+				color = value;
+				if (value == "blue") {
+					form.BackColor = Color.Navy;
+					mapPanel.BackColor = Color.Navy;
+					blueButton.Checked = true;
+				} else {
+					form.BackColor = Color.Black;
+					mapPanel.BackColor = Color.Black;
+					blackButton.Checked = true;
+				}
+			}
+		}
 
-		public Settings(Panel settingsPanel, CheckBox sfxCheckBox, CheckBox musicCheckBox) {
+		public Settings(Form1 form, Panel mapPanel, Panel settingsPanel, CheckBox sfxCheckBox, CheckBox musicCheckBox, RadioButton blueRadioButton, RadioButton blackRadioButton) {
 			this.settingsPanel = settingsPanel;
 			this.sfxCheckBox = sfxCheckBox;
 			this.musicCheckBox = musicCheckBox;
-			LoadFromFie();
+			this.blueButton = blueRadioButton;
+			this.blackButton = blackRadioButton;
+			this.mapPanel = mapPanel;
+			this.form = form;
+			LoadFromFile();
 		}
 
 		public void Hide() {
@@ -35,7 +62,7 @@ namespace Ragnarok {
 			if (saveData) {
 				SaveToFile();
 			} else {
-				LoadFromFie();
+				LoadFromFile();
 			}
 			Hide();
 		}
@@ -43,10 +70,16 @@ namespace Ragnarok {
 		private void SaveToFile() {
 			AudioState = sfxCheckBox.Checked;
 			MusicState = musicCheckBox.Checked;
+			if (blueButton.Checked) {
+				_color = "blue";
+			} else {
+				_color = "black";
+			}
 
-			String[] lines = new String[2];
+			String[] lines = new String[3];
 			lines[0] = "audio" + "," + sfxCheckBox.Checked.ToString();
 			lines[1] = "music" + "," + musicCheckBox.Checked.ToString();
+			lines[2] = "color" + "," + color;
 
 			string myDocPath = @"..\..\Resources\";
 			using(StreamWriter outputFile = new StreamWriter(myDocPath + @"settings.txt")) {
@@ -56,7 +89,7 @@ namespace Ragnarok {
 			}
 		}
 
-		private void LoadFromFie() {
+		private void LoadFromFile() {
 			string myDocPath = @"..\..\Resources\";
 			int counter = 0;
 			string line;
@@ -87,6 +120,13 @@ namespace Ragnarok {
 			} else {
 				musicCheckBox.Checked = false;
 				MusicState = false;
+			}
+
+			lineElements = lines[2].Split(',');
+			if (lineElements[1] == "blue") {
+				_color = "blue";
+			} else {
+				_color = "black";
 			}
 		}
 	}
