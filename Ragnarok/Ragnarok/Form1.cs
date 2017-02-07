@@ -76,8 +76,8 @@ namespace Ragnarok {
 		private void closeMenuButton_Click(object sender, EventArgs e) {
 		}
 
-		private void PBTowerSpots0_Click(object sender, EventArgs e) {
-			MapLocation location = new MapLocation(game.towerSpots[0].X, game.towerSpots[0].Y, game.map);
+		//Metoda wywoływana przy klikaniu na PB wieży
+		private void TowerPBClickedOnSpot(MapLocation location) {
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
@@ -87,193 +87,63 @@ namespace Ragnarok {
 				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
 			} else if (tower is CrossbowTower || tower is MageTower || tower is SniperTower) {
 				if (tower.UpgradeLevel < 3) {
-					upgradeTowerPanelObj.Show(location);
+					upgradeTowerPanelObj.Show(location, tower);
 					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
 				} else {
 					ragnarokTowerPanelObj.Show(location);
 					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
 				}
 			}
+		}
+
+		private void PBTowerSpots0_Click(object sender, EventArgs e) {
+			MapLocation location = new MapLocation(game.towerSpots[0].X, game.towerSpots[0].Y, game.map);
+			TowerPBClickedOnSpot(location);
 		}
 
 		private void PBTowerSpots1_Click(object sender, EventArgs e) {
 			MapLocation location = new MapLocation(game.towerSpots[1].X, game.towerSpots[1].Y, game.map);
-			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
-			if (tower == null) {
-				basicTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is BasicTower) {
-				switchTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is CrossbowTower || tower is MageTower || tower is SniperTower) {
-				if (tower.UpgradeLevel < 3) {
-					upgradeTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				} else {
-					ragnarokTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				}
-			}
+			TowerPBClickedOnSpot(location);
 		}
 
 		private void PBTowerSpots2_Click(object sender, EventArgs e) {
 			MapLocation location = new MapLocation(game.towerSpots[2].X, game.towerSpots[2].Y, game.map);
-			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
-			if (tower == null) {
-				basicTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is BasicTower) {
-				switchTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is CrossbowTower || tower is MageTower || tower is SniperTower) {
-				if (tower.UpgradeLevel < 3) {
-					upgradeTowerPanelObj.Show(location, tower);
-					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				} else {
-					ragnarokTowerPanelObj.Show(location, tower);
-					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				}
-			}
+			TowerPBClickedOnSpot(location);
 		}
 
 		private void PBTowerSpots3_Click(object sender, EventArgs e) {
 			MapLocation location = new MapLocation(game.towerSpots[3].X, game.towerSpots[3].Y, game.map);
-			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
-			if (tower == null) {
-				basicTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is BasicTower) {
-				switchTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is CrossbowTower || tower is MageTower || tower is SniperTower) {
-				if (tower.UpgradeLevel < 3) {
-					upgradeTowerPanelObj.Show(location, tower);
-					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				} else {
-					ragnarokTowerPanelObj.Show(location, tower);
-					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				}
-			}
+			TowerPBClickedOnSpot(location);
 		}
 
 		private void PBTowerSpots4_Click(object sender, EventArgs e) {
 			MapLocation location = new MapLocation(game.towerSpots[4].X, game.towerSpots[4].Y, game.map);
-			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
-			if (tower == null) {
-				basicTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is BasicTower) {
-				switchTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is CrossbowTower || tower is MageTower || tower is SniperTower) {
-				if (tower.UpgradeLevel < 3) {
-					upgradeTowerPanelObj.Show(location, tower);
-					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				} else {
-					ragnarokTowerPanelObj.Show(location, tower);
-					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				}
-			}
+			TowerPBClickedOnSpot(location);
 		}
 
 		private void PBTowerSpots5_Click(object sender, EventArgs e) {
 			MapLocation location = new MapLocation(game.towerSpots[5].X, game.towerSpots[5].Y, game.map);
-			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
-			if (tower == null) {
-				basicTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is BasicTower) {
-				switchTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is CrossbowTower || tower is MageTower || tower is SniperTower) {
-				if (tower.UpgradeLevel < 3) {
-					upgradeTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				} else {
-					ragnarokTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				}
-			}
+			TowerPBClickedOnSpot(location);
 		}
 
 		private void PBTowerSpots6_Click(object sender, EventArgs e) {
 			MapLocation location = new MapLocation(game.towerSpots[6].X, game.towerSpots[6].Y, game.map);
-			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
-			if (tower == null) {
-				basicTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is BasicTower) {
-				switchTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is CrossbowTower || tower is MageTower || tower is SniperTower) {
-				if (tower.UpgradeLevel < 3) {
-					upgradeTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				} else {
-					ragnarokTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				}
-			}
+			TowerPBClickedOnSpot(location);
 		}
 
 		private void PBTowerSpots7_Click(object sender, EventArgs e) {
 			MapLocation location = new MapLocation(game.towerSpots[7].X, game.towerSpots[7].Y, game.map);
-			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
-			if (tower == null) {
-				basicTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is BasicTower) {
-				switchTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is CrossbowTower || tower is MageTower || tower is SniperTower) {
-				if (tower.UpgradeLevel < 3) {
-					upgradeTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				} else {
-					ragnarokTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				}
-			}
+			TowerPBClickedOnSpot(location);
 		}
 
 		private void PBTowerSpots8_Click(object sender, EventArgs e) {
 			MapLocation location = new MapLocation(game.towerSpots[8].X, game.towerSpots[8].Y, game.map);
-			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
-			if (tower == null) {
-				basicTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is BasicTower) {
-				switchTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is CrossbowTower || tower is MageTower || tower is SniperTower) {
-				if (tower.UpgradeLevel < 3) {
-					upgradeTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				} else {
-					ragnarokTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				}
-			}
+			TowerPBClickedOnSpot(location);
 		}
 
 		private void PBTowerSpots9_Click(object sender, EventArgs e) {
 			MapLocation location = new MapLocation(game.towerSpots[9].X, game.towerSpots[9].Y, game.map);
-			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
-			if (tower == null) {
-				basicTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is BasicTower) {
-				switchTowerPanelObj.Show(location);
-				TowerPanel.HideEveryPanelExceptFirst(switchTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-			} else if (tower is CrossbowTower || tower is MageTower || tower is SniperTower) {
-				if (tower.UpgradeLevel < 3) {
-					upgradeTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				} else {
-					ragnarokTowerPanelObj.Show(location);
-					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
-				}
-			}
+			TowerPBClickedOnSpot(location);
 		}
 
 		private void basicPanelCloseButton_Click(object sender, EventArgs e) {
