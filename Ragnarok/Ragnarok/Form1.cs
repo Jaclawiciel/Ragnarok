@@ -18,7 +18,7 @@ namespace Ragnarok {
 			// Inicjalizuję obiekty okien
 			mainMenu = new MainMenu(mainMenuPanel, closeMenuButton, startNewGameButton, loadGameButton, menuSettingsButton, menuQuitButton);
 			mainSettingsPanel = new Settings(this, mapPanel, settingsPanel, sfxCheckBox, musicCheckBox, navyColor, blackColor);
-			mainMapPanel = new MapPanel(mapPanel, game.map, game.towerSpots);
+			mainMapPanel = new MapPanel(mapPanel, game.map, game.towerSpots, game.path);
 			basicTowerPanelObj = new BasicTowerPanel(basicPanel, game.map);
 			switchTowerPanelObj = new SwitchTowerPanel(switchPanel, game.map);
 			upgradeTowerPanelObj = new UpgradeTowerPanel(upgradePanel, game.map);
@@ -58,6 +58,7 @@ namespace Ragnarok {
 			mainMenu.Hide();
 			mainMapPanel.Show();
 			InitializePictureBoxEvents();
+            drawing_timer.Start();
 		}
 
 		private void loadGameButton_Click(object sender, EventArgs e) {
@@ -301,5 +302,13 @@ namespace Ragnarok {
 			mainSettingsPanel.Close(true);
 			mainMenu.Show();
 		}
-	}
+
+        private void drawing_timer_Tick(object sender, EventArgs e) {
+            game.UpdateDrawing(mainMapPanel);
+        }
+
+        private void game_timer_Tick(object sender, EventArgs e) {
+            game.PlayTurn();
+        }
+    }
 }
