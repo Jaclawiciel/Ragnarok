@@ -10,18 +10,22 @@ namespace Ragnarok {
 	class MapPanel {
 		public Panel panel;
 		private MapLocation[] MLTowerSpots;
+        private MapLocation[] MLRoute;
 		public PictureBox[] PBTowerSpots;
+        public PictureBox[] PBRoute;
 
 
-		public MapPanel(Panel panel, Map map, MapLocation[] towerSpots) {
+		public MapPanel(Panel panel, Map map, MapLocation[] towerSpots, Path path) {
 			this.panel = panel;
 			panel.Size = new System.Drawing.Size(map.Width * 70, map.Height * 70);
 			this.MLTowerSpots = towerSpots;
 			this.panel.BackgroundImage = Image.FromFile("../../Resources/MapOnly.png");
+            this.MLRoute = path.GetPath();
 		}
 
 		public void Show() {
 			DrawTowersSpots(MLTowerSpots);
+            DrawRoute(MLRoute);
 			panel.Show();
 		}
 
@@ -40,6 +44,18 @@ namespace Ragnarok {
 				panel.Controls.Add(PBTowerSpots[i]);
 			}
 		}
+
+        private void DrawRoute(MapLocation[] path) {
+            PBRoute = new PictureBox[path.Length];
+            for (int i = 0; i < path.Length; i++) {
+                PBRoute[i] = new PictureBox();
+                PBRoute[i].Size = new Size(70, 70);
+                PBRoute[i].Location = new System.Drawing.Point(path[i].X * 70, path[i].Y * 70);
+                PBRoute[i].BackColor = Color.LightYellow;
+                PBRoute[i].Enabled = true;
+                panel.Controls.Add(PBRoute[i]);
+            }
+        }
 
 		public Tower WhatTowerIsPlacedOn(MapLocation towerSpotLocation, Tower[] towers) {
 			foreach (Tower tower in towers) {

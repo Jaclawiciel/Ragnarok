@@ -18,7 +18,7 @@ namespace Ragnarok {
 			// Inicjalizuję obiekty okien
 			mainMenu = new MainMenu(mainMenuPanel, closeMenuButton, startNewGameButton, loadGameButton, menuSettingsButton, menuQuitButton);
 			mainSettingsPanel = new Settings(this, mapPanel, settingsPanel, sfxCheckBox, musicCheckBox, navyColor, blackColor);
-			mainMapPanel = new MapPanel(mapPanel, game.map, game.towerSpots);
+			mainMapPanel = new MapPanel(mapPanel, game.map, game.towerSpots, game.path);
 			basicTowerPanelObj = new BasicTowerPanel(basicPanel, game.map);
 			switchTowerPanelObj = new SwitchTowerPanel(switchPanel, game.map);
 			upgradeTowerPanelObj = new UpgradeTowerPanel(upgradePanel, game.map);
