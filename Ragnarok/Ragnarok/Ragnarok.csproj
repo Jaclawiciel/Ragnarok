@@ -49,6 +49,7 @@
     <Compile Include="BasicInvader.cs" />
     <Compile Include="BasicTower.cs" />
     <Compile Include="CrossbowTower.cs" />
+    <Compile Include="DrawingInvaders.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -113,5 +113,7 @@ namespace Ragnarok {
             if (!temp) invaders = new List<IInvader>();
             waveCount += 1;
         }
+        public void GameStart(Timer timer) { timer.Start(); }
+        public void GameStop(Timer timer) { timer.Start(); }
 	}
 }
