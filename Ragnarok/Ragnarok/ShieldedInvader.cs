@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Ragnarok {
     class ShieldedInvader : Invader {
         public override int HP { get; protected set; } = 3;
+        public override int gain { get; protected set; } = 40;
 
         public ShieldedInvader(Path path) : base(path) { }
 

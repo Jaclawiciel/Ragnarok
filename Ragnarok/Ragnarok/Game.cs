@@ -12,8 +12,8 @@ namespace Ragnarok {
 		public List<Tower> towers { get; private set; }
 		public List<IInvader> invaders { get; private set; }
 		public MapLocation[] towerSpots;
+        public Player player = new Player();
         public int waveCount { get; private set; } = 3;
-        public int zycia { get; private set; } = 5;
 
 		public Game() {
 			path = new Path(new[] { new MapLocation(0, 7, map), new MapLocation(1, 7, map), new MapLocation(2, 7, map), new MapLocation(2, 6, map),
@@ -81,26 +81,26 @@ namespace Ragnarok {
         }
         public void Damage() {
             foreach(Tower tower in towers) {
-                tower.Shooting(invaders);
+                tower.Shooting(invaders, player);
             }
         }
         public void MoveEveryone() {
             foreach(IInvader invader in invaders) {
                 if (invader.IsActive) {
                     invader.Move();
-                    if (invader.PathEnded) zycia -= 1;
+                    if (invader.PathEnded) player.SubLives(1);
                 }
             }
         }
         public void AreYouAlive() {
-            if (zycia <= 0) Dead();
+            if (player.lives <= 0) Dead();
         }
         public void Dead() {
             MessageBox.Show("YOU LOST !");
             towers = new List<Tower>();
             invaders = new List<IInvader>();
+            player = new Player();
             waveCount = 3;
-            zycia = 5;
         }
         public void WaveSpawn() {
             if (invaders.Count() < waveCount) AddInvader();

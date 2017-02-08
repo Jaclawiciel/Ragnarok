@@ -14,6 +14,7 @@ namespace Ragnarok {
     interface IInvader : IMappable, IMovable {
         bool PathEnded { get; }
         int HP { get; }
+        int gain { get; }
         bool IsDestroyed { get; }
         bool IsActive { get; }
         void TakeDamage(int damage);

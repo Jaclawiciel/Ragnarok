@@ -10,6 +10,7 @@ namespace Ragnarok {
     class BasicTower : Tower {
         public override int Range { get; protected set; } = 1;
         public override int Power { get; protected set; } = 2;
+        public override int Cost { get; protected set; } = 50;
         protected override double Accuracy { get; } = .75;
 
         public BasicTower(MapLocation location) : base(location) { }

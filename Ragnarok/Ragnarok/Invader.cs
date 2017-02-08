@@ -17,6 +17,7 @@ namespace Ragnarok {
         public bool PathEnded { get { return pathStep >= path.Length; } }
 
         public abstract int HP { get; protected set; }
+        public abstract int gain { get; protected set; }
 
         public bool IsDestroyed => HP <= 0;
         public bool IsActive => !(IsDestroyed || PathEnded);
