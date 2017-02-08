@@ -41,6 +41,36 @@ namespace Ragnarok {
 			}
 		}
 
+		private void DrawTowerOnSpot(MapLocation location, Game game, Image image) {
+			int index = 0;
+			foreach (MapLocation towerSpot in game.towerSpots) {
+				if (towerSpot.Equals(location)) {
+					PBTowerSpots[index].Image = image;
+				}
+			}
+			index++;
+		}
+
+		public void DrawTowerOnSpot(MapLocation location, BasicTower tower, Game game) {
+			Image imageToDraw = tower.Image;
+			DrawTowerOnSpot(location, game, imageToDraw);
+		}
+
+		public void DrawTowerOnSpot(MapLocation location, CrossbowTower tower, Game game) {
+			Image imageToDraw = tower.Image;
+			DrawTowerOnSpot(location, game, imageToDraw);
+		}
+
+		public void DrawTowerOnSpot(MapLocation location, MageTower tower, Game game) {
+			Image imageToDraw = tower.Image;
+			DrawTowerOnSpot(location, game, imageToDraw);
+		}
+
+		public void DrawTowerOnSpot(MapLocation location, SniperTower tower, Game game) {
+			Image imageToDraw = tower.Image;
+			DrawTowerOnSpot(location, game, imageToDraw);
+		}
+
 		public Tower WhatTowerIsPlacedOn(MapLocation towerSpotLocation, Tower[] towers) {
 			foreach (Tower tower in towers) {
 				if (towerSpotLocation.X == tower.GetX() && towerSpotLocation.Y == tower.GetY()) {

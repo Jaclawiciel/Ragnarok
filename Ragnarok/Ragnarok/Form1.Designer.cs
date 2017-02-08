@@ -47,12 +47,6 @@
 			this.startNewGameButton = new System.Windows.Forms.Button();
 			this.mainMenuTitle = new System.Windows.Forms.Label();
 			this.mapPanel = new System.Windows.Forms.Panel();
-			this.settingsPanel = new System.Windows.Forms.Panel();
-			this.musicCheckBox = new System.Windows.Forms.CheckBox();
-			this.sfxCheckBox = new System.Windows.Forms.CheckBox();
-			this.closeButton = new System.Windows.Forms.Button();
-			this.saveButton = new System.Windows.Forms.Button();
-			this.label1 = new System.Windows.Forms.Label();
 			this.ragnarokPanel = new System.Windows.Forms.Panel();
 			this.ragnarokPanelLevelLabel = new System.Windows.Forms.Label();
 			this.ragnarokPanelTitleLabel = new System.Windows.Forms.Label();
@@ -61,6 +55,15 @@
 			this.ragnarokPanelRangeLabel = new System.Windows.Forms.Label();
 			this.ragnarokPanelPictureBox = new System.Windows.Forms.PictureBox();
 			this.ragnarokPanelSellButton = new System.Windows.Forms.Button();
+			this.settingsPanel = new System.Windows.Forms.Panel();
+			this.colorGroupBox = new System.Windows.Forms.GroupBox();
+			this.navyColor = new System.Windows.Forms.RadioButton();
+			this.blackColor = new System.Windows.Forms.RadioButton();
+			this.musicCheckBox = new System.Windows.Forms.CheckBox();
+			this.sfxCheckBox = new System.Windows.Forms.CheckBox();
+			this.closeButton = new System.Windows.Forms.Button();
+			this.saveButton = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
 			this.basicPanel = new System.Windows.Forms.Panel();
 			this.basicTowerLabel = new System.Windows.Forms.Label();
 			this.basicPanelCloseButton = new System.Windows.Forms.Button();
@@ -101,14 +104,12 @@
 			this.switchCloseButton = new System.Windows.Forms.Button();
 			this.switchCrossbowCostLabel = new System.Windows.Forms.Label();
 			this.switchCrossbowPictureBox = new System.Windows.Forms.PictureBox();
-			this.navyColor = new System.Windows.Forms.RadioButton();
-			this.blackColor = new System.Windows.Forms.RadioButton();
-			this.colorGroupBox = new System.Windows.Forms.GroupBox();
 			this.mainMenuPanel.SuspendLayout();
 			this.mapPanel.SuspendLayout();
-			this.settingsPanel.SuspendLayout();
 			this.ragnarokPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.ragnarokPanelPictureBox)).BeginInit();
+			this.settingsPanel.SuspendLayout();
+			this.colorGroupBox.SuspendLayout();
 			this.basicPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.basicPanelTowerImage)).BeginInit();
 			this.upgradePanel.SuspendLayout();
@@ -117,7 +118,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.switchSniperPictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchMagePictureBox)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchCrossbowPictureBox)).BeginInit();
-			this.colorGroupBox.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// mainMenuPanel
@@ -210,91 +210,11 @@
 			// 
 			this.mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.mapPanel.Controls.Add(this.ragnarokPanel);
+			this.mapPanel.Controls.Add(this.switchPanel);
 			this.mapPanel.Location = new System.Drawing.Point(0, 0);
 			this.mapPanel.Name = "mapPanel";
 			this.mapPanel.Size = new System.Drawing.Size(1050, 700);
 			this.mapPanel.TabIndex = 1;
-			// 
-			// settingsPanel
-			// 
-			this.settingsPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.settingsPanel.BackColor = System.Drawing.Color.Maroon;
-			this.settingsPanel.Controls.Add(this.colorGroupBox);
-			this.settingsPanel.Controls.Add(this.musicCheckBox);
-			this.settingsPanel.Controls.Add(this.sfxCheckBox);
-			this.settingsPanel.Controls.Add(this.closeButton);
-			this.settingsPanel.Controls.Add(this.saveButton);
-			this.settingsPanel.Controls.Add(this.label1);
-			this.settingsPanel.Location = new System.Drawing.Point(1056, 481);
-			this.settingsPanel.Name = "settingsPanel";
-			this.settingsPanel.Size = new System.Drawing.Size(222, 230);
-			this.settingsPanel.TabIndex = 9;
-			this.settingsPanel.Visible = false;
-			// 
-			// musicCheckBox
-			// 
-			this.musicCheckBox.AutoSize = true;
-			this.musicCheckBox.Checked = true;
-			this.musicCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.musicCheckBox.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.musicCheckBox.ForeColor = System.Drawing.Color.White;
-			this.musicCheckBox.Location = new System.Drawing.Point(33, 101);
-			this.musicCheckBox.Name = "musicCheckBox";
-			this.musicCheckBox.Size = new System.Drawing.Size(69, 23);
-			this.musicCheckBox.TabIndex = 7;
-			this.musicCheckBox.Text = "Music";
-			this.musicCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// sfxCheckBox
-			// 
-			this.sfxCheckBox.AutoSize = true;
-			this.sfxCheckBox.Checked = true;
-			this.sfxCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.sfxCheckBox.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.sfxCheckBox.ForeColor = System.Drawing.Color.White;
-			this.sfxCheckBox.Location = new System.Drawing.Point(33, 66);
-			this.sfxCheckBox.Name = "sfxCheckBox";
-			this.sfxCheckBox.Size = new System.Drawing.Size(122, 23);
-			this.sfxCheckBox.TabIndex = 6;
-			this.sfxCheckBox.Text = "Sound Effects";
-			this.sfxCheckBox.UseVisualStyleBackColor = true;
-			// 
-			// closeButton
-			// 
-			this.closeButton.BackColor = System.Drawing.Color.Maroon;
-			this.closeButton.FlatAppearance.BorderSize = 0;
-			this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.closeButton.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.closeButton.Location = new System.Drawing.Point(185, 3);
-			this.closeButton.Name = "closeButton";
-			this.closeButton.Size = new System.Drawing.Size(34, 30);
-			this.closeButton.TabIndex = 5;
-			this.closeButton.Text = "X";
-			this.closeButton.UseVisualStyleBackColor = false;
-			this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
-			// 
-			// saveButton
-			// 
-			this.saveButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.saveButton.Location = new System.Drawing.Point(74, 196);
-			this.saveButton.Name = "saveButton";
-			this.saveButton.Size = new System.Drawing.Size(75, 23);
-			this.saveButton.TabIndex = 4;
-			this.saveButton.Text = "Save";
-			this.saveButton.UseVisualStyleBackColor = true;
-			this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(69, 13);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(96, 29);
-			this.label1.TabIndex = 0;
-			this.label1.Text = "Settings";
 			// 
 			// ragnarokPanel
 			// 
@@ -389,6 +309,126 @@
 			this.ragnarokPanelSellButton.Text = "Sell (+ $)";
 			this.ragnarokPanelSellButton.UseVisualStyleBackColor = true;
 			// 
+			// settingsPanel
+			// 
+			this.settingsPanel.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.settingsPanel.BackColor = System.Drawing.Color.Maroon;
+			this.settingsPanel.Controls.Add(this.colorGroupBox);
+			this.settingsPanel.Controls.Add(this.musicCheckBox);
+			this.settingsPanel.Controls.Add(this.sfxCheckBox);
+			this.settingsPanel.Controls.Add(this.closeButton);
+			this.settingsPanel.Controls.Add(this.saveButton);
+			this.settingsPanel.Controls.Add(this.label1);
+			this.settingsPanel.Location = new System.Drawing.Point(1056, 481);
+			this.settingsPanel.Name = "settingsPanel";
+			this.settingsPanel.Size = new System.Drawing.Size(222, 230);
+			this.settingsPanel.TabIndex = 9;
+			this.settingsPanel.Visible = false;
+			// 
+			// colorGroupBox
+			// 
+			this.colorGroupBox.Controls.Add(this.navyColor);
+			this.colorGroupBox.Controls.Add(this.blackColor);
+			this.colorGroupBox.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.colorGroupBox.ForeColor = System.Drawing.Color.White;
+			this.colorGroupBox.Location = new System.Drawing.Point(29, 127);
+			this.colorGroupBox.Name = "colorGroupBox";
+			this.colorGroupBox.Size = new System.Drawing.Size(139, 52);
+			this.colorGroupBox.TabIndex = 10;
+			this.colorGroupBox.TabStop = false;
+			this.colorGroupBox.Text = "Background Color";
+			// 
+			// navyColor
+			// 
+			this.navyColor.AutoSize = true;
+			this.navyColor.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.navyColor.ForeColor = System.Drawing.Color.White;
+			this.navyColor.Location = new System.Drawing.Point(16, 18);
+			this.navyColor.Name = "navyColor";
+			this.navyColor.Size = new System.Drawing.Size(50, 19);
+			this.navyColor.TabIndex = 8;
+			this.navyColor.TabStop = true;
+			this.navyColor.Text = "Blue";
+			this.navyColor.UseVisualStyleBackColor = true;
+			// 
+			// blackColor
+			// 
+			this.blackColor.AutoSize = true;
+			this.blackColor.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.blackColor.ForeColor = System.Drawing.Color.White;
+			this.blackColor.Location = new System.Drawing.Point(78, 18);
+			this.blackColor.Name = "blackColor";
+			this.blackColor.Size = new System.Drawing.Size(56, 19);
+			this.blackColor.TabIndex = 9;
+			this.blackColor.TabStop = true;
+			this.blackColor.Text = "Black";
+			this.blackColor.UseVisualStyleBackColor = true;
+			// 
+			// musicCheckBox
+			// 
+			this.musicCheckBox.AutoSize = true;
+			this.musicCheckBox.Checked = true;
+			this.musicCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.musicCheckBox.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.musicCheckBox.ForeColor = System.Drawing.Color.White;
+			this.musicCheckBox.Location = new System.Drawing.Point(33, 101);
+			this.musicCheckBox.Name = "musicCheckBox";
+			this.musicCheckBox.Size = new System.Drawing.Size(69, 23);
+			this.musicCheckBox.TabIndex = 7;
+			this.musicCheckBox.Text = "Music";
+			this.musicCheckBox.UseVisualStyleBackColor = true;
+			// 
+			// sfxCheckBox
+			// 
+			this.sfxCheckBox.AutoSize = true;
+			this.sfxCheckBox.Checked = true;
+			this.sfxCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.sfxCheckBox.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.sfxCheckBox.ForeColor = System.Drawing.Color.White;
+			this.sfxCheckBox.Location = new System.Drawing.Point(33, 66);
+			this.sfxCheckBox.Name = "sfxCheckBox";
+			this.sfxCheckBox.Size = new System.Drawing.Size(122, 23);
+			this.sfxCheckBox.TabIndex = 6;
+			this.sfxCheckBox.Text = "Sound Effects";
+			this.sfxCheckBox.UseVisualStyleBackColor = true;
+			// 
+			// closeButton
+			// 
+			this.closeButton.BackColor = System.Drawing.Color.Maroon;
+			this.closeButton.FlatAppearance.BorderSize = 0;
+			this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.closeButton.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.closeButton.Location = new System.Drawing.Point(185, 3);
+			this.closeButton.Name = "closeButton";
+			this.closeButton.Size = new System.Drawing.Size(34, 30);
+			this.closeButton.TabIndex = 5;
+			this.closeButton.Text = "X";
+			this.closeButton.UseVisualStyleBackColor = false;
+			this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+			// 
+			// saveButton
+			// 
+			this.saveButton.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.saveButton.Location = new System.Drawing.Point(74, 196);
+			this.saveButton.Name = "saveButton";
+			this.saveButton.Size = new System.Drawing.Size(75, 23);
+			this.saveButton.TabIndex = 4;
+			this.saveButton.Text = "Save";
+			this.saveButton.UseVisualStyleBackColor = true;
+			this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label1.ForeColor = System.Drawing.Color.White;
+			this.label1.Location = new System.Drawing.Point(69, 13);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(96, 29);
+			this.label1.TabIndex = 0;
+			this.label1.Text = "Settings";
+			// 
 			// basicPanel
 			// 
 			this.basicPanel.BackColor = System.Drawing.Color.Maroon;
@@ -482,6 +522,7 @@
 			this.buyBasicTowerButton.TabIndex = 0;
 			this.buyBasicTowerButton.Text = "Buy";
 			this.buyBasicTowerButton.UseVisualStyleBackColor = true;
+			this.buyBasicTowerButton.Click += new System.EventHandler(this.buyBasicTowerButton_Click);
 			// 
 			// upgradePanel
 			// 
@@ -623,7 +664,7 @@
 			this.switchPanel.Controls.Add(this.switchCrossbowCostLabel);
 			this.switchPanel.Controls.Add(this.switchCrossbowPictureBox);
 			this.switchPanel.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.switchPanel.Location = new System.Drawing.Point(1284, 43);
+			this.switchPanel.Location = new System.Drawing.Point(696, 19);
 			this.switchPanel.Name = "switchPanel";
 			this.switchPanel.Size = new System.Drawing.Size(232, 283);
 			this.switchPanel.TabIndex = 8;
@@ -841,45 +882,6 @@
 			this.switchCrossbowPictureBox.TabIndex = 1;
 			this.switchCrossbowPictureBox.TabStop = false;
 			// 
-			// navyColor
-			// 
-			this.navyColor.AutoSize = true;
-			this.navyColor.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.navyColor.ForeColor = System.Drawing.Color.White;
-			this.navyColor.Location = new System.Drawing.Point(16, 18);
-			this.navyColor.Name = "navyColor";
-			this.navyColor.Size = new System.Drawing.Size(50, 19);
-			this.navyColor.TabIndex = 8;
-			this.navyColor.TabStop = true;
-			this.navyColor.Text = "Blue";
-			this.navyColor.UseVisualStyleBackColor = true;
-			// 
-			// blackColor
-			// 
-			this.blackColor.AutoSize = true;
-			this.blackColor.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.blackColor.ForeColor = System.Drawing.Color.White;
-			this.blackColor.Location = new System.Drawing.Point(78, 18);
-			this.blackColor.Name = "blackColor";
-			this.blackColor.Size = new System.Drawing.Size(56, 19);
-			this.blackColor.TabIndex = 9;
-			this.blackColor.TabStop = true;
-			this.blackColor.Text = "Black";
-			this.blackColor.UseVisualStyleBackColor = true;
-			// 
-			// colorGroupBox
-			// 
-			this.colorGroupBox.Controls.Add(this.navyColor);
-			this.colorGroupBox.Controls.Add(this.blackColor);
-			this.colorGroupBox.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.colorGroupBox.ForeColor = System.Drawing.Color.White;
-			this.colorGroupBox.Location = new System.Drawing.Point(29, 127);
-			this.colorGroupBox.Name = "colorGroupBox";
-			this.colorGroupBox.Size = new System.Drawing.Size(139, 52);
-			this.colorGroupBox.TabIndex = 10;
-			this.colorGroupBox.TabStop = false;
-			this.colorGroupBox.Text = "Background Color";
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -887,7 +889,6 @@
 			this.BackColor = System.Drawing.Color.Navy;
 			this.ClientSize = new System.Drawing.Size(1362, 741);
 			this.Controls.Add(this.settingsPanel);
-			this.Controls.Add(this.switchPanel);
 			this.Controls.Add(this.upgradePanel);
 			this.Controls.Add(this.basicPanel);
 			this.Controls.Add(this.mapPanel);
@@ -897,11 +898,13 @@
 			this.mainMenuPanel.ResumeLayout(false);
 			this.mainMenuPanel.PerformLayout();
 			this.mapPanel.ResumeLayout(false);
-			this.settingsPanel.ResumeLayout(false);
-			this.settingsPanel.PerformLayout();
 			this.ragnarokPanel.ResumeLayout(false);
 			this.ragnarokPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.ragnarokPanelPictureBox)).EndInit();
+			this.settingsPanel.ResumeLayout(false);
+			this.settingsPanel.PerformLayout();
+			this.colorGroupBox.ResumeLayout(false);
+			this.colorGroupBox.PerformLayout();
 			this.basicPanel.ResumeLayout(false);
 			this.basicPanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.basicPanelTowerImage)).EndInit();
@@ -913,8 +916,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.switchSniperPictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchMagePictureBox)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.switchCrossbowPictureBox)).EndInit();
-			this.colorGroupBox.ResumeLayout(false);
-			this.colorGroupBox.PerformLayout();
 			this.ResumeLayout(false);
 
 		}

@@ -78,7 +78,9 @@ namespace Ragnarok {
 
 		//Metoda wywoływana przy klikaniu na PB wieży
 		private void TowerPBClickedOnSpot(MapLocation location) {
+			TowerPanel.CurrentTowerSpot = location;
 			Tower tower = mainMapPanel.WhatTowerIsPlacedOn(location, game.towers.ToArray());
+			TowerPanel.CurrentTower = tower;
 			if (tower == null) {
 				basicTowerPanelObj.Show(location);
 				TowerPanel.HideEveryPanelExceptFirst(basicTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
@@ -170,6 +172,16 @@ namespace Ragnarok {
 		private void saveButton_Click(object sender, EventArgs e) {
 			mainSettingsPanel.Close(true);
 			mainMenu.Show();
+		}
+
+
+		//Przyciski stawiania, kupowania, upgradowania, sprzedawania wież
+		private void buyBasicTowerButton_Click(object sender, EventArgs e) {
+			BasicTower basicTower = new BasicTower(TowerPanel.CurrentTowerSpot);
+			if(basicTower != null) {
+				game.AddTower(basicTower);
+				mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, basicTower, game);
+			}
 		}
 	}
 }
