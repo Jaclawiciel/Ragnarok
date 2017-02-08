@@ -885,11 +885,14 @@
             // 
             // game_timer
             // 
+            this.game_timer.Enabled = true;
             this.game_timer.Interval = 1000;
+            this.game_timer.Tick += new System.EventHandler(this.game_timer_Tick);
             // 
             // drawing_timer
             // 
             this.drawing_timer.Interval = 50;
+            this.drawing_timer.Tick += new System.EventHandler(this.drawing_timer_Tick);
             // 
             // Form1
             // 

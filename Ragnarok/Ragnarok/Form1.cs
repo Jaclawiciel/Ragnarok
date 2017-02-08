@@ -58,6 +58,7 @@ namespace Ragnarok {
 			mainMenu.Hide();
 			mainMapPanel.Show();
 			InitializePictureBoxEvents();
+            drawing_timer.Start();
 		}
 
 		private void loadGameButton_Click(object sender, EventArgs e) {
@@ -301,5 +302,13 @@ namespace Ragnarok {
 			mainSettingsPanel.Close(true);
 			mainMenu.Show();
 		}
-	}
+
+        private void drawing_timer_Tick(object sender, EventArgs e) {
+            game.UpdateDrawing(mainMapPanel);
+        }
+
+        private void game_timer_Tick(object sender, EventArgs e) {
+            game.PlayTurn();
+        }
+    }
 }

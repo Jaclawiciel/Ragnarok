@@ -115,5 +115,14 @@ namespace Ragnarok {
         }
         public void GameStart(Timer timer) { timer.Start(); }
         public void GameStop(Timer timer) { timer.Start(); }
+
+        public void UpdateDrawing(MapPanel mapPanel) {
+            for(int i = 0; i < mapPanel.PBRoute.Length; i++) {
+                mapPanel.PBRoute[i].Image = null;
+            }
+            foreach (IInvader invader in invaders) {
+                mapPanel.PBRoute[invader.GetPathStep()].Image = invader.image;
+            }
+        }
 	}
 }

@@ -51,7 +51,7 @@ namespace Ragnarok {
                 PBRoute[i] = new PictureBox();
                 PBRoute[i].Size = new Size(70, 70);
                 PBRoute[i].Location = new System.Drawing.Point(path[i].X * 70, path[i].Y * 70);
-                PBRoute[i].BackColor = Color.LightYellow;
+                PBRoute[i].BackColor = Color.DarkGreen;
                 PBRoute[i].Enabled = true;
                 panel.Controls.Add(PBRoute[i]);
             }
