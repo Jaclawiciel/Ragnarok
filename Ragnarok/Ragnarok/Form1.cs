@@ -93,7 +93,7 @@ namespace Ragnarok {
 					upgradeTowerPanelObj.Show(location, tower);
 					TowerPanel.HideEveryPanelExceptFirst(upgradeTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
 				} else {
-					ragnarokTowerPanelObj.Show(location);
+					ragnarokTowerPanelObj.Show(location, tower);
 					TowerPanel.HideEveryPanelExceptFirst(ragnarokTowerPanelObj, basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
 				}
 			}
@@ -183,7 +183,7 @@ namespace Ragnarok {
 				mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, basicTower, game);
 				
 			} else {
-				MessageBox.Show("You need more gold o buy this tower.", "Not enough gold");
+				MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
 			}
 			basicTowerPanelObj.Hide();
 		}
@@ -193,7 +193,7 @@ namespace Ragnarok {
 				game.SwitchTowers(TowerPanel.CurrentTower, TowerType.crossbowTower);
 				mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, (CrossbowTower)TowerPanel.CurrentTower, game);
 			} else {
-				MessageBox.Show("You need more gold o buy this tower.", "Not enough gold");
+				MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
 			}
 			switchTowerPanelObj.Hide();
 		}
@@ -203,7 +203,7 @@ namespace Ragnarok {
 				game.SwitchTowers(TowerPanel.CurrentTower, TowerType.mageTower);
 				mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, (MageTower)TowerPanel.CurrentTower, game);
 			} else {
-				MessageBox.Show("You need more gold o buy this tower.", "Not enough gold");
+				MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
 			}
 			switchTowerPanelObj.Hide();
 		}
@@ -213,13 +213,60 @@ namespace Ragnarok {
 				game.SwitchTowers(TowerPanel.CurrentTower, TowerType.sniperTower);
 				mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, (SniperTower)TowerPanel.CurrentTower, game);
 			} else {
-				MessageBox.Show("You need more gold o buy this tower.", "Not enough gold");
+				MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
 			}
 			switchTowerPanelObj.Hide();
 		}
 
-		//*******************************************************/////
+		private void switchSellButton_Click(object sender, EventArgs e) {
+			game.player.AddGold(BasicTower.SellCost);
+			game.DeleteTower(TowerPanel.CurrentTower);
+			mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, game);
+			switchTowerPanelObj.Hide();
+		}
 
+		private void upgradePanelSellButton_Click(object sender, EventArgs e) {
+			if (TowerPanel.CurrentTower is CrossbowTower) {
+				game.player.AddGold(CrossbowTower.SellCost * TowerPanel.CurrentTower.UpgradeLevel);
+			} else if (TowerPanel.CurrentTower is MageTower) {
+				game.player.AddGold(MageTower.SellCost * TowerPanel.CurrentTower.UpgradeLevel);
+			} else {
+				game.player.AddGold(SniperTower.SellCost * TowerPanel.CurrentTower.UpgradeLevel);
+			}
+			game.DeleteTower(TowerPanel.CurrentTower);
+			mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, game);
+			upgradeTowerPanelObj.Hide();
+		}
+
+		private void upgradePanelUpgradeButton_Click(object sender, EventArgs e) {
+			if (upgradeTowerPanelObj.towerType == TowerType.crossbowTower) {
+				if(game.player.SubGold(CrossbowTower.Cost * TowerPanel.CurrentTower.UpgradeLevel)) {
+					TowerPanel.CurrentTower.Upgrade();
+					mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, (CrossbowTower)TowerPanel.CurrentTower, game);
+					upgradeTowerPanelObj.Hide();
+				} else {
+					MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
+				}
+			} else if (upgradeTowerPanelObj.towerType == TowerType.mageTower) {
+				if(game.player.SubGold(MageTower.Cost * TowerPanel.CurrentTower.UpgradeLevel)) {
+					TowerPanel.CurrentTower.Upgrade();
+					mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, (MageTower)TowerPanel.CurrentTower, game);
+					upgradeTowerPanelObj.Hide();
+				} else {
+					MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
+				}
+			} else {
+				if(game.player.SubGold(SniperTower.Cost * TowerPanel.CurrentTower.UpgradeLevel)) {
+					TowerPanel.CurrentTower.Upgrade();
+					mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, (SniperTower)TowerPanel.CurrentTower, game);
+					upgradeTowerPanelObj.Hide();
+				} else {
+					MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
+				}
+			}
+		}
+
+		//*******************************************************/////
 
 		private void drawing_timer_Tick(object sender, EventArgs e) {
             game.UpdateDrawing(mainMapPanel);
@@ -227,6 +274,7 @@ namespace Ragnarok {
 
         private void game_timer_Tick(object sender, EventArgs e) {
             game.PlayTurn();
+			goldStatusLabel.Text = "Gold: " + game.player.gold + "$";
         }
 	}
 

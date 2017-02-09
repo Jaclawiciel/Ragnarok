@@ -107,6 +107,7 @@
 			this.upgradePanelSellButton = new System.Windows.Forms.Button();
 			this.game_timer = new System.Windows.Forms.Timer(this.components);
 			this.drawing_timer = new System.Windows.Forms.Timer(this.components);
+			this.goldStatusLabel = new System.Windows.Forms.Label();
 			this.mainMenuPanel.SuspendLayout();
 			this.mapPanel.SuspendLayout();
 			this.ragnarokPanel.SuspendLayout();
@@ -133,7 +134,7 @@
 			this.mainMenuPanel.Controls.Add(this.loadGameButton);
 			this.mainMenuPanel.Controls.Add(this.startNewGameButton);
 			this.mainMenuPanel.Controls.Add(this.mainMenuTitle);
-			this.mainMenuPanel.Location = new System.Drawing.Point(1052, 0);
+			this.mainMenuPanel.Location = new System.Drawing.Point(1060, 44);
 			this.mainMenuPanel.Name = "mainMenuPanel";
 			this.mainMenuPanel.Size = new System.Drawing.Size(222, 200);
 			this.mainMenuPanel.TabIndex = 0;
@@ -384,6 +385,7 @@
 			this.switchSellButton.TabIndex = 23;
 			this.switchSellButton.Text = "Sell (+ $)";
 			this.switchSellButton.UseVisualStyleBackColor = true;
+			this.switchSellButton.Click += new System.EventHandler(this.switchSellButton_Click);
 			// 
 			// switchSniperPowerTower
 			// 
@@ -823,6 +825,7 @@
 			this.upgradePanelUpgradeButton.TabIndex = 7;
 			this.upgradePanelUpgradeButton.Text = "Upgrade";
 			this.upgradePanelUpgradeButton.UseVisualStyleBackColor = true;
+			this.upgradePanelUpgradeButton.Click += new System.EventHandler(this.upgradePanelUpgradeButton_Click);
 			// 
 			// upgradePanelCloseButton
 			// 
@@ -881,12 +884,14 @@
 			// 
 			// upgradePanelSellButton
 			// 
+			this.upgradePanelSellButton.Font = new System.Drawing.Font("Constantia", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.upgradePanelSellButton.Location = new System.Drawing.Point(7, 230);
 			this.upgradePanelSellButton.Name = "upgradePanelSellButton";
 			this.upgradePanelSellButton.Size = new System.Drawing.Size(66, 23);
 			this.upgradePanelSellButton.TabIndex = 0;
 			this.upgradePanelSellButton.Text = "Sell (+ $)";
 			this.upgradePanelSellButton.UseVisualStyleBackColor = true;
+			this.upgradePanelSellButton.Click += new System.EventHandler(this.upgradePanelSellButton_Click);
 			// 
 			// game_timer
 			// 
@@ -899,12 +904,24 @@
 			this.drawing_timer.Interval = 50;
 			this.drawing_timer.Tick += new System.EventHandler(this.drawing_timer_Tick);
 			// 
+			// goldStatusLabel
+			// 
+			this.goldStatusLabel.AutoSize = true;
+			this.goldStatusLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.goldStatusLabel.ForeColor = System.Drawing.Color.White;
+			this.goldStatusLabel.Location = new System.Drawing.Point(1071, 9);
+			this.goldStatusLabel.Name = "goldStatusLabel";
+			this.goldStatusLabel.Size = new System.Drawing.Size(58, 19);
+			this.goldStatusLabel.TabIndex = 10;
+			this.goldStatusLabel.Text = "Gold: $";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Navy;
 			this.ClientSize = new System.Drawing.Size(1354, 733);
+			this.Controls.Add(this.goldStatusLabel);
 			this.Controls.Add(this.settingsPanel);
 			this.Controls.Add(this.upgradePanel);
 			this.Controls.Add(this.basicPanel);
@@ -934,6 +951,7 @@
 			this.upgradePanel.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.upgradePanelPictureBox)).EndInit();
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -1006,6 +1024,7 @@
 		private System.Windows.Forms.GroupBox colorGroupBox;
         private System.Windows.Forms.Timer game_timer;
         private System.Windows.Forms.Timer drawing_timer;
-    }
+		private System.Windows.Forms.Label goldStatusLabel;
+	}
 }
 

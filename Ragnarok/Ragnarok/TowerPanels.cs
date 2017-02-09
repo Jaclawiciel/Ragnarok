@@ -81,7 +81,7 @@ namespace Ragnarok {
 		protected Label rangeLabel;
 		protected Label powerLabel;
 		protected Tower tower;
-		protected TowerType towerType;
+		public TowerType towerType;
 		protected int range;
 		protected int power;
 		protected int cost;
@@ -269,8 +269,6 @@ namespace Ragnarok {
 
 	class UpgradeTowerPanel : TowerPanel {
 		private Label titleLabel;
-		private Label costLabel;
-		private int cost;
 		private Label levelLabel;
 		private Button sellButton;
 		private int sellCost;
@@ -282,6 +280,7 @@ namespace Ragnarok {
 			levelLabel = FindLabelIn(panel, "level");
 			rangeLabel = FindLabelIn(panel, "rangeLabel");
 			powerLabel = FindLabelIn(panel, "powerLabel");
+			costLabel = FindLabelIn(panel, "costLabel");
 			sellButton = FindButtonIn(panel, "sellButton");
 			this.map = map;
 		}
@@ -290,23 +289,27 @@ namespace Ragnarok {
 			if (tower is CrossbowTower) {
 				titleLabel.Text = "Crossbow Tower";
 				towerType = TowerType.crossbowTower;
+				cost = CrossbowTower.Cost * (TowerPanel.CurrentTower.UpgradeLevel + 1);
+				sellCost = (CrossbowTower.Cost * CurrentTower.UpgradeLevel) / 2;
 			} else if (tower is MageTower) {
 				titleLabel.Text = "Mage Tower";
 				towerType = TowerType.mageTower;
+				cost = MageTower.Cost * (TowerPanel.CurrentTower.UpgradeLevel + 1);
+				sellCost = (MageTower.Cost * CurrentTower.UpgradeLevel) / 2;
 			} else {
 				titleLabel.Text = "Sniper Tower";
 				towerType = TowerType.sniperTower;
+				sellCost = (SniperTower.Cost * CurrentTower.UpgradeLevel) / 2;
 			}
 			level = tower.UpgradeLevel + 1;
 			towerPictureBox.Image = towerImage;
 			levelLabel.Text = "Level: " + level.ToString();
-			//cost = tower.Cost;
 			range = tower.Range;
 			rangeLabel.Text = "Range: " + range.ToString();
 			power = tower.Power;
 			powerLabel.Text = "Power: " + power.ToString();
-			//sellCost = tower.SellCost;
-			//sellButton.Text = "Sell: (+ $")" + sellCost.ToString();
+			costLabel.Text = "Cost: " + cost + "$";
+			sellButton.Text = "Sell (+" + sellCost + "$)";
 
 			base.Show(spotLocation);
 		}
@@ -331,10 +334,13 @@ namespace Ragnarok {
 		public void Show(MapLocation spotLocation, Tower tower) {
 			if (tower is CrossbowTower) {
 				towerType = TowerType.crossbowTower;
+				sellCost = CrossbowTower.SellCost * CurrentTower.UpgradeLevel;
 			} else if (tower is MageTower) {
 				towerType = TowerType.mageTower;
+				sellCost = MageTower.SellCost * CurrentTower.UpgradeLevel;
 			} else {
 				towerType = TowerType.sniperTower;
+				sellCost = SniperTower.SellCost * CurrentTower.UpgradeLevel;
 			}
 			level = tower.UpgradeLevel;
 			towerPictureBox.Image = towerImage;
@@ -343,8 +349,7 @@ namespace Ragnarok {
 			rangeLabel.Text = "Range: " + range;
 			power = tower.Power;
 			powerLabel.Text = "Power: " + power;
-			//sellCost = tower.SellCost;
-			//sellButton.Text = "Sell: (+ $)" + sellCost;
+			sellButton.Text = "Sell: (+" + sellCost + "$)";
 
 			base.Show(spotLocation);
 		}

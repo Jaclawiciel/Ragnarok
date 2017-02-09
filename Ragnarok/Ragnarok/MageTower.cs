@@ -10,7 +10,8 @@ namespace Ragnarok {
         public override int Range { get; protected set; } = 1;
         public override int Power { get; protected set; } = 10;
         public static int Cost { get; protected set; } = 100;
-        protected override double Accuracy { get; } = .30;
+		public static int SellCost { get { return Cost / 2; } }
+		protected override double Accuracy { get; } = .30;
 		public static Image DefaultImage = Image.FromFile("../../Resources/Mage Tower.png");
 		public Image Image {
 			get {

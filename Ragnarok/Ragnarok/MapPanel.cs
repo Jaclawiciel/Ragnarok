@@ -78,7 +78,12 @@ namespace Ragnarok {
 			DrawTowerOnSpot(location, game, imageToDraw);
 		}
 
-    private void DrawRoute(MapLocation[] path) {
+		public void DrawTowerOnSpot(MapLocation location, Game game) {
+			Image imageToDraw = null;
+			DrawTowerOnSpot(location, game, imageToDraw);
+		}
+
+		private void DrawRoute(MapLocation[] path) {
         PBRoute = new PictureBox[path.Length];
         for (int i = 0; i < path.Length; i++) {
             PBRoute[i] = new PictureBox();
