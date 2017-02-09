@@ -9,6 +9,7 @@ namespace Ragnarok {
     class SniperTower : Tower {
         public override int Range { get; protected set; } = 4;
         public override int Power { get; protected set; } = 1;
+        public override int Cost { get; protected set; } = 100;
         protected override double Accuracy { get; } = .95;
 		public Image Image {
 			get {

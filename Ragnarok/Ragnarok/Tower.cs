@@ -10,6 +10,7 @@ namespace Ragnarok {
     class Tower {
         public virtual int Range { get; protected set; } = 1;
         public virtual int Power { get; protected set; } = 1;
+        public virtual int Cost { get; protected set; } = 1000;
         protected virtual double Accuracy { get; } = .75;
         private MapLocation location;
         public int UpgradeLevel { get; protected set; } = 1;
@@ -20,9 +21,11 @@ namespace Ragnarok {
 
         public int GetX() { return location.X; }
         public int GetY() { return location.Y; }
+        public int GetRange() { return Range; }
+        public int GetPower() { return Power; }
 
         public void Upgrade() {
-            if (UpgradeLevel <= 3) {
+            if (UpgradeLevel < 3) {
                 Range += 1;
                 Power += 1;
                 UpgradeLevel += 1;
@@ -32,13 +35,13 @@ namespace Ragnarok {
         private bool IsSuccessfulShot() {
             return Random.NextDouble() < Accuracy;
         }
-        public void Shooting(List<IInvader> invaders) {
+        public void Shooting(List<IInvader> invaders, Player player) {
             foreach(IInvader invader in invaders) {
                 if(invader.IsActive && location.InRangeOf(invader.location, Range)) {
                     if (IsSuccessfulShot()) {
                         invader.TakeDamage(Power);
                         if (invader.IsDestroyed) {
-                            //GIVE ME GOLD
+                            player.AddGold(invader.gain);
                         }
                         break;
                     }

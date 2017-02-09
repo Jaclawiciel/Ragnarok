@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,14 +12,14 @@ namespace Ragnarok {
 		public List<Tower> towers { get; private set; }
 		public List<IInvader> invaders { get; private set; }
 		public MapLocation[] towerSpots;
+        public Player player = new Player();
         public int waveCount { get; private set; } = 3;
-        public int zycia { get; private set; } = 5;
 
 		public Game() {
 			path = new Path(new[] { new MapLocation(0, 7, map), new MapLocation(1, 7, map), new MapLocation(2, 7, map), new MapLocation(2, 6, map),
-			 new MapLocation(2, 5, map), new MapLocation(2, 4, map), new MapLocation(2, 3, map), new MapLocation(2, 2, map),
-			 new MapLocation(3, 2, map), new MapLocation(4, 2, map), new MapLocation(5, 2, map), new MapLocation(6, 2, map),
-			 new MapLocation(6, 3, map), new MapLocation(6, 4, map), new MapLocation(6, 5, map), new MapLocation(6,6,map),
+			new MapLocation(2, 5, map), new MapLocation(2, 4, map), new MapLocation(2, 3, map), new MapLocation(2, 2, map),
+			new MapLocation(3, 2, map), new MapLocation(4, 2, map), new MapLocation(5, 2, map), new MapLocation(6, 2, map),
+			new MapLocation(6, 3, map), new MapLocation(6, 4, map), new MapLocation(6, 5, map), new MapLocation(6,6,map),
 			new MapLocation(6,7,map), new MapLocation(6,8,map), new MapLocation(7,8,map), new MapLocation(8,8,map), new MapLocation(8,7,map), new MapLocation(8,6,map), new MapLocation(9,6,map), new MapLocation(10,6,map),
 			new MapLocation(10, 5, map), new MapLocation(10,4,map), new MapLocation(10, 3, map), new MapLocation(10,2,map),
 			new MapLocation(10,1,map), new MapLocation(11,1,map), new MapLocation(12,1,map), new MapLocation(13,1,map),
@@ -81,26 +81,26 @@ namespace Ragnarok {
         }
         public void Damage() {
             foreach(Tower tower in towers) {
-                tower.Shooting(invaders);
+                tower.Shooting(invaders, player);
             }
         }
         public void MoveEveryone() {
             foreach(IInvader invader in invaders) {
                 if (invader.IsActive) {
                     invader.Move();
-                    if (invader.PathEnded) zycia -= 1;
+                    if (invader.PathEnded) player.SubLives(1);
                 }
             }
         }
         public void AreYouAlive() {
-            if (zycia <= 0) Dead();
+            if (player.lives <= 0) Dead();
         }
         public void Dead() {
             MessageBox.Show("YOU LOST !");
             towers = new List<Tower>();
             invaders = new List<IInvader>();
+            player = new Player();
             waveCount = 3;
-            zycia = 5;
         }
         public void WaveSpawn() {
             if (invaders.Count() < waveCount) AddInvader();
@@ -112,6 +112,17 @@ namespace Ragnarok {
             }
             if (!temp) invaders = new List<IInvader>();
             waveCount += 1;
+        }
+        public void GameStart(Timer timer) { timer.Start(); }
+        public void GameStop(Timer timer) { timer.Start(); }
+
+        public void UpdateDrawing(MapPanel mapPanel) {
+            for(int i = 0; i < mapPanel.PBRoute.Length; i++) {
+                mapPanel.PBRoute[i].Image = null;
+            }
+            foreach (IInvader invader in invaders) {
+                mapPanel.PBRoute[invader.GetPathStep()].Image = invader.image;
+            }
         }
 	}
 }

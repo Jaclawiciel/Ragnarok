@@ -59,13 +59,13 @@
     <Compile Include="IInvader.cs" />
     <Compile Include="Invader.cs" />
     <Compile Include="IPanel.cs" />
-    <Compile Include="Level.cs" />
     <Compile Include="MainMenu.cs" />
     <Compile Include="MageTower.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="MapLocation.cs" />
     <Compile Include="MapPanel.cs" />
     <Compile Include="Path.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

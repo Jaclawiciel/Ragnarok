@@ -13,6 +13,8 @@ namespace Ragnarok {
 			this.path = path;
 		}
 
+        public MapLocation[] GetPath() { return path; }
+
 		public MapLocation GetLocationAt(int pathStep) {
 			if (pathStep < Length) {
 				return path[pathStep];
