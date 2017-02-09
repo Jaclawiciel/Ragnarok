@@ -13,9 +13,9 @@ namespace Ragnarok {
         
         public void SubLives(int i) { lives -= i; }
         public void AddGold(int i) { gold += i; }
-        public bool SubGold(int i) {
-            if (i <= gold) {
-                AddGold(0 - i);
+        public bool SubGold(int towerCost) {
+            if (towerCost <= gold) {
+                AddGold(0 - towerCost);
                 return true;
             }
             else return false;

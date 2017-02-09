@@ -198,6 +198,28 @@ namespace Ragnarok {
 			switchTowerPanelObj.Hide();
 		}
 
+		private void switchMageButton_Click(object sender, EventArgs e) {
+			if(game.player.SubGold(MageTower.Cost)) {
+				game.SwitchTowers(TowerPanel.CurrentTower, TowerType.mageTower);
+				mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, (MageTower)TowerPanel.CurrentTower, game);
+			} else {
+				MessageBox.Show("You need more gold o buy this tower.", "Not enough gold");
+			}
+			switchTowerPanelObj.Hide();
+		}
+
+		private void switchSniperButton_Click(object sender, EventArgs e) {
+			if(game.player.SubGold(SniperTower.Cost)) {
+				game.SwitchTowers(TowerPanel.CurrentTower, TowerType.sniperTower);
+				mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, (SniperTower)TowerPanel.CurrentTower, game);
+			} else {
+				MessageBox.Show("You need more gold o buy this tower.", "Not enough gold");
+			}
+			switchTowerPanelObj.Hide();
+		}
+
+		//*******************************************************/////
+
 
 		private void drawing_timer_Tick(object sender, EventArgs e) {
             game.UpdateDrawing(mainMapPanel);
