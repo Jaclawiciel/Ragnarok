@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,8 @@ namespace Ragnarok {
         public override int Power { get; protected set; } = 2;
         public override int Cost { get; protected set; } = 50;
         protected override double Accuracy { get; } = .75;
+		public Image Image { get; private set; } = Image.FromFile("../../Resources/Basic Tower.png");
 
-        public BasicTower(MapLocation location) : base(location) { }
+		public BasicTower(MapLocation location) : base(location) { }
     }
 }

@@ -45,17 +45,49 @@ namespace Ragnarok {
 			}
 		}
 
-        private void DrawRoute(MapLocation[] path) {
-            PBRoute = new PictureBox[path.Length];
-            for (int i = 0; i < path.Length; i++) {
-                PBRoute[i] = new PictureBox();
-                PBRoute[i].Size = new Size(70, 70);
-                PBRoute[i].Location = new System.Drawing.Point(path[i].X * 70, path[i].Y * 70);
-                PBRoute[i].BackColor = Color.DarkGreen;
-                PBRoute[i].Enabled = true;
-                panel.Controls.Add(PBRoute[i]);
-            }
+
+		private void DrawTowerOnSpot(MapLocation location, Game game, Image image) {
+			int index = 0;
+			foreach (MapLocation towerSpot in game.towerSpots) {
+				if (towerSpot.Equals(location)) {
+					PBTowerSpots[index].Image = image;
+				}
+			}
+			index++;
+		}
+
+		public void DrawTowerOnSpot(MapLocation location, BasicTower tower, Game game) {
+			Image imageToDraw = tower.Image;
+			DrawTowerOnSpot(location, game, imageToDraw);
+		}
+
+		public void DrawTowerOnSpot(MapLocation location, CrossbowTower tower, Game game) {
+			Image imageToDraw = tower.Image;
+			DrawTowerOnSpot(location, game, imageToDraw);
+		}
+
+		public void DrawTowerOnSpot(MapLocation location, MageTower tower, Game game) {
+			Image imageToDraw = tower.Image;
+			DrawTowerOnSpot(location, game, imageToDraw);
+		}
+
+		public void DrawTowerOnSpot(MapLocation location, SniperTower tower, Game game) {
+			Image imageToDraw = tower.Image;
+			DrawTowerOnSpot(location, game, imageToDraw);
+		}
+
+    private void DrawRoute(MapLocation[] path) {
+        PBRoute = new PictureBox[path.Length];
+        for (int i = 0; i < path.Length; i++) {
+            PBRoute[i] = new PictureBox();
+            PBRoute[i].Size = new Size(70, 70);
+            PBRoute[i].Location = new System.Drawing.Point(path[i].X * 70, path[i].Y * 70);
+            PBRoute[i].BackColor = Color.DarkGreen;
+            PBRoute[i].Enabled = true;
+            panel.Controls.Add(PBRoute[i]);
         }
+    }
+
 
 		public Tower WhatTowerIsPlacedOn(MapLocation towerSpotLocation, Tower[] towers) {
 			foreach (Tower tower in towers) {

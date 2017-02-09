@@ -13,14 +13,20 @@ namespace Ragnarok {
 		protected Panel towerPanel;
 		protected int level;
 		protected PictureBox towerPictureBox;
-		protected Image towerImage {
+		public Image towerImage {
 			get {
 				switch (towerType) {
 					case TowerType.noneTower: {
 							return Image.FromFile("../../Resources/Basic Tower.png");
 						}
 					case TowerType.basicTower: {
-							return null;
+							if (CurrentTower is CrossbowTower) {
+								return Image.FromFile("../../Resources/Crossbow Tower.png");
+							} else if (CurrentTower is MageTower) {
+								return Image.FromFile("../../Resources/Mage Tower.png");
+							} else {
+								return Image.FromFile("../../Resources/Sniper Tower.png");
+							}
 						}
 					case TowerType.crossbowTower: {
 							switch (level) {
@@ -79,6 +85,8 @@ namespace Ragnarok {
 		protected int range;
 		protected int power;
 		protected Map map;
+		public static MapLocation CurrentTowerSpot;
+		public static Tower CurrentTower;
 
 		public virtual void Show(MapLocation spotLocation) {
 
