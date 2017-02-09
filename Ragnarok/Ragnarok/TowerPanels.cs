@@ -77,13 +77,14 @@ namespace Ragnarok {
 				}
 			}
 		}
-		//protected Label costlabel { get { return costlabel} set { costlabel.Text = "Cost: " + cost; } }
+		protected Label costLabel;
 		protected Label rangeLabel;
 		protected Label powerLabel;
 		protected Tower tower;
 		protected TowerType towerType;
 		protected int range;
 		protected int power;
+		protected int cost;
 		protected Map map;
 		public static MapLocation CurrentTowerSpot;
 		public static Tower CurrentTower;
@@ -178,9 +179,6 @@ namespace Ragnarok {
 
 
 	class BasicTowerPanel : TowerPanel {
-		private Label costLabel;
-		private int cost;
-
 
 		public BasicTowerPanel(Panel panel, Map map) {
 			tower = new BasicTower(new MapLocation(0, 0, new Map(1, 1)));
@@ -190,7 +188,8 @@ namespace Ragnarok {
 			towerPictureBox = FindPictureBoxIn(panel, "basic");
 			towerPictureBox.Image = towerImage;
 			costLabel = FindLabelIn(panel, "costLabel");
-			//cost = tower.Cost;
+			cost = BasicTower.Cost;
+			costLabel.Text = "Cost: " + cost + "$";
 			rangeLabel = FindLabelIn(panel, "range");
 			range = tower.Range;
 			rangeLabel.Text = "Range: " + range;
@@ -229,6 +228,17 @@ namespace Ragnarok {
 			tower2 = new SniperTower(new MapLocation(0, 0, map));
 			level = 1;
 			towerType = TowerType.basicTower;
+
+			costLabel = FindLabelIn(panel, "crossbowCost");
+			cost = CrossbowTower.Cost;
+			costLabel.Text = "Cost: " + cost + "$";
+			costLabel1 = FindLabelIn(panel, "mageCost");
+			cost1 = MageTower.Cost;
+			costLabel1.Text = "Cost: " + cost1 + "$";
+			costLabel2 = FindLabelIn(panel, "sniperCost");
+			cost2 = SniperTower.Cost;
+			costLabel2.Text = "Cost: " + cost2 + "$";
+
 			rangeLabel = FindLabelIn(panel, "crossbowRange");
 			range = tower.Range;
 			rangeLabel.Text = "Range: " + range;
@@ -249,10 +259,9 @@ namespace Ragnarok {
 			power2 = tower2.Power;
 			powerLabel2.Text = "Power: " + power2;
 
-			BasicTower basicTower = new BasicTower(new MapLocation(0, 0, map));
-			//sellCost = basicTower.SellCost;
-			//sellButton = FindButtonIn(panel, "sellButton");
-			//sellButton.Text = "Sell: (+ $") +sellCost.ToString();
+			sellCost = BasicTower.Cost / 2;
+			sellButton = FindButtonIn(panel, "sellButton");
+			sellButton.Text = "Sell: (+" + sellCost.ToString() + "$)";
 
 			this.map = map;
 		}

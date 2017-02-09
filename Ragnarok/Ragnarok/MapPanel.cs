@@ -51,9 +51,11 @@ namespace Ragnarok {
 			foreach (MapLocation towerSpot in game.towerSpots) {
 				if (towerSpot.Equals(location)) {
 					PBTowerSpots[index].Image = image;
+					break;
 				}
+				index++;
 			}
-			index++;
+			
 		}
 
 		public void DrawTowerOnSpot(MapLocation location, BasicTower tower, Game game) {

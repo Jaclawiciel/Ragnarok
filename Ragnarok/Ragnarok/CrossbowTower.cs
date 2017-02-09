@@ -9,8 +9,9 @@ namespace Ragnarok {
     class CrossbowTower : Tower {
         public override int Range { get; protected set; } = 2;
         public override int Power { get; protected set; } = 3;
-        public override int Cost { get; protected set; } = 100;
+        public static int Cost { get; protected set; } = 100;
         protected override double Accuracy { get; } = .85;
+		public static Image DefaultImage = Image.FromFile("../../Resources/Crossbow Tower.png");
 		public Image Image {
 			get {
 				switch (UpgradeLevel) {

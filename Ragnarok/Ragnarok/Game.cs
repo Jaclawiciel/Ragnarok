@@ -49,21 +49,27 @@ namespace Ragnarok {
         }
         public void DeleteTower(Tower tower) {
             foreach(Tower t in towers) {
-                if (t.GetX() == tower.GetX() && t.GetY() == tower.GetY()) towers.Remove(t);
+                if (t.GetX() == tower.GetX() && t.GetY() == tower.GetY()) {
+					towers.Remove(t);
+					break;
+				}
             }
         }
-        public void SwitchTowers(Tower oldTower, int which) {
+        public void SwitchTowers(Tower oldTower, TowerType towerType) {
             DeleteTower(oldTower);
-            switch (which) {
-                case 1:
-                    towers.Add(new CrossbowTower(new MapLocation(oldTower.GetX(), oldTower.GetY(), map)));
+            switch (towerType) {
+                case TowerType.crossbowTower:
+					TowerPanel.CurrentTower = new CrossbowTower(new MapLocation(oldTower.GetX(), oldTower.GetY(), map));
+					towers.Add(TowerPanel.CurrentTower);
                     break;
-                case 2:
-                    towers.Add(new MageTower(new MapLocation(oldTower.GetX(), oldTower.GetY(), map)));
-                    break;
-                case 3:
-                    towers.Add(new SniperTower(new MapLocation(oldTower.GetX(), oldTower.GetY(), map)));
-                    break;
+                case TowerType.mageTower:
+					TowerPanel.CurrentTower = new MageTower(new MapLocation(oldTower.GetX(), oldTower.GetY(), map));
+					towers.Add(TowerPanel.CurrentTower);
+					break;
+                case TowerType.sniperTower:
+					TowerPanel.CurrentTower = new SniperTower(new MapLocation(oldTower.GetX(), oldTower.GetY(), map));
+					towers.Add(TowerPanel.CurrentTower);
+					break;
             }
         }
         public void AddInvader() {

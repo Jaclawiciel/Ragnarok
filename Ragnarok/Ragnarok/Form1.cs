@@ -177,19 +177,35 @@ namespace Ragnarok {
 
 		//Przyciski stawiania, kupowania, upgradowania, sprzedawania wież
 		private void buyBasicTowerButton_Click(object sender, EventArgs e) {
-			BasicTower basicTower = new BasicTower(TowerPanel.CurrentTowerSpot);
-			if(basicTower != null) {
+			if (game.player.SubGold(BasicTower.Cost)) {
+				BasicTower basicTower = new BasicTower(TowerPanel.CurrentTowerSpot);
 				game.AddTower(basicTower);
 				mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, basicTower, game);
+				
+			} else {
+				MessageBox.Show("You need more gold o buy this tower.", "Not enough gold");
 			}
+			basicTowerPanelObj.Hide();
 		}
-        private void drawing_timer_Tick(object sender, EventArgs e) {
+
+		private void switchCrossbowButton_Click(object sender, EventArgs e) {
+			if (game.player.SubGold(CrossbowTower.Cost)) {
+				game.SwitchTowers(TowerPanel.CurrentTower, TowerType.crossbowTower);
+				mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, (CrossbowTower)TowerPanel.CurrentTower, game);
+			} else {
+				MessageBox.Show("You need more gold o buy this tower.", "Not enough gold");
+			}
+			switchTowerPanelObj.Hide();
+		}
+
+
+		private void drawing_timer_Tick(object sender, EventArgs e) {
             game.UpdateDrawing(mainMapPanel);
         }
 
         private void game_timer_Tick(object sender, EventArgs e) {
             game.PlayTurn();
         }
-    }
+	}
 
 }
