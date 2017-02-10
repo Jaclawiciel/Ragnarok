@@ -18,7 +18,6 @@ namespace Ragnarok {
 			// Inicjalizuję obiekty okien
 			mainMenu = new MainMenu(mainMenuPanel, closeMenuButton, startNewGameButton, loadGameButton, menuSettingsButton, menuQuitButton);
 			mainSettingsPanel = new Settings(this, mapPanel, settingsPanel, sfxCheckBox, musicCheckBox, navyColor, blackColor);
-			mainMapPanel = new MapPanel(mapPanel, game.map, game.towerSpots, game.path);
 			basicTowerPanelObj = new BasicTowerPanel(basicPanel, game.map);
 			switchTowerPanelObj = new SwitchTowerPanel(switchPanel, game.map);
 			upgradeTowerPanelObj = new UpgradeTowerPanel(upgradePanel, game.map);
@@ -28,8 +27,12 @@ namespace Ragnarok {
 			//Ukrywam kolejne panele programu
 			mainMenu.Hide();
 			mainSettingsPanel.Hide();
-			mainMapPanel.Hide();
+			//mainMapPanel.Hide();
 			TowerPanel.HideAllPanels(basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
+
+			goldStatusLabel.Hide();
+			startButton.Hide();
+			pauseButton.Hide();
 
 			mainMenu.ShowMenuWithoutCloseButtonIn(this);
 		}
@@ -55,10 +58,19 @@ namespace Ragnarok {
 
 		// Metody menu
 		private void startNewGameButton_Click(object sender, EventArgs e) {
+			mainMapPanel = new MapPanel(mapPanel, game.map, game.towerSpots, game.path);
+			game = new Game();
+
 			mainMenu.Hide();
 			mainMapPanel.Show();
 			InitializePictureBoxEvents();
-            drawing_timer.Start();
+			goldStatusLabel.Show();
+			startButton.Show();
+			pauseButton.Show();
+
+			startButton.Enabled = true;
+			pauseButton.Enabled = true;
+			mapPanel.Enabled = true;
 		}
 
 		private void loadGameButton_Click(object sender, EventArgs e) {
@@ -75,6 +87,25 @@ namespace Ragnarok {
 		}
 
 		private void closeMenuButton_Click(object sender, EventArgs e) {
+			drawing_timer.Start();
+			startButton.Enabled = true;
+			pauseButton.Enabled = true;
+			mapPanel.Enabled = true;
+			mainMenuPanel.Hide();
+		}
+
+		//Metody start i pause
+
+		private void startButton_Click(object sender, EventArgs e) {
+			drawing_timer.Start();
+		}
+
+		private void pauseButton_Click(object sender, EventArgs e) {
+			drawing_timer.Stop();
+			startButton.Enabled = false;
+			pauseButton.Enabled = false;
+			mapPanel.Enabled = false;
+			mainMenu.ShowMenuIn(this);
 		}
 
 		//Metoda wywoływana przy klikaniu na PB wieży

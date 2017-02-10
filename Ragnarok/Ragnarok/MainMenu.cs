@@ -32,6 +32,7 @@ namespace Ragnarok {
 
 		public void ShowMenuIn(Form1 form) {
 			menuPanel.Location = Form1.CenterPointOf(form, menuPanel);
+			closeButton.Show();
 			Show();
 		}
 

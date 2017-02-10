@@ -108,6 +108,8 @@
 			this.game_timer = new System.Windows.Forms.Timer(this.components);
 			this.drawing_timer = new System.Windows.Forms.Timer(this.components);
 			this.goldStatusLabel = new System.Windows.Forms.Label();
+			this.startButton = new System.Windows.Forms.Button();
+			this.pauseButton = new System.Windows.Forms.Button();
 			this.mainMenuPanel.SuspendLayout();
 			this.mapPanel.SuspendLayout();
 			this.ragnarokPanel.SuspendLayout();
@@ -134,7 +136,7 @@
 			this.mainMenuPanel.Controls.Add(this.loadGameButton);
 			this.mainMenuPanel.Controls.Add(this.startNewGameButton);
 			this.mainMenuPanel.Controls.Add(this.mainMenuTitle);
-			this.mainMenuPanel.Location = new System.Drawing.Point(1060, 44);
+			this.mainMenuPanel.Location = new System.Drawing.Point(1062, 152);
 			this.mainMenuPanel.Name = "mainMenuPanel";
 			this.mainMenuPanel.Size = new System.Drawing.Size(222, 200);
 			this.mainMenuPanel.TabIndex = 0;
@@ -215,6 +217,8 @@
 			this.mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.mapPanel.Controls.Add(this.ragnarokPanel);
 			this.mapPanel.Controls.Add(this.switchPanel);
+			this.mapPanel.Controls.Add(this.basicPanel);
+			this.mapPanel.Controls.Add(this.upgradePanel);
 			this.mapPanel.Location = new System.Drawing.Point(0, 0);
 			this.mapPanel.Name = "mapPanel";
 			this.mapPanel.Size = new System.Drawing.Size(1050, 700);
@@ -232,7 +236,7 @@
 			this.ragnarokPanel.Controls.Add(this.ragnarokPanelPictureBox);
 			this.ragnarokPanel.Controls.Add(this.ragnarokPanelSellButton);
 			this.ragnarokPanel.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.ragnarokPanel.Location = new System.Drawing.Point(967, 180);
+			this.ragnarokPanel.Location = new System.Drawing.Point(713, 322);
 			this.ragnarokPanel.Name = "ragnarokPanel";
 			this.ragnarokPanel.Size = new System.Drawing.Size(155, 244);
 			this.ragnarokPanel.TabIndex = 8;
@@ -571,7 +575,7 @@
 			this.settingsPanel.Controls.Add(this.closeButton);
 			this.settingsPanel.Controls.Add(this.saveButton);
 			this.settingsPanel.Controls.Add(this.label1);
-			this.settingsPanel.Location = new System.Drawing.Point(1052, 477);
+			this.settingsPanel.Location = new System.Drawing.Point(955, 477);
 			this.settingsPanel.Name = "settingsPanel";
 			this.settingsPanel.Size = new System.Drawing.Size(222, 230);
 			this.settingsPanel.TabIndex = 9;
@@ -693,7 +697,7 @@
 			this.basicPanel.Controls.Add(this.basicPanelTowerImage);
 			this.basicPanel.Controls.Add(this.buyBasicTowerButton);
 			this.basicPanel.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.basicPanel.Location = new System.Drawing.Point(1056, 210);
+			this.basicPanel.Location = new System.Drawing.Point(528, 33);
 			this.basicPanel.Name = "basicPanel";
 			this.basicPanel.Size = new System.Drawing.Size(160, 260);
 			this.basicPanel.TabIndex = 2;
@@ -790,7 +794,7 @@
 			this.upgradePanel.Controls.Add(this.upgradePanelPictureBox);
 			this.upgradePanel.Controls.Add(this.upgradePanelSellButton);
 			this.upgradePanel.Font = new System.Drawing.Font("Constantia", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.upgradePanel.Location = new System.Drawing.Point(1222, 210);
+			this.upgradePanel.Location = new System.Drawing.Point(529, 301);
 			this.upgradePanel.Name = "upgradePanel";
 			this.upgradePanel.Size = new System.Drawing.Size(159, 265);
 			this.upgradePanel.TabIndex = 7;
@@ -909,24 +913,48 @@
 			this.goldStatusLabel.AutoSize = true;
 			this.goldStatusLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.goldStatusLabel.ForeColor = System.Drawing.Color.White;
-			this.goldStatusLabel.Location = new System.Drawing.Point(1071, 9);
+			this.goldStatusLabel.Location = new System.Drawing.Point(1058, 34);
 			this.goldStatusLabel.Name = "goldStatusLabel";
 			this.goldStatusLabel.Size = new System.Drawing.Size(58, 19);
 			this.goldStatusLabel.TabIndex = 10;
 			this.goldStatusLabel.Text = "Gold: $";
+			// 
+			// startButton
+			// 
+			this.startButton.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.startButton.Location = new System.Drawing.Point(1062, 63);
+			this.startButton.Name = "startButton";
+			this.startButton.Size = new System.Drawing.Size(75, 34);
+			this.startButton.TabIndex = 11;
+			this.startButton.Text = "Start";
+			this.startButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.startButton.UseVisualStyleBackColor = true;
+			this.startButton.Click += new System.EventHandler(this.startButton_Click);
+			// 
+			// pauseButton
+			// 
+			this.pauseButton.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.pauseButton.Location = new System.Drawing.Point(1062, 112);
+			this.pauseButton.Name = "pauseButton";
+			this.pauseButton.Size = new System.Drawing.Size(75, 34);
+			this.pauseButton.TabIndex = 12;
+			this.pauseButton.Text = "Pause";
+			this.pauseButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+			this.pauseButton.UseVisualStyleBackColor = true;
+			this.pauseButton.Click += new System.EventHandler(this.pauseButton_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Navy;
-			this.ClientSize = new System.Drawing.Size(1354, 733);
+			this.ClientSize = new System.Drawing.Size(1161, 733);
+			this.Controls.Add(this.pauseButton);
+			this.Controls.Add(this.startButton);
 			this.Controls.Add(this.goldStatusLabel);
-			this.Controls.Add(this.settingsPanel);
-			this.Controls.Add(this.upgradePanel);
-			this.Controls.Add(this.basicPanel);
-			this.Controls.Add(this.mapPanel);
 			this.Controls.Add(this.mainMenuPanel);
+			this.Controls.Add(this.settingsPanel);
+			this.Controls.Add(this.mapPanel);
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.mainMenuPanel.ResumeLayout(false);
@@ -1025,6 +1053,8 @@
         private System.Windows.Forms.Timer game_timer;
         private System.Windows.Forms.Timer drawing_timer;
 		private System.Windows.Forms.Label goldStatusLabel;
+		private System.Windows.Forms.Button startButton;
+		private System.Windows.Forms.Button pauseButton;
 	}
 }
 
