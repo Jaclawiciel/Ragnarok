@@ -13,7 +13,8 @@ namespace Ragnarok {
 		public List<IInvader> invaders { get; private set; }
 		public MapLocation[] towerSpots;
         public Player player = new Player();
-        public int waveCount { get; private set; } = 3;
+        public int waveCount { get; private set; }
+        public int waveMax { get; private set; }
 
 		public Game() {
 			path = new Path(new[] { new MapLocation(0, 7, map), new MapLocation(1, 7, map), new MapLocation(2, 7, map), new MapLocation(2, 6, map),
@@ -29,6 +30,8 @@ namespace Ragnarok {
 			towerSpots = new MapLocation[] { new MapLocation(1,6,map), new MapLocation(4, 3,map), new MapLocation(4,5,map), new MapLocation(7,7,map), new MapLocation(8,3,map), new MapLocation(9,5,map), new MapLocation(9,7, map),
 			new MapLocation(11, 2, map), new MapLocation(12,6,map), new MapLocation(14,3,map)};
 
+            waveCount = 0;
+            waveMax = 3;
 			towers = new List<Tower>();
 			invaders = new List<IInvader>();
 			//towers.Add(new BasicTower(new MapLocation(4, 3, map)));
@@ -107,17 +110,22 @@ namespace Ragnarok {
             invaders = new List<IInvader>();
             player = new Player();
             waveCount = 3;
+            waveMax = 3;
         }
         public void WaveSpawn() {
-            if (invaders.Count() < waveCount) AddInvader();
+            if (waveCount < waveMax) { AddInvader(); waveCount += 1; }
         }
         public void CorpseRemoval() {
             bool temp = false;
             foreach(IInvader invader in invaders) {
                 if (invader.IsActive) temp = true;
             }
-            if (!temp) invaders = new List<IInvader>();
-            waveCount += 1;
+            if (!temp) {
+                invaders = new List<IInvader>();
+                waveCount = 0;
+                waveMax += 1;
+            }
+            
         }
         public void GameStart(Timer timer) { timer.Start(); }
         public void GameStop(Timer timer) { timer.Stop(); }
@@ -127,7 +135,7 @@ namespace Ragnarok {
                 mapPanel.PBRoute[i].Image = null;
             }
             foreach (IInvader invader in invaders) {
-                mapPanel.PBRoute[invader.GetPathStep()].Image = invader.image;
+                if (invader.GetPathStep() < mapPanel.PBRoute.Length && invader.IsActive) mapPanel.PBRoute[invader.GetPathStep()].Image = invader.image;
             }
         }
 	}
