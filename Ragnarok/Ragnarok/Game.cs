@@ -120,7 +120,7 @@ namespace Ragnarok {
             waveCount += 1;
         }
         public void GameStart(Timer timer) { timer.Start(); }
-        public void GameStop(Timer timer) { timer.Start(); }
+        public void GameStop(Timer timer) { timer.Stop(); }
 
         public void UpdateDrawing(MapPanel mapPanel) {
             for(int i = 0; i < mapPanel.PBRoute.Length; i++) {
