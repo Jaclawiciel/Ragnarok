@@ -97,11 +97,13 @@ namespace Ragnarok {
 		//Metody start i pause
 
 		private void startButton_Click(object sender, EventArgs e) {
-			drawing_timer.Start();
+            game_timer.Start();
+            drawing_timer.Start();
 		}
 
 		private void pauseButton_Click(object sender, EventArgs e) {
-			drawing_timer.Stop();
+            game_timer.Stop();
+            drawing_timer.Stop();
 			startButton.Enabled = false;
 			pauseButton.Enabled = false;
 			mapPanel.Enabled = false;
