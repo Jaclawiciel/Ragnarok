@@ -42,7 +42,6 @@ namespace Ragnarok {
         public void PlayTurn() {
             Damage();
             MoveEveryone();
-            AreYouAlive();
             WaveSpawn();
             CorpseRemoval();
         }
@@ -100,9 +99,6 @@ namespace Ragnarok {
                     if (invader.PathEnded) player.SubLives(1);
                 }
             }
-        }
-        public void AreYouAlive() {
-            if (player.lives <= 0) Dead();
         }
         public void Dead() {
             MessageBox.Show("YOU LOST !");

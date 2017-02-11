@@ -340,6 +340,7 @@ namespace Ragnarok {
         }
 
         private void game_timer_Tick(object sender, EventArgs e) {
+            if (game.player.lives <= 0) { UpdateGold(); game_timer.Stop(); game.Dead(); }
             game.PlayTurn();
 			UpdateGold();
 			UpdateLifes();
