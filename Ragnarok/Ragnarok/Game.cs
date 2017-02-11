@@ -105,7 +105,7 @@ namespace Ragnarok {
             towers = new List<Tower>();
             invaders = new List<IInvader>();
             player = new Player();
-            waveCount = 3;
+            waveCount = 0;
             waveMax = 3;
         }
         public void WaveSpawn() {
