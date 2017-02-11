@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ragnarok {
     class ShieldedInvader : Invader {
-        public override int HP { get; protected set; } = 10;
+        public override int HP { get; protected set; } = 6;
         public override int gain { get; protected set; } = 20;
         public override Image image { get; protected set; } = Image.FromFile("../../Resources/Shielded Invader.png");
 
