@@ -371,6 +371,8 @@ namespace Ragnarok {
                 game_timer.Stop();
                 MessageBox.Show("YOU LOST !");
                 startNewGame();
+                drawing_timer.Start();
+                drawing_timer.Stop();
             }
             game.PlayTurn();
 			UpdateGold();
