@@ -205,6 +205,7 @@
             // 
             // mapPanel
             // 
+            this.mapPanel.BackgroundImage = global::Ragnarok.Properties.Resources.gamebackground;
             this.mapPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mapPanel.Controls.Add(this.ragnarokPanel);
             this.mapPanel.Controls.Add(this.switchPanel);

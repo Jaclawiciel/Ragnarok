@@ -109,6 +109,7 @@
     <Content Include="Resources\Crossbow Tower.png" />
     <Content Include="Resources\Crossbow Tower2.png" />
     <Content Include="Resources\Crossbow Tower3.png" />
+    <Content Include="Resources\gamebackground.jpg" />
     <Content Include="Resources\Mage Tower.png" />
     <Content Include="Resources\Mage Tower2.png" />
     <Content Include="Resources\Mage Tower3.png" />
