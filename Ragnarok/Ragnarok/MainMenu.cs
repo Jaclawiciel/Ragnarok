@@ -11,17 +11,15 @@ namespace Ragnarok {
 		private Panel menuPanel;
 		private Button closeButton;
 		private Button startNewGameButton;
-		private Button loadGameButton;
 		private Button settingsButton;
 		private Button quitButton;
 
 		public MainMenu(
 			Panel menuPanel, Button closeButton, Button startNewGameButton,
-			Button loadGameButton, Button settingsButton, Button quitButton) {
+			Button settingsButton, Button quitButton) {
 			this.menuPanel = menuPanel;
 			this.closeButton = closeButton;
 			this.startNewGameButton = startNewGameButton;
-			this.loadGameButton = loadGameButton;
 			this.settingsButton = settingsButton;
 			this.quitButton = quitButton;
 		}

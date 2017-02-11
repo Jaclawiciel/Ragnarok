@@ -12,12 +12,22 @@ namespace Ragnarok {
 		private Form form;
 		private Panel mapPanel;
 		private Panel settingsPanel;
-		private CheckBox sfxCheckBox;
 		private CheckBox musicCheckBox;
-		public bool AudioState;
 		public bool MusicState;
+		public string Difficulty {
+			get {
+				if (normalDiff.Checked) {
+					return "normal";
+				} else {
+					return "hardcore";
+				}
+			}
+		}
 		private RadioButton blueButton;
 		private RadioButton blackButton;
+		private RadioButton normalDiff;
+		private RadioButton hardcoreDiff;
+		private GroupBox diffGroupBox;
 		private string color;
 		private string _color {
 			get {
@@ -37,12 +47,15 @@ namespace Ragnarok {
 			}
 		}
 
-		public Settings(Form1 form, Panel mapPanel, Panel settingsPanel, CheckBox sfxCheckBox, CheckBox musicCheckBox, RadioButton blueRadioButton, RadioButton blackRadioButton) {
+		public Settings(Form1 form, Panel mapPanel, Panel settingsPanel, CheckBox musicCheckBox, RadioButton blueRadioButton, RadioButton blackRadioButton,
+			RadioButton normalDiff, RadioButton hardcoreDiff, GroupBox diffGroupBox) {
 			this.settingsPanel = settingsPanel;
-			this.sfxCheckBox = sfxCheckBox;
 			this.musicCheckBox = musicCheckBox;
 			this.blueButton = blueRadioButton;
 			this.blackButton = blackRadioButton;
+			this.normalDiff = normalDiff;
+			this.hardcoreDiff = hardcoreDiff;
+			this.diffGroupBox = diffGroupBox;
 			this.mapPanel = mapPanel;
 			this.form = form;
 			LoadFromFile();
@@ -68,8 +81,8 @@ namespace Ragnarok {
 		}
 
 		private void SaveToFile() {
-			AudioState = sfxCheckBox.Checked;
 			MusicState = musicCheckBox.Checked;
+
 			if (blueButton.Checked) {
 				_color = "blue";
 			} else {
@@ -77,9 +90,9 @@ namespace Ragnarok {
 			}
 
 			String[] lines = new String[3];
-			lines[0] = "audio" + "," + sfxCheckBox.Checked.ToString();
-			lines[1] = "music" + "," + musicCheckBox.Checked.ToString();
-			lines[2] = "color" + "," + color;
+			lines[0] = "music" + "," + musicCheckBox.Checked.ToString();
+			lines[1] = "color" + "," + color;
+			lines[2] = "difficulty" + "," + Difficulty;
 
 			string myDocPath = @"..\..\Resources\";
 			using(StreamWriter outputFile = new StreamWriter(myDocPath + @"settings.txt")) {
@@ -103,17 +116,8 @@ namespace Ragnarok {
 				counter++;
 			}
 			file.Close();
-
-			string[] lineElements = lines[0].Split(',');
-			if (lineElements[1] == "true") {
-				sfxCheckBox.Checked = true;
-				AudioState = true;
-			} else {
-				sfxCheckBox.Checked = false;
-				AudioState = false;
-			}
-
-			lineElements = lines[1].Split(',');
+		
+			String[] lineElements = lines[0].Split(',');
 			if (lineElements[1] == "true") {
 				musicCheckBox.Checked = true;
 				MusicState = true;
@@ -122,11 +126,18 @@ namespace Ragnarok {
 				MusicState = false;
 			}
 
-			lineElements = lines[2].Split(',');
+			lineElements = lines[1].Split(',');
 			if (lineElements[1] == "blue") {
 				_color = "blue";
 			} else {
 				_color = "black";
+			}
+
+			lineElements = lines[2].Split(',');
+			if (lineElements[1] == "normal") {
+				normalDiff.Checked = true;
+			} else {
+				hardcoreDiff.Checked = true;
 			}
 		}
 	}
