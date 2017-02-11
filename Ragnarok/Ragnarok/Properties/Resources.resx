@@ -118,46 +118,49 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Basic Invader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Basic Invader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Basic Tower" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Basic Tower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Crossbow Tower" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crossbow Tower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Crossbow Tower2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Crossbow Tower2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Crossbow Tower3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Crossbow Tower3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Mage Tower" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mage Tower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mage Tower2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mage Tower2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mage Tower3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mage Tower3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MapOnly" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MapOnly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Tank Invader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tank Invader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Shielded Invader" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shielded Invader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sniper Tower" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sniper Tower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Sniper Tower3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sniper Tower3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sniper Tower2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sniper Tower2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Sniper Tower3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Sniper Tower3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mage Tower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mage Tower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Tank Invader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Tank Invader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MapOnly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MapOnly.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Crossbow Tower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crossbow Tower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mage Tower3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mage Tower3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sniper Tower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sniper Tower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Basic Invader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Basic Invader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mage Tower2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mage Tower2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Crossbow Tower2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Crossbow Tower2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Basic Tower" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Basic Tower.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mainbackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mainbackground.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

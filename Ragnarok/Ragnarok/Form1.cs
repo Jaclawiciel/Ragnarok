@@ -26,8 +26,9 @@ namespace Ragnarok {
 			upgradeTowerPanelObj = new UpgradeTowerPanel(upgradePanel, game.map);
 			ragnarokTowerPanelObj = new RagnarokTowerPanel(ragnarokPanel, game.map);
 
-			//Ukrywam kolejne panele programu
-			mainMenu.Hide();
+            player.Play();
+            //Ukrywam kolejne panele programu
+            mainMenu.Hide();
 			mainSettingsPanel.Hide();
 			mainMapPanel.Hide();
 			TowerPanel.HideAllPanels(basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
@@ -78,7 +79,6 @@ namespace Ragnarok {
 			startButton.Enabled = true;
 			pauseButton.Enabled = true;
 			mapPanel.Enabled = true;
-			player.Play();
 		}
 
 		private void loadGameButton_Click(object sender, EventArgs e) {
