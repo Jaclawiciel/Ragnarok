@@ -993,11 +993,11 @@
 			// 
 			this.waveLabel.AutoSize = true;
 			this.waveLabel.BackColor = System.Drawing.Color.Transparent;
-			this.waveLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.waveLabel.ForeColor = System.Drawing.Color.White;
+			this.waveLabel.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.waveLabel.ForeColor = System.Drawing.Color.Maroon;
 			this.waveLabel.Location = new System.Drawing.Point(1058, 672);
 			this.waveLabel.Name = "waveLabel";
-			this.waveLabel.Size = new System.Drawing.Size(56, 19);
+			this.waveLabel.Size = new System.Drawing.Size(74, 26);
 			this.waveLabel.TabIndex = 14;
 			this.waveLabel.Text = "Wave: ";
 			// 
