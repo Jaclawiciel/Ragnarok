@@ -140,7 +140,7 @@
 			this.mainMenuPanel.Controls.Add(this.menuSettingsButton);
 			this.mainMenuPanel.Controls.Add(this.startNewGameButton);
 			this.mainMenuPanel.Controls.Add(this.mainMenuTitle);
-			this.mainMenuPanel.Location = new System.Drawing.Point(1062, 176);
+			this.mainMenuPanel.Location = new System.Drawing.Point(1062, 253);
 			this.mainMenuPanel.Name = "mainMenuPanel";
 			this.mainMenuPanel.Size = new System.Drawing.Size(222, 200);
 			this.mainMenuPanel.TabIndex = 0;
@@ -782,7 +782,7 @@
 			this.settingsPanel.Controls.Add(this.closeButton);
 			this.settingsPanel.Controls.Add(this.saveButton);
 			this.settingsPanel.Controls.Add(this.label1);
-			this.settingsPanel.Location = new System.Drawing.Point(1062, 382);
+			this.settingsPanel.Location = new System.Drawing.Point(1059, 461);
 			this.settingsPanel.Name = "settingsPanel";
 			this.settingsPanel.Size = new System.Drawing.Size(222, 260);
 			this.settingsPanel.TabIndex = 9;
@@ -956,7 +956,7 @@
 			// startButton
 			// 
 			this.startButton.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.startButton.Location = new System.Drawing.Point(1062, 87);
+			this.startButton.Location = new System.Drawing.Point(1059, 118);
 			this.startButton.Name = "startButton";
 			this.startButton.Size = new System.Drawing.Size(75, 34);
 			this.startButton.TabIndex = 11;
@@ -968,7 +968,7 @@
 			// pauseButton
 			// 
 			this.pauseButton.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.pauseButton.Location = new System.Drawing.Point(1062, 136);
+			this.pauseButton.Location = new System.Drawing.Point(1059, 167);
 			this.pauseButton.Name = "pauseButton";
 			this.pauseButton.Size = new System.Drawing.Size(75, 34);
 			this.pauseButton.TabIndex = 12;
@@ -993,11 +993,11 @@
 			// 
 			this.waveLabel.AutoSize = true;
 			this.waveLabel.BackColor = System.Drawing.Color.Transparent;
-			this.waveLabel.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.waveLabel.ForeColor = System.Drawing.Color.Maroon;
-			this.waveLabel.Location = new System.Drawing.Point(1058, 672);
+			this.waveLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.waveLabel.ForeColor = System.Drawing.Color.White;
+			this.waveLabel.Location = new System.Drawing.Point(1061, 74);
 			this.waveLabel.Name = "waveLabel";
-			this.waveLabel.Size = new System.Drawing.Size(74, 26);
+			this.waveLabel.Size = new System.Drawing.Size(56, 19);
 			this.waveLabel.TabIndex = 14;
 			this.waveLabel.Text = "Wave: ";
 			// 
