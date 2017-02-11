@@ -21,26 +21,24 @@ namespace Ragnarok {
 			this.MLTowerSpots = towerSpots;
 			this.panel.BackgroundImage = Image.FromFile("../../Resources/MapOnly.png");
             this.MLRoute = path.GetPath();
-		}
+            DrawTowersSpots(MLTowerSpots);
+            DrawRoute(MLRoute);
+        }
 
 		public void Show() {
-			RemoveTowerSpotsFromPanel();
-			DrawTowersSpots(MLTowerSpots);
-            DrawRoute(MLRoute);
-			panel.Show();
+            RemoveImages();
+            panel.Show();
 		}
 
 		public void Hide() {
 			panel.Hide();
 		}
 
-		private void RemoveTowerSpotsFromPanel() {
-			foreach (Control pb in panel.Controls) {
-				if (pb is PictureBox) {
-					panel.Controls.Remove(pb);
-				}
-			}
-		}
+		private void RemoveImages() {
+            foreach(Control pb in panel.Controls) {
+                if (pb is PictureBox) ((PictureBox)pb).Image = null;
+            }
+        }
 
 		private void DrawTowersSpots(MapLocation[] towerSpots) {
 			//Tworzenie spotów na wieże

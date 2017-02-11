@@ -60,7 +60,6 @@ namespace Ragnarok {
 		// Metody menu
 		private void startNewGameButton_Click(object sender, EventArgs e) {
 			game = new Game();
-			mainMapPanel = new MapPanel(mapPanel, game.map, game.towerSpots, game.path);
 
 			mainMenu.Hide();
 			mainMapPanel.Show();
