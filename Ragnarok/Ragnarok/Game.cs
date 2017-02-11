@@ -100,14 +100,6 @@ namespace Ragnarok {
                 }
             }
         }
-        public void Dead() {
-            MessageBox.Show("YOU LOST !");
-            towers = new List<Tower>();
-            invaders = new List<IInvader>();
-            player = new Player();
-            waveCount = 0;
-            waveMax = 3;
-        }
         public void WaveSpawn() {
             if (waveCount < waveMax) { AddInvader(); waveCount += 1; }
         }

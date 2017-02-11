@@ -75,23 +75,27 @@ namespace Ragnarok {
 
 		// Metody menu
 		private void startNewGameButton_Click(object sender, EventArgs e) {
-			game = new Game();
-
-			mainMenu.Hide();
-			mainMapPanel.Show();
-			InitializePictureBoxEvents();
-
-			lifesStatusLabel.Show();
-			goldStatusLabel.Show();
-			startButton.Show();
-			pauseButton.Show();
-
-			UpdateLifes();
-			UpdateGold();
-			startButton.Enabled = true;
-			pauseButton.Enabled = true;
-			mapPanel.Enabled = true;
+            startNewGame();
 		}
+
+        private void startNewGame() {
+            game = new Game();
+
+            mainMenu.Hide();
+            mainMapPanel.Show();
+            InitializePictureBoxEvents();
+
+            lifesStatusLabel.Show();
+            goldStatusLabel.Show();
+            startButton.Show();
+            pauseButton.Show();
+
+            UpdateLifes();
+            UpdateGold();
+            startButton.Enabled = true;
+            pauseButton.Enabled = true;
+            mapPanel.Enabled = true;
+        }
 
 		private void loadGameButton_Click(object sender, EventArgs e) {
 
@@ -362,7 +366,12 @@ namespace Ragnarok {
         }
 
         private void game_timer_Tick(object sender, EventArgs e) {
-            if (game.player.lives <= 0) { UpdateGold(); game_timer.Stop(); game.Dead(); }
+            if (game.player.lives <= 0) {
+                UpdateGold();
+                game_timer.Stop();
+                MessageBox.Show("YOU LOST !");
+                startNewGame();
+            }
             game.PlayTurn();
 			UpdateGold();
 			UpdateLifes();
