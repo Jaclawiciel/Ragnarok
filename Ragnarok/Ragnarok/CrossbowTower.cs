@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Ragnarok {
     class CrossbowTower : Tower {
-        public override int Range { get; protected set; } = 2;
-        public override int Power { get; protected set; } = 3;
+        public override int Range { get; protected set; } = 1;
+        public override int Power { get; protected set; } = 2;
         public static int Cost { get; protected set; } = 100;
 		public static int SellCost { get { return Cost / 2; } }
 		protected override double Accuracy { get; } = .85;

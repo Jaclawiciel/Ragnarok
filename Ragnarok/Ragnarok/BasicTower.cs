@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Ragnarok {
     class BasicTower : Tower {
         public override int Range { get; protected set; } = 1;
-        public override int Power { get; protected set; } = 2;
+        public override int Power { get; protected set; } = 1;
         public static int Cost { get; protected set; } = 50;
 		public static int SellCost { get { return Cost / 2; } }
         protected override double Accuracy { get; } = .75;

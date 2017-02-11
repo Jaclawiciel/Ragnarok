@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 namespace Ragnarok {
     class MageTower : Tower {
         public override int Range { get; protected set; } = 1;
-        public override int Power { get; protected set; } = 10;
-        public static int Cost { get; protected set; } = 100;
+        public override int Power { get; protected set; } = 8;
+        public static int Cost { get; protected set; } = 150;
 		public static int SellCost { get { return Cost / 2; } }
 		protected override double Accuracy { get; } = .30;
 		public static Image DefaultImage = Image.FromFile("../../Resources/Mage Tower.png");
