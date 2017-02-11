@@ -68,6 +68,7 @@ namespace Ragnarok {
 			startButton.Show();
 			pauseButton.Show();
 
+			goldStatusLabel.Text = "Gold: " + game.player.gold + "$";
 			startButton.Enabled = true;
 			pauseButton.Enabled = true;
 			mapPanel.Enabled = true;
@@ -108,6 +109,10 @@ namespace Ragnarok {
 			pauseButton.Enabled = false;
 			mapPanel.Enabled = false;
 			mainMenu.ShowMenuIn(this);
+		}
+
+		private void UpdateGold() {
+			goldStatusLabel.Text = "Gold: " + game.player.gold + "$";
 		}
 
 		//Metoda wywoływana przy klikaniu na PB wieży
@@ -219,6 +224,7 @@ namespace Ragnarok {
 				MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
 			}
 			basicTowerPanelObj.Hide();
+			UpdateGold();
 		}
 
 		private void switchCrossbowButton_Click(object sender, EventArgs e) {
@@ -229,6 +235,7 @@ namespace Ragnarok {
 				MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
 			}
 			switchTowerPanelObj.Hide();
+			UpdateGold();
 		}
 
 		private void switchMageButton_Click(object sender, EventArgs e) {
@@ -239,6 +246,7 @@ namespace Ragnarok {
 				MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
 			}
 			switchTowerPanelObj.Hide();
+			UpdateGold();
 		}
 
 		private void switchSniperButton_Click(object sender, EventArgs e) {
@@ -249,6 +257,7 @@ namespace Ragnarok {
 				MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
 			}
 			switchTowerPanelObj.Hide();
+			UpdateGold();
 		}
 
 		private void switchSellButton_Click(object sender, EventArgs e) {
@@ -256,6 +265,7 @@ namespace Ragnarok {
 			game.DeleteTower(TowerPanel.CurrentTower);
 			mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, game);
 			switchTowerPanelObj.Hide();
+			UpdateGold();
 		}
 
 		private void upgradePanelSellButton_Click(object sender, EventArgs e) {
@@ -269,6 +279,7 @@ namespace Ragnarok {
 			game.DeleteTower(TowerPanel.CurrentTower);
 			mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, game);
 			upgradeTowerPanelObj.Hide();
+			UpdateGold();
 		}
 
 		private void upgradePanelUpgradeButton_Click(object sender, EventArgs e) {
@@ -297,6 +308,7 @@ namespace Ragnarok {
 					MessageBox.Show("You need more gold to buy this tower.", "Not enough gold");
 				}
 			}
+			UpdateGold();
 		}
 
 		private void ragnarokPanelSellButton_Click(object sender, EventArgs e) {
@@ -310,6 +322,7 @@ namespace Ragnarok {
 			game.DeleteTower(TowerPanel.CurrentTower);
 			mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, game);
 			ragnarokTowerPanelObj.Hide();
+			UpdateGold();
 		}
 
 		//*******************************************************/////
@@ -320,7 +333,7 @@ namespace Ragnarok {
 
         private void game_timer_Tick(object sender, EventArgs e) {
             game.PlayTurn();
-			goldStatusLabel.Text = "Gold: " + game.player.gold + "$";
+			UpdateGold();
         }
 	}
 
