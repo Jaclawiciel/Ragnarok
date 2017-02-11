@@ -25,8 +25,8 @@ namespace Ragnarok {
 			switchTowerPanelObj = new SwitchTowerPanel(switchPanel, game.map);
 			upgradeTowerPanelObj = new UpgradeTowerPanel(upgradePanel, game.map);
 			ragnarokTowerPanelObj = new RagnarokTowerPanel(ragnarokPanel, game.map);
+			PlayMusic();
 
-            player.Play();
             //Ukrywam kolejne panele programu
             mainMenu.Hide();
 			mainSettingsPanel.Hide();
@@ -41,7 +41,7 @@ namespace Ragnarok {
 			mainMenu.ShowMenuWithoutCloseButtonIn(this);
 		}
 
-		SoundPlayer player = new SoundPlayer(@"../../Resources/Wardruna_-_Helvegen.wav");
+		private SoundPlayer player = new SoundPlayer(@"../../Resources/Wardruna_-_Helvegen.wav");
 
 		private MainMenu mainMenu;
 		private Settings mainSettingsPanel;
@@ -59,6 +59,18 @@ namespace Ragnarok {
 				form.Size.Width / 2 - panel.Size.Width / 2,
 				form.Size.Height / 2 - panel.Size.Height);
 			return centerPoint;
+		}
+
+		private void PlayMusic() {
+			if (mainSettingsPanel.MusicState) {
+				if (!mainSettingsPanel.IsMusicPlaying) {
+					player.Play();
+					mainSettingsPanel.IsMusicPlaying = true;
+				}
+			} else {
+				player.Stop();
+				mainSettingsPanel.IsMusicPlaying = false;
+			}
 		}
 
 		// Metody menu
@@ -222,11 +234,13 @@ namespace Ragnarok {
 		private void closeButton_Click(object sender, EventArgs e) {
 			mainSettingsPanel.Close(false);
 			mainMenu.Show();
+			PlayMusic();
 		}
 
 		private void saveButton_Click(object sender, EventArgs e) {
 			mainSettingsPanel.Close(true);
 			mainMenu.Show();
+			PlayMusic();
 		}
 
 		//Przyciski stawiania, kupowania, upgradowania, sprzedawania wież

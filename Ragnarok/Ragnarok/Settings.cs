@@ -14,6 +14,7 @@ namespace Ragnarok {
 		private Panel settingsPanel;
 		private CheckBox musicCheckBox;
 		public bool MusicState;
+		public bool IsMusicPlaying = false;
 		public string Difficulty {
 			get {
 				if (normalDiff.Checked) {
