@@ -305,9 +305,9 @@ namespace Ragnarok {
 			towerPictureBox.Image = towerImage;
 			levelLabel.Text = "Level: " + level.ToString();
 			range = tower.Range;
-			rangeLabel.Text = "Range: " + range.ToString();
+			rangeLabel.Text = "Range: " + (range + 1);
 			power = tower.Power;
-			powerLabel.Text = "Power: " + power.ToString();
+			powerLabel.Text = "Power: " + (power + 1);
 			costLabel.Text = "Cost: " + cost + "$";
 			sellButton.Text = "Sell (+" + sellCost + "$)";
 
