@@ -299,6 +299,19 @@ namespace Ragnarok {
 			}
 		}
 
+		private void ragnarokPanelSellButton_Click(object sender, EventArgs e) {
+			if (TowerPanel.CurrentTower is CrossbowTower) {
+				game.player.AddGold(CrossbowTower.SellCost * TowerPanel.CurrentTower.UpgradeLevel);
+			} else if (TowerPanel.CurrentTower is MageTower) {
+				game.player.AddGold(MageTower.SellCost * TowerPanel.CurrentTower.UpgradeLevel);
+			} else {
+				game.player.AddGold(SniperTower.SellCost * TowerPanel.CurrentTower.UpgradeLevel);
+			}
+			game.DeleteTower(TowerPanel.CurrentTower);
+			mainMapPanel.DrawTowerOnSpot(TowerPanel.CurrentTowerSpot, game);
+			ragnarokTowerPanelObj.Hide();
+		}
+
 		//*******************************************************/////
 
 		private void drawing_timer_Tick(object sender, EventArgs e) {
