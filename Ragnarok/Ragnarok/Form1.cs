@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WMPLib;
+using System.Media;
 
 namespace Ragnarok {
 	public partial class Form1 : Form {
@@ -39,6 +39,8 @@ namespace Ragnarok {
 
 			mainMenu.ShowMenuWithoutCloseButtonIn(this);
 		}
+
+		SoundPlayer player = new SoundPlayer(@"../../Resources/Wardruna_-_Helvegen.wav");
 
 		private MainMenu mainMenu;
 		private Settings mainSettingsPanel;
@@ -76,6 +78,7 @@ namespace Ragnarok {
 			startButton.Enabled = true;
 			pauseButton.Enabled = true;
 			mapPanel.Enabled = true;
+			player.Play();
 		}
 
 		private void loadGameButton_Click(object sender, EventArgs e) {
