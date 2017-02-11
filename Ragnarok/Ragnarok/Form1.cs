@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace Ragnarok {
 	public partial class Form1 : Form {
@@ -14,7 +16,7 @@ namespace Ragnarok {
 			InitializeComponent();
 
 			game = new Game();
-
+            
 			// Inicjalizuję obiekty okien
 			mainMenu = new MainMenu(mainMenuPanel, closeMenuButton, startNewGameButton, menuSettingsButton, menuQuitButton);
 			mainSettingsPanel = new Settings(this, mapPanel, settingsPanel, musicCheckBox, navyColor, blackColor, normalDiffRadioButton, hardcoreDiffRadioButton, difficultyGroupBox);
@@ -23,7 +25,9 @@ namespace Ragnarok {
 			switchTowerPanelObj = new SwitchTowerPanel(switchPanel, game.map);
 			upgradeTowerPanelObj = new UpgradeTowerPanel(upgradePanel, game.map);
 			ragnarokTowerPanelObj = new RagnarokTowerPanel(ragnarokPanel, game.map);
-
+            wplayer = new WMPLib.WindowsMediaPlayer();
+            wplayer.URL = MP3_path;
+            wplayer.controls.play();
 
 			//Ukrywam kolejne panele programu
 			mainMenu.Hide();
@@ -46,10 +50,14 @@ namespace Ragnarok {
 		private SwitchTowerPanel switchTowerPanelObj;
 		private UpgradeTowerPanel upgradeTowerPanelObj;
 		private RagnarokTowerPanel ragnarokTowerPanelObj;
+        private WMPLib.WindowsMediaPlayer wplayer;
+        private readonly string MP3_path = "Wardruna - Helvegen.mp3";
 
-		private Game game;
+        private Game game;
+        
+        public void musicPlay() {
 
-
+        }
 		// Metoda centrująca panele w Formie
 		public static System.Drawing.Point CenterPointOf(Form1 form, Panel panel) {
 			System.Drawing.Point centerPoint = new System.Drawing.Point(
