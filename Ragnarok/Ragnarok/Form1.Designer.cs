@@ -100,6 +100,7 @@
 			this.normalDiffRadioButton = new System.Windows.Forms.RadioButton();
 			this.hardcoreDiffRadioButton = new System.Windows.Forms.RadioButton();
 			this.colorGroupBox = new System.Windows.Forms.GroupBox();
+			this.imageRadioButton = new System.Windows.Forms.RadioButton();
 			this.navyColor = new System.Windows.Forms.RadioButton();
 			this.blackColor = new System.Windows.Forms.RadioButton();
 			this.musicCheckBox = new System.Windows.Forms.CheckBox();
@@ -112,7 +113,7 @@
 			this.startButton = new System.Windows.Forms.Button();
 			this.pauseButton = new System.Windows.Forms.Button();
 			this.lifesStatusLabel = new System.Windows.Forms.Label();
-			this.imageRadioButton = new System.Windows.Forms.RadioButton();
+			this.waveLabel = new System.Windows.Forms.Label();
 			this.mainMenuPanel.SuspendLayout();
 			this.mapPanel.SuspendLayout();
 			this.ragnarokPanel.SuspendLayout();
@@ -139,7 +140,7 @@
 			this.mainMenuPanel.Controls.Add(this.menuSettingsButton);
 			this.mainMenuPanel.Controls.Add(this.startNewGameButton);
 			this.mainMenuPanel.Controls.Add(this.mainMenuTitle);
-			this.mainMenuPanel.Location = new System.Drawing.Point(1062, 241);
+			this.mainMenuPanel.Location = new System.Drawing.Point(1062, 176);
 			this.mainMenuPanel.Name = "mainMenuPanel";
 			this.mainMenuPanel.Size = new System.Drawing.Size(222, 200);
 			this.mainMenuPanel.TabIndex = 0;
@@ -781,7 +782,7 @@
 			this.settingsPanel.Controls.Add(this.closeButton);
 			this.settingsPanel.Controls.Add(this.saveButton);
 			this.settingsPanel.Controls.Add(this.label1);
-			this.settingsPanel.Location = new System.Drawing.Point(1062, 461);
+			this.settingsPanel.Location = new System.Drawing.Point(1062, 382);
 			this.settingsPanel.Name = "settingsPanel";
 			this.settingsPanel.Size = new System.Drawing.Size(222, 260);
 			this.settingsPanel.TabIndex = 9;
@@ -839,6 +840,19 @@
 			this.colorGroupBox.TabIndex = 10;
 			this.colorGroupBox.TabStop = false;
 			this.colorGroupBox.Text = "Background Color";
+			// 
+			// imageRadioButton
+			// 
+			this.imageRadioButton.AutoSize = true;
+			this.imageRadioButton.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.imageRadioButton.ForeColor = System.Drawing.Color.White;
+			this.imageRadioButton.Location = new System.Drawing.Point(16, 49);
+			this.imageRadioButton.Name = "imageRadioButton";
+			this.imageRadioButton.Size = new System.Drawing.Size(120, 19);
+			this.imageRadioButton.TabIndex = 10;
+			this.imageRadioButton.TabStop = true;
+			this.imageRadioButton.Text = "Midgard Serpent";
+			this.imageRadioButton.UseVisualStyleBackColor = true;
 			// 
 			// navyColor
 			// 
@@ -975,18 +989,17 @@
 			this.lifesStatusLabel.TabIndex = 13;
 			this.lifesStatusLabel.Text = "Lifes: ";
 			// 
-			// imageRadioButton
+			// waveLabel
 			// 
-			this.imageRadioButton.AutoSize = true;
-			this.imageRadioButton.Font = new System.Drawing.Font("Constantia", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.imageRadioButton.ForeColor = System.Drawing.Color.White;
-			this.imageRadioButton.Location = new System.Drawing.Point(16, 49);
-			this.imageRadioButton.Name = "imageRadioButton";
-			this.imageRadioButton.Size = new System.Drawing.Size(120, 19);
-			this.imageRadioButton.TabIndex = 10;
-			this.imageRadioButton.TabStop = true;
-			this.imageRadioButton.Text = "Midgard Serpent";
-			this.imageRadioButton.UseVisualStyleBackColor = true;
+			this.waveLabel.AutoSize = true;
+			this.waveLabel.BackColor = System.Drawing.Color.Transparent;
+			this.waveLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.waveLabel.ForeColor = System.Drawing.Color.White;
+			this.waveLabel.Location = new System.Drawing.Point(1058, 672);
+			this.waveLabel.Name = "waveLabel";
+			this.waveLabel.Size = new System.Drawing.Size(56, 19);
+			this.waveLabel.TabIndex = 14;
+			this.waveLabel.Text = "Wave: ";
 			// 
 			// Form1
 			// 
@@ -995,6 +1008,7 @@
 			this.BackColor = System.Drawing.Color.Navy;
 			this.BackgroundImage = global::Ragnarok.Properties.Resources.mainbackground;
 			this.ClientSize = new System.Drawing.Size(1161, 733);
+			this.Controls.Add(this.waveLabel);
 			this.Controls.Add(this.lifesStatusLabel);
 			this.Controls.Add(this.pauseButton);
 			this.Controls.Add(this.startButton);
@@ -1107,6 +1121,7 @@
 		private System.Windows.Forms.RadioButton normalDiffRadioButton;
 		private System.Windows.Forms.RadioButton hardcoreDiffRadioButton;
 		private System.Windows.Forms.RadioButton imageRadioButton;
+		private System.Windows.Forms.Label waveLabel;
 	}
 }
 

@@ -35,6 +35,7 @@ namespace Ragnarok {
 
 			lifesStatusLabel.Hide();
 			goldStatusLabel.Hide();
+			waveLabel.Hide();
 			startButton.Hide();
 			pauseButton.Hide();
 
@@ -87,11 +88,13 @@ namespace Ragnarok {
 
             lifesStatusLabel.Show();
             goldStatusLabel.Show();
+			waveLabel.Show();
             startButton.Show();
             pauseButton.Show();
 
             UpdateLifes();
             UpdateGold();
+			UpdateWave();
             startButton.Enabled = true;
             pauseButton.Enabled = true;
             mapPanel.Enabled = true;
@@ -145,6 +148,10 @@ namespace Ragnarok {
 
 		private void UpdateLifes() {
 			lifesStatusLabel.Text = "Lifes: " + game.player.lives;
+		}
+
+		private void UpdateWave() {
+			waveLabel.Text = "Wave: " + (game.waveMax - 2);
 		}
 
 		//Metoda wywoływana przy klikaniu na PB wieży
@@ -377,6 +384,7 @@ namespace Ragnarok {
             game.PlayTurn();
 			UpdateGold();
 			UpdateLifes();
+			UpdateWave();
         }
 	}
 
