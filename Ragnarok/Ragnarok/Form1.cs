@@ -102,6 +102,11 @@ namespace Ragnarok {
 		//Metody start i pause
 
 		private void startButton_Click(object sender, EventArgs e) {
+			if (mainSettingsPanel.Difficulty == "normal") {
+				game_timer.Interval = 1000;
+			} else {
+				game_timer.Interval = 500;
+			}
             game_timer.Start();
             drawing_timer.Start();
 		}
