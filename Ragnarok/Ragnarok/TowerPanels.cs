@@ -299,6 +299,7 @@ namespace Ragnarok {
 			} else {
 				titleLabel.Text = "Sniper Tower";
 				towerType = TowerType.sniperTower;
+				cost = SniperTower.Cost * (TowerPanel.CurrentTower.UpgradeLevel + 1);
 				sellCost = (SniperTower.Cost * CurrentTower.UpgradeLevel) / 2;
 			}
 			level = tower.UpgradeLevel + 1;

@@ -9,7 +9,7 @@ namespace Ragnarok {
         public int gold { get; private set; }
         public int lives { get; private set; }
 
-        public Player() { gold = 3000; lives = 5; }
+        public Player() { gold = 250; lives = 5; }
         
         public void SubLives(int howManyLives) { lives -= howManyLives; }
         public void AddGold(int howMuchGold) { gold += howMuchGold; }
