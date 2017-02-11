@@ -139,7 +139,7 @@
 			this.mainMenuPanel.Controls.Add(this.menuSettingsButton);
 			this.mainMenuPanel.Controls.Add(this.startNewGameButton);
 			this.mainMenuPanel.Controls.Add(this.mainMenuTitle);
-			this.mainMenuPanel.Location = new System.Drawing.Point(1062, 238);
+			this.mainMenuPanel.Location = new System.Drawing.Point(1062, 241);
 			this.mainMenuPanel.Name = "mainMenuPanel";
 			this.mainMenuPanel.Size = new System.Drawing.Size(222, 200);
 			this.mainMenuPanel.TabIndex = 0;
@@ -196,13 +196,13 @@
 			// mainMenuTitle
 			// 
 			this.mainMenuTitle.AutoSize = true;
-			this.mainMenuTitle.Font = new System.Drawing.Font("Constantia", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.mainMenuTitle.ForeColor = System.Drawing.Color.White;
+			this.mainMenuTitle.Font = new System.Drawing.Font("Constantia", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.mainMenuTitle.ForeColor = System.Drawing.Color.Black;
 			this.mainMenuTitle.Location = new System.Drawing.Point(43, 16);
 			this.mainMenuTitle.Name = "mainMenuTitle";
-			this.mainMenuTitle.Size = new System.Drawing.Size(136, 29);
+			this.mainMenuTitle.Size = new System.Drawing.Size(136, 36);
 			this.mainMenuTitle.TabIndex = 0;
-			this.mainMenuTitle.Text = "Main Menu";
+			this.mainMenuTitle.Text = "Ragnarok";
 			// 
 			// mapPanel
 			// 
@@ -930,6 +930,7 @@
 			// goldStatusLabel
 			// 
 			this.goldStatusLabel.AutoSize = true;
+			this.goldStatusLabel.BackColor = System.Drawing.Color.Transparent;
 			this.goldStatusLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.goldStatusLabel.ForeColor = System.Drawing.Color.White;
 			this.goldStatusLabel.Location = new System.Drawing.Point(1062, 49);
@@ -965,6 +966,7 @@
 			// lifesStatusLabel
 			// 
 			this.lifesStatusLabel.AutoSize = true;
+			this.lifesStatusLabel.BackColor = System.Drawing.Color.Transparent;
 			this.lifesStatusLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.lifesStatusLabel.ForeColor = System.Drawing.Color.White;
 			this.lifesStatusLabel.Location = new System.Drawing.Point(1062, 21);
@@ -997,8 +999,8 @@
 			this.Controls.Add(this.pauseButton);
 			this.Controls.Add(this.startButton);
 			this.Controls.Add(this.goldStatusLabel);
-			this.Controls.Add(this.settingsPanel);
 			this.Controls.Add(this.mainMenuPanel);
+			this.Controls.Add(this.settingsPanel);
 			this.Controls.Add(this.mapPanel);
 			this.Name = "Form1";
 			this.Text = "Form1";
