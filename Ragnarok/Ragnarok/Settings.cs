@@ -128,7 +128,7 @@ namespace Ragnarok {
 			file.Close();
 		
 			String[] lineElements = lines[0].Split(',');
-			if (lineElements[1] == "true") {
+			if (lineElements[1] == "True") {
 				musicCheckBox.Checked = true;
 				MusicState = true;
 			} else {
