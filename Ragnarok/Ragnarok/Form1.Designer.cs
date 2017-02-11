@@ -110,6 +110,7 @@
 			this.goldStatusLabel = new System.Windows.Forms.Label();
 			this.startButton = new System.Windows.Forms.Button();
 			this.pauseButton = new System.Windows.Forms.Button();
+			this.lifesStatusLabel = new System.Windows.Forms.Label();
 			this.mainMenuPanel.SuspendLayout();
 			this.mapPanel.SuspendLayout();
 			this.ragnarokPanel.SuspendLayout();
@@ -136,7 +137,7 @@
 			this.mainMenuPanel.Controls.Add(this.loadGameButton);
 			this.mainMenuPanel.Controls.Add(this.startNewGameButton);
 			this.mainMenuPanel.Controls.Add(this.mainMenuTitle);
-			this.mainMenuPanel.Location = new System.Drawing.Point(1062, 152);
+			this.mainMenuPanel.Location = new System.Drawing.Point(1062, 238);
 			this.mainMenuPanel.Name = "mainMenuPanel";
 			this.mainMenuPanel.Size = new System.Drawing.Size(222, 200);
 			this.mainMenuPanel.TabIndex = 0;
@@ -913,7 +914,7 @@
 			this.goldStatusLabel.AutoSize = true;
 			this.goldStatusLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.goldStatusLabel.ForeColor = System.Drawing.Color.White;
-			this.goldStatusLabel.Location = new System.Drawing.Point(1058, 34);
+			this.goldStatusLabel.Location = new System.Drawing.Point(1062, 49);
 			this.goldStatusLabel.Name = "goldStatusLabel";
 			this.goldStatusLabel.Size = new System.Drawing.Size(58, 19);
 			this.goldStatusLabel.TabIndex = 10;
@@ -922,7 +923,7 @@
 			// startButton
 			// 
 			this.startButton.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.startButton.Location = new System.Drawing.Point(1062, 63);
+			this.startButton.Location = new System.Drawing.Point(1062, 87);
 			this.startButton.Name = "startButton";
 			this.startButton.Size = new System.Drawing.Size(75, 34);
 			this.startButton.TabIndex = 11;
@@ -934,7 +935,7 @@
 			// pauseButton
 			// 
 			this.pauseButton.Font = new System.Drawing.Font("Constantia", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.pauseButton.Location = new System.Drawing.Point(1062, 112);
+			this.pauseButton.Location = new System.Drawing.Point(1062, 136);
 			this.pauseButton.Name = "pauseButton";
 			this.pauseButton.Size = new System.Drawing.Size(75, 34);
 			this.pauseButton.TabIndex = 12;
@@ -943,12 +944,24 @@
 			this.pauseButton.UseVisualStyleBackColor = true;
 			this.pauseButton.Click += new System.EventHandler(this.pauseButton_Click);
 			// 
+			// lifesStatusLabel
+			// 
+			this.lifesStatusLabel.AutoSize = true;
+			this.lifesStatusLabel.Font = new System.Drawing.Font("Constantia", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.lifesStatusLabel.ForeColor = System.Drawing.Color.White;
+			this.lifesStatusLabel.Location = new System.Drawing.Point(1062, 21);
+			this.lifesStatusLabel.Name = "lifesStatusLabel";
+			this.lifesStatusLabel.Size = new System.Drawing.Size(50, 19);
+			this.lifesStatusLabel.TabIndex = 13;
+			this.lifesStatusLabel.Text = "Lifes: ";
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Navy;
 			this.ClientSize = new System.Drawing.Size(1161, 733);
+			this.Controls.Add(this.lifesStatusLabel);
 			this.Controls.Add(this.pauseButton);
 			this.Controls.Add(this.startButton);
 			this.Controls.Add(this.goldStatusLabel);
@@ -1055,6 +1068,7 @@
 		private System.Windows.Forms.Label goldStatusLabel;
 		private System.Windows.Forms.Button startButton;
 		private System.Windows.Forms.Button pauseButton;
+		private System.Windows.Forms.Label lifesStatusLabel;
 	}
 }
 

@@ -30,6 +30,7 @@ namespace Ragnarok {
 			//mainMapPanel.Hide();
 			TowerPanel.HideAllPanels(basicTowerPanelObj, switchTowerPanelObj, upgradeTowerPanelObj, ragnarokTowerPanelObj);
 
+			lifesStatusLabel.Hide();
 			goldStatusLabel.Hide();
 			startButton.Hide();
 			pauseButton.Hide();
@@ -64,11 +65,14 @@ namespace Ragnarok {
 			mainMenu.Hide();
 			mainMapPanel.Show();
 			InitializePictureBoxEvents();
+
+			lifesStatusLabel.Show();
 			goldStatusLabel.Show();
 			startButton.Show();
 			pauseButton.Show();
 
-			goldStatusLabel.Text = "Gold: " + game.player.gold + "$";
+			UpdateLifes();
+			UpdateGold();
 			startButton.Enabled = true;
 			pauseButton.Enabled = true;
 			mapPanel.Enabled = true;
@@ -113,6 +117,10 @@ namespace Ragnarok {
 
 		private void UpdateGold() {
 			goldStatusLabel.Text = "Gold: " + game.player.gold + "$";
+		}
+
+		private void UpdateLifes() {
+			lifesStatusLabel.Text = "Lifes: " + game.player.lives;
 		}
 
 		//Metoda wywoływana przy klikaniu na PB wieży
@@ -334,6 +342,7 @@ namespace Ragnarok {
         private void game_timer_Tick(object sender, EventArgs e) {
             game.PlayTurn();
 			UpdateGold();
+			UpdateLifes();
         }
 	}
 

@@ -24,6 +24,7 @@ namespace Ragnarok {
 		}
 
 		public void Show() {
+			RemoveTowerSpotsFromPanel();
 			DrawTowersSpots(MLTowerSpots);
             DrawRoute(MLRoute);
 			panel.Show();
@@ -33,7 +34,16 @@ namespace Ragnarok {
 			panel.Hide();
 		}
 
+		private void RemoveTowerSpotsFromPanel() {
+			foreach (Control pb in panel.Controls) {
+				if (pb is PictureBox) {
+					panel.Controls.Remove(pb);
+				}
+			}
+		}
+
 		private void DrawTowersSpots(MapLocation[] towerSpots) {
+			//Tworzenie spotów na wieże
 			PBTowerSpots = new PictureBox[towerSpots.Length];
 			for (int i = 0; i < towerSpots.Length; i++) {
 				PBTowerSpots[i] = new PictureBox();
@@ -84,16 +94,16 @@ namespace Ragnarok {
 		}
 
 		private void DrawRoute(MapLocation[] path) {
-        PBRoute = new PictureBox[path.Length];
-        for (int i = 0; i < path.Length; i++) {
-            PBRoute[i] = new PictureBox();
-            PBRoute[i].Size = new Size(70, 70);
-            PBRoute[i].Location = new System.Drawing.Point(path[i].X * 70, path[i].Y * 70);
-            PBRoute[i].BackColor = Color.DarkGreen;
-            PBRoute[i].Enabled = true;
-            panel.Controls.Add(PBRoute[i]);
-        }
-    }
+			PBRoute = new PictureBox[path.Length];
+			for (int i = 0; i < path.Length; i++) {
+				PBRoute[i] = new PictureBox();
+				PBRoute[i].Size = new Size(70, 70);
+				PBRoute[i].Location = new System.Drawing.Point(path[i].X * 70, path[i].Y * 70);
+				PBRoute[i].BackColor = Color.DarkGreen;
+				PBRoute[i].Enabled = true;
+				panel.Controls.Add(PBRoute[i]);
+			}
+		}
 
 
 		public Tower WhatTowerIsPlacedOn(MapLocation towerSpotLocation, Tower[] towers) {
