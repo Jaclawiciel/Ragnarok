@@ -25,6 +25,7 @@ namespace Ragnarok {
 		}
 		private RadioButton blueButton;
 		private RadioButton blackButton;
+		private RadioButton imageButton;
 		private RadioButton normalDiff;
 		private RadioButton hardcoreDiff;
 		private GroupBox diffGroupBox;
@@ -39,20 +40,26 @@ namespace Ragnarok {
 					form.BackColor = Color.Navy;
 					mapPanel.BackColor = Color.Navy;
 					blueButton.Checked = true;
-				} else {
+				} else if(value == "black") {
 					form.BackColor = Color.Black;
 					mapPanel.BackColor = Color.Black;
 					blackButton.Checked = true;
+				} else {
+					//form.BackColor = Color.Transparent;
+					mapPanel.BackColor = Color.Transparent;
+					imageButton.Checked = true;
 				}
 			}
 		}
 
-		public Settings(Form1 form, Panel mapPanel, Panel settingsPanel, CheckBox musicCheckBox, RadioButton blueRadioButton, RadioButton blackRadioButton,
+		public Settings(Form1 form, Panel mapPanel, Panel settingsPanel, CheckBox musicCheckBox, 
+			RadioButton blueRadioButton, RadioButton blackRadioButton, RadioButton imageRadioButton,
 			RadioButton normalDiff, RadioButton hardcoreDiff, GroupBox diffGroupBox) {
 			this.settingsPanel = settingsPanel;
 			this.musicCheckBox = musicCheckBox;
 			this.blueButton = blueRadioButton;
 			this.blackButton = blackRadioButton;
+			this.imageButton = imageRadioButton;
 			this.normalDiff = normalDiff;
 			this.hardcoreDiff = hardcoreDiff;
 			this.diffGroupBox = diffGroupBox;
@@ -85,8 +92,10 @@ namespace Ragnarok {
 
 			if (blueButton.Checked) {
 				_color = "blue";
-			} else {
+			} else if(blackButton.Checked) {
 				_color = "black";
+			} else {
+				_color = "image";
 			}
 
 			String[] lines = new String[3];
@@ -129,8 +138,10 @@ namespace Ragnarok {
 			lineElements = lines[1].Split(',');
 			if (lineElements[1] == "blue") {
 				_color = "blue";
-			} else {
+			} else if(lineElements[1] == "black") {
 				_color = "black";
+			} else {
+				_color = "image";
 			}
 
 			lineElements = lines[2].Split(',');
