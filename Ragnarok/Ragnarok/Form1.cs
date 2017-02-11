@@ -25,9 +25,6 @@ namespace Ragnarok {
 			switchTowerPanelObj = new SwitchTowerPanel(switchPanel, game.map);
 			upgradeTowerPanelObj = new UpgradeTowerPanel(upgradePanel, game.map);
 			ragnarokTowerPanelObj = new RagnarokTowerPanel(ragnarokPanel, game.map);
-            wplayer = new WMPLib.WindowsMediaPlayer();
-            wplayer.URL = MP3_path;
-            wplayer.controls.play();
 
 			//Ukrywam kolejne panele programu
 			mainMenu.Hide();
@@ -50,14 +47,9 @@ namespace Ragnarok {
 		private SwitchTowerPanel switchTowerPanelObj;
 		private UpgradeTowerPanel upgradeTowerPanelObj;
 		private RagnarokTowerPanel ragnarokTowerPanelObj;
-        private WMPLib.WindowsMediaPlayer wplayer;
-        private readonly string MP3_path = "Wardruna - Helvegen.mp3";
 
         private Game game;
         
-        public void musicPlay() {
-
-        }
 		// Metoda centrująca panele w Formie
 		public static System.Drawing.Point CenterPointOf(Form1 form, Panel panel) {
 			System.Drawing.Point centerPoint = new System.Drawing.Point(
