@@ -112,12 +112,14 @@
     <Content Include="Resources\Mage Tower.png" />
     <Content Include="Resources\Mage Tower2.png" />
     <Content Include="Resources\Mage Tower3.png" />
+    <Content Include="Resources\mainbackground.jpg" />
     <Content Include="Resources\MapOnly.png" />
     <Content Include="Resources\Shielded Invader.png" />
     <Content Include="Resources\Sniper Tower.png" />
     <Content Include="Resources\Sniper Tower2.png" />
     <Content Include="Resources\Sniper Tower3.png" />
     <Content Include="Resources\Tank Invader.png" />
+    <Content Include="Resources\Wardruna - Helvegen.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
